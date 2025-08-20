@@ -5,6 +5,7 @@ function Projects() {
     {
       nombre: "📊 SuperStore Sales",
       descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.",
+      imagen: "/img/SuperStore_Sales.jpg",
       herramientas: "Python, Pandas, SQL",
       link: "https://github.com/SaitoM17/superstore_sales",
     },
@@ -33,14 +34,19 @@ function Projects() {
       <h2>Proyectos</h2>
       <div className="projects-grid">
         {proyectos.map((p, index) => (
-          <div key={index} className="project-card">
-            <h3>{p.nombre}</h3>
-            <p>{p.descripcion}</p>
-            <p><strong>Herramientas:</strong> {p.herramientas}</p>
-            <a href={p.link} target="_blank" rel="noopener noreferrer">
-              Ver proyecto
-            </a>
-          </div>
+        <div key={index} className="project-card">
+            <div className="project-content">
+                <h3>{p.nombre}</h3>
+                <p>{p.descripcion}</p>
+                <p><strong>Herramientas:</strong> {p.herramientas}</p>
+                <a href={p.link} target="_blank" rel="noopener noreferrer">
+                Ver proyecto
+                </a>
+            </div>
+            {p.imagen && (
+                <img src={p.imagen} alt="Icono del proyecto" className="project-icon" />
+            )}
+        </div>
         ))}
       </div>
     </section>
