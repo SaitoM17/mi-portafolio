@@ -12,6 +12,7 @@ function Projects() {
     {
       nombre: "📊 Ramen Ratings",
       descripcion: "Este proyecto presenta un dashboard interactivo basado en más de 2500 reseñas de productos de ramen a nivel internacional, recopiladas por Aleksey Bilogur (Owner).",
+      imagen: "/img/Ramen.jpg",
       herramientas: "Power BI",
       link: "https://github.com/SaitoM17/ramen_ratings",
     },
