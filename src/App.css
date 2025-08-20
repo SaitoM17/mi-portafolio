@@ -28,11 +28,33 @@ h2 {
   gap: 1rem;
 }
 
+/* .project-card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+} */
+
 .project-card {
   background: white;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
+  display: flex;                /* Activa flexbox */
+  justify-content: space-between; 
+  align-items: center;          /* Centra verticalmente */
+  gap: 1rem;                    /* Espacio entre texto e imagen */
+}
+
+.project-content {
+  flex: 1;                      /* Texto ocupa lo que quede */
+}
+
+.project-icon {
+  width: 120px;                 /* Ajusta tamaño de la imagen */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .project-card a {
