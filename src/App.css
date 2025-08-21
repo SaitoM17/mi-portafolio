@@ -57,13 +57,22 @@ h2 {
   object-fit: cover;
 }
 
-.project-card a {
-  color: #0056b3;
-  text-decoration: none;
+.project-links {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;   /* Espacio entre "Ver proyecto" y el logo */
 }
 
-.project-card a:hover {
-  text-decoration: underline;
+.repositor-icon {
+  width: 28px;   /* Más pequeño que la imagen del proyecto */
+  height: auto;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.repositor-icon:hover {
+  transform: scale(1.2);
 }
 
 footer {
@@ -72,4 +81,28 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* ========================
+   📱 Responsive
+   ======================== */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;   /* Apila todo en columna */
+    text-align: center;
+  }
+
+  .project-content {
+    order: 2;                /* Texto abajo */
+  }
+
+  .project-icon {
+    order: 1;                /* Imagen arriba */
+    width: 100%;             /* Que ocupe todo el ancho */
+    max-width: 300px;        /* Limita el tamaño */
+  }
+
+  .project-links {
+    justify-content: center; /* Centra "Ver proyecto" y el icono */
+  }
 }
