@@ -37,6 +37,13 @@ function Projects() {
       herramientas: "Python, Pandas, Matplolib, Seaborn Jupyter Notebook",
       link: "https://github.com/SaitoM17/analisis_empresarial_mexico_siem_2024.git",
     },
+    {
+      nombre: "📊 Análisis 'Mexico Trade Statistics 2012 - 2023'",
+      descripcion: "Analizar la evolución del comercio exterior de México entre 2012 y 2023, identificando los principales socios comerciales, productos clave, tendencias de exportación e importación, y patrones económicos relevantes mediante técnicas de análisis de datos.",
+      imagen: "/img/Trade_Statistics.jpg",
+      herramientas: "Python, Pandas, Matplolib, Seaborn Jupyter Notebook, scipy",
+      link: "https://github.com/SaitoM17/analisis_mexico_trade_statistics_2012_2023.git",
+    },
   ];
 
   return (
