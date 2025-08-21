@@ -64,6 +64,15 @@ h2 {
   gap: 0.5rem;   /* Espacio entre "Ver proyecto" y el logo */
 }
 
+.link-repo{
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.link-repo:hover {
+  text-decoration: underline;
+}
+
 .repositor-icon {
   width: 28px;   /* Más pequeño que la imagen del proyecto */
   height: auto;
