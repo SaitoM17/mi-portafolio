@@ -8,7 +8,7 @@ function SIEM() {
         su localización, tamaño, sector económico predominante y diferencias regionales, 
         usando técnicas estadísticas y visualización de datos.
       </p>
-      <img src="/img/SIEM.png" alt="SIEM" style={{ maxWidth: "400px" }} />
+      <img src="/img/SIEM.jpg" alt="SIEM" style={{ maxWidth: "400px" }} />
       <br />
       <a href="https://github.com/SaitoM17/analisis_empresarial_mexico_siem_2024.git" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
