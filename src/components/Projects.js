@@ -52,18 +52,26 @@ function Projects() {
       <div className="projects-grid">
         {proyectos.map((p, index) => (
         <div key={index} className="project-card">
-            <div className="project-content">
-                <h3>{p.nombre}</h3>
-                <p>{p.descripcion}</p>
-                <p><strong>Herramientas:</strong> {p.herramientas}</p>
-                <a href={p.link} target="_blank" rel="noopener noreferrer">
+          <div className="project-content">
+            <h3>{p.nombre}</h3>
+            <p>{p.descripcion}</p>
+            <p><strong>Herramientas:</strong> {p.herramientas}</p>
+            
+            <div className="project-links">
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
                 Ver proyecto
-                </a>
+              </a>
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
+                <img src={"/icon/github.png"} alt={p.nombre} className="repositor-icon" />
+              </a>
             </div>
-            {p.imagen && (
-                <img src={p.imagen} alt="Icono del proyecto" className="project-icon" />
-            )}
+          </div>
+
+          {p.imagen && (
+            <img src={p.imagen} alt="Icono del proyecto" className="project-icon" />
+          )}
         </div>
+
         ))}
       </div>
     </section>
