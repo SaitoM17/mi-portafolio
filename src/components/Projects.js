@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Projects() {
   const proyectos = [
@@ -7,6 +8,7 @@ function Projects() {
       descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.",
       imagen: "/img/SuperStore_Sales.jpg",
       herramientas: "Python, Pandas, SQL",
+      pagina: "/superstore-sales",
       link: "https://github.com/SaitoM17/superstore_sales",
     },
     {
@@ -58,9 +60,7 @@ function Projects() {
             <p><strong>Herramientas:</strong> {p.herramientas}</p>
             
             <div className="project-links">
-              <a href={p.link} target="_blank" rel="noopener noreferrer">
-                Ver proyecto
-              </a>
+              <Link to={p.pagina} className="link-repo">Ver Proyecto</Link>
               <a href={p.link} target="_blank" rel="noopener noreferrer">
                 <img src={"/icon/github.png"} alt={p.nombre} className="repositor-icon" />
               </a>
