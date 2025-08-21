@@ -30,6 +30,13 @@ function Projects() {
       herramientas: "Power BI",
       link: "https://github.com/SaitoM17/analisis_del_precio_tortillas_mexico_2007_a_2024",
     },
+    {
+      nombre: "📊 Sistema de Información Empresarial Mexicano (SIEM)",
+      descripcion: "Analizar la distribución y características de las empresas registradas en el Sistema de Información Empresarial Mexicano (SIEM) para obtener insights sobre su localización, tamaño, sector económico predominante y diferencias regionales, usando técnicas estadísticas y visualización de datos.",
+      imagen: "/img/SIEM.jpg",
+      herramientas: "Python, Pandas, Matplolib, Seaborn Jupyter Notebook",
+      link: "https://github.com/SaitoM17/analisis_empresarial_mexico_siem_2024.git",
+    },
   ];
 
   return (
