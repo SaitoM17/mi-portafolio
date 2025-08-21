@@ -9,7 +9,7 @@ function Projects() {
       imagen: "/img/SuperStore_Sales.jpg",
       herramientas: "Python, Pandas, SQL",
       pagina: "/superstore-sales",
-      link: "https://github.com/SaitoM17/superstore_sales",
+      link: "https://github.com/SaitoM17/superstore_sales.git",
     },
     {
       nombre: "📊 Ramen Ratings",
@@ -17,7 +17,7 @@ function Projects() {
       imagen: "/img/Ramen.jpg",
       herramientas: "Power BI",
       pagina: "/Ramen-ratings",
-      link: "https://github.com/SaitoM17/ramen_ratings",
+      link: "https://github.com/SaitoM17/ramen_ratings.git",
     },
     {
       nombre: "📊 Amazon Delivery",
@@ -25,7 +25,7 @@ function Projects() {
       imagen: "/img/Amazon_Delivery.jpg",
       herramientas: "Python, Pandas, SQL",
       pagina: "/Amazon-delivery",
-      link: "https://github.com/SaitoM17/amazon_delivery",
+      link: "https://github.com/SaitoM17/amazon_delivery.git",
     },
     {
       nombre: "📊 Precio de las tortillas en México",
@@ -33,7 +33,7 @@ function Projects() {
       imagen: "/img/Tortillas.png",
       herramientas: "Power BI",
       pagina: "/Precio-tortilla",
-      link: "https://github.com/SaitoM17/analisis_del_precio_tortillas_mexico_2007_a_2024",
+      link: "https://github.com/SaitoM17/analisis_del_precio_tortillas_mexico_2007_a_2024.git",
     },
     {
       nombre: "📊 Sistema de Información Empresarial Mexicano (SIEM)",
