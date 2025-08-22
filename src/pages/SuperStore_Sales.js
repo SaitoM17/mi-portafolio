@@ -68,7 +68,7 @@ function SuperStoreSales() {
         análisis posterior sea lo más preciso y fiable posible.
       </p>
 
-      <he>2. Análisis Valores Atípicos</he>
+      <h3>2. Análisis Valores Atípicos</h3>
       <p>
         El análisis de los registros con valores atípicos en el conjunto de datos de Superstore Sales, respaldado por el 
         script de Python y la visualización adjunta, ha demostrado que estas fluctuaciones en las ventas no son errores de datos. 
