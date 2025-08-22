@@ -1,6 +1,29 @@
 import React from "react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function SuperStoreSales() {
+
+  const code = `
+# Rellenar los valores nulos en la columna Postal Code
+df_store_sales['Postal Code'] = df_store_sales['Postal Code'].fillna('05403')
+
+# Transformación de columna Postal Code
+df_store_sales['Postal Code'] = df_store_sales['Postal Code'].astype(str)
+
+# Eliminar .0 de los demás datos
+df_store_sales['Postal Code'] = df_store_sales['Postal Code'].str.replace('.0', '', regex=False)
+
+# Verificación de la cantidad de valores nulos
+valores_nulos = df_store_sales['Postal Code'].isnull().sum()
+print(f'Cantidad de valores nulos: {valores_nulos}')
+# Salida: Cantidad de valores nulos: 0
+
+# Filas donde se imputaron los valores nulos
+filas_05403 = df_store_sales[df_store_sales['Postal Code'] == '05403']
+print(filas_05403)
+  `;
+
   return (
     <div style={{ padding: "2rem" }}>
       
@@ -83,6 +106,40 @@ function SuperStoreSales() {
         El script de Python, que utiliza la biblioteca fuzzywuzzy para comparar nombres de productos y un análisis de la evolución del precio por mes, 
         permitió confirmar que estas fluctuaciones son consistentes con la dinámica de precios del mercado, en lugar de ser errores de registro. 
         Este hallazgo es crucial para el proyecto, ya que nos permite mantener estos datos en el conjunto para un análisis más completo y realista.
+      </p>
+
+      <h3>3. Limpieza y preprocesamiento</h3>
+      <p>
+        A partir del análisis exploratorio y del manejo de valores atípicos, se procede a la fase de limpieza de datos. El único problema 
+        identificado fue la presencia de 11 valores nulos en la columna Postal Code, lo cual se resolverá mediante una imputación.
+      </p>
+
+      <p>
+        Se imputaron los valores faltantes en la columna Postal Code con el código 05403. Esta decisión se tomó al verificar que el 
+        código postal de la ciudad de Burlington en Vermont (único registro sin Postal Code pero con todos los demás datos geográficos completos) es 05403.
+      </p>
+
+      <p>
+        Adicionalmente, se realizó una transformación del tipo de dato de la columna Postal Code, convirtiéndola de float a un formato 
+        de texto (string) y eliminando el .0 de los valores existentes para estandarizar el formato.
+      </p>
+
+      <p>
+        El script de Python utilizado para esta tarea es el siguiente:
+      </p>
+
+      <SyntaxHighlighter language="python" style={dracula}>
+        {code}
+      </SyntaxHighlighter>
+
+      <p>
+        Nota: Las columnas de fecha (Order Date y Ship Date) se mantendrán en su formato actual y se convertirán a un tipo de dato de 
+        fecha (datetime) solo cuando sea necesario para un análisis específico, a fin de optimizar el rendimiento y la memoria.
+      </p>
+      
+      <p>
+        Finalmente, el conjunto de datos, ahora limpio y preparado, se ha guardado en un nuevo archivo CSV llamado store_sales_limpio.csv 
+        para su uso en futuras etapas del análisis.
       </p>
 
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
