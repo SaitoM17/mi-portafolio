@@ -44,9 +44,9 @@ function SuperStoreSales() {
       <h2>🧪 Desarrollo del Proyecto</h2>
       
       <h3>1. Carga y exploración inicial de los datos</h3>
-
       <p>
-        La primera fase de nuestro proyecto fue una exploración exhaustiva del conjunto de datos Superstore Sales. Esta etapa nos permitió obtener una visión general de su composición, confirmando que contiene 9800 registros y 18 columnas.
+        La primera fase de nuestro proyecto fue una exploración exhaustiva del conjunto de datos Superstore Sales. 
+        Esta etapa nos permitió obtener una visión general de su composición, confirmando que contiene 9800 registros y 18 columnas.
 
         Esta exploración inicial es crucial para identificar posibles problemas que podrían afectar el análisis, como:
 
@@ -57,11 +57,32 @@ function SuperStoreSales() {
         Distribución de datos.
         Durante este proceso, se identificaron dos problemas principales:
 
-        Se encontraron 11 registros con valores nulos en la columna Postal Code. Afortunadamente, este problema no representa un gran obstáculo, ya que contamos con información complementaria en otras columnas que nos permitirá rellenar los datos faltantes de manera precisa.
+        Se encontraron 11 registros con valores nulos en la columna Postal Code. Afortunadamente, este problema no representa un 
+        gran obstáculo, ya que contamos con información complementaria en otras columnas que nos permitirá rellenar los datos faltantes de manera precisa.
 
-        Se detectaron valores atípicos en el conjunto de datos. Para abordar este hallazgo, se llevará a cabo un análisis más profundo para comprender la naturaleza de estos registros. Esto nos ayudará a determinar si son datos erróneos que deben ser eliminados, o si representan eventos reales (como ventas excepcionalmente altas) que necesitan ser considerados en el análisis.
+        Se detectaron valores atípicos en el conjunto de datos. Para abordar este hallazgo, se llevará a cabo un análisis más profundo para 
+        comprender la naturaleza de estos registros. Esto nos ayudará a determinar si son datos erróneos que deben ser eliminados, o si 
+        representan eventos reales (como ventas excepcionalmente altas) que necesitan ser considerados en el análisis.
 
-        Este primer paso nos ha dado una base sólida para comenzar el proceso de limpieza y preparación de datos, asegurando que nuestro análisis posterior sea lo más preciso y fiable posible.
+        Este primer paso nos ha dado una base sólida para comenzar el proceso de limpieza y preparación de datos, asegurando que nuestro 
+        análisis posterior sea lo más preciso y fiable posible.
+      </p>
+
+      <he>2. Análisis Valores Atípicos</he>
+      <p>
+        El análisis de los registros con valores atípicos en el conjunto de datos de Superstore Sales, respaldado por el 
+        script de Python y la visualización adjunta, ha demostrado que estas fluctuaciones en las ventas no son errores de datos. 
+        Por el contrario, representan escenarios de precios volátiles y estratégicos, algo común en mercados dinámicos.
+      </p>
+      <img src="/SuperStoreSales/graficos_evolucion_ventas_original.png" alt="Evolución de las Ventas"/>
+      <p>
+        Como se puede observar en el gráfico, los precios fluctúan ampliamente a lo largo de los años 2015 a 2018. Esto sugiere que las 
+        variaciones son parte del comportamiento natural del mercado, posiblemente debido a promociones, cambios estacionales o estrategias de la empresa.
+      </p>
+      <p>
+        El script de Python, que utiliza la biblioteca fuzzywuzzy para comparar nombres de productos y un análisis de la evolución del precio por mes, 
+        permitió confirmar que estas fluctuaciones son consistentes con la dinámica de precios del mercado, en lugar de ser errores de registro. 
+        Este hallazgo es crucial para el proyecto, ya que nos permite mantener estos datos en el conjunto para un análisis más completo y realista.
       </p>
 
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
