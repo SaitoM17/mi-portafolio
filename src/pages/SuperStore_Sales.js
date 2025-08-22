@@ -3,9 +3,10 @@ import React from "react";
 function SuperStoreSales() {
   return (
     <div style={{ padding: "2rem" }}>
+      
+      <h1>📦 SuperStore Sales</h1>
       <img src="/img/SuperStore_Sales.jpg" alt="Amazon Delivery" style={{ maxWidth: "400px" }} />
       <br />
-      <h2>📦 SuperStore Sales</h2>
       
       <p>
         Este proyecto consiste en un dashboard interactivo y reportes
@@ -13,8 +14,9 @@ function SuperStoreSales() {
         Incluye análisis en Python, Pandas y SQL.
       </p>
       
+      <h2>  🎯 Propósito</h2>
+
       <p>
-        🎯 Propósito
         El proyecto busca evaluar el comportamiento de las ventas de una tienda minorista a partir de datos históricos, considerando diferentes dimensiones clave como producto, cliente, categoría y región. El objetivo es descubrir patrones relevantes, identificar áreas de oportunidad, anticipar riesgos potenciales y establecer estrategias basadas en datos que impulsen decisiones comerciales informadas.
 
         Obtener KPI's:
@@ -39,9 +41,11 @@ function SuperStoreSales() {
         ¿Qué están funcionando bien y si se puede escalar?
       </p>
 
-      <h3>🧪 Desarrollo del Proyecto</h3>
+      <h2>🧪 Desarrollo del Proyecto</h2>
+      
+      <h3>1. Carga y exploración inicial de los datos</h3>
+
       <p>
-        1. Carga y exploración inicial de los datos
         La primera fase de nuestro proyecto fue una exploración exhaustiva del conjunto de datos Superstore Sales. Esta etapa nos permitió obtener una visión general de su composición, confirmando que contiene 9800 registros y 18 columnas.
 
         Esta exploración inicial es crucial para identificar posibles problemas que podrían afectar el análisis, como:
