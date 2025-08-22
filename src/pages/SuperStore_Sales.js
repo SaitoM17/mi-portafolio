@@ -38,6 +38,28 @@ function SuperStoreSales() {
 
         ¿Qué están funcionando bien y si se puede escalar?
       </p>
+
+      <h3>🧪 Desarrollo del Proyecto</h3>
+      <p>
+        1. Carga y exploración inicial de los datos
+        La primera fase de nuestro proyecto fue una exploración exhaustiva del conjunto de datos Superstore Sales. Esta etapa nos permitió obtener una visión general de su composición, confirmando que contiene 9800 registros y 18 columnas.
+
+        Esta exploración inicial es crucial para identificar posibles problemas que podrían afectar el análisis, como:
+
+        Valores duplicados.
+        Valores nulos.
+        Errores de registro (por ejemplo, errores tipográficos).
+        Valores atípicos (valores que se desvían significativamente de la mayoría de los datos).
+        Distribución de datos.
+        Durante este proceso, se identificaron dos problemas principales:
+
+        Se encontraron 11 registros con valores nulos en la columna Postal Code. Afortunadamente, este problema no representa un gran obstáculo, ya que contamos con información complementaria en otras columnas que nos permitirá rellenar los datos faltantes de manera precisa.
+
+        Se detectaron valores atípicos en el conjunto de datos. Para abordar este hallazgo, se llevará a cabo un análisis más profundo para comprender la naturaleza de estos registros. Esto nos ayudará a determinar si son datos erróneos que deben ser eliminados, o si representan eventos reales (como ventas excepcionalmente altas) que necesitan ser considerados en el análisis.
+
+        Este primer paso nos ha dado una base sólida para comenzar el proceso de limpieza y preparación de datos, asegurando que nuestro análisis posterior sea lo más preciso y fiable posible.
+      </p>
+
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
       </a>
