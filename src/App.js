@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Navbar from "./components/Navbar.js";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -17,23 +18,26 @@ import MexicoTradeStatis from "./pages/MexicoTradeStati.js";
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={
-          <>
-            <About />
-            <Projects />
-            <Contact />
-          </>
-        }/>
-        <Route path="/superstore-sales" element={<SuperStoreSales />} />
-        <Route path="/Ramen-ratings" element={<RamenRantings />} />
-        <Route path="/Amazon-delivery" element={<AmazonDelivery />} />
-        <Route path="/Precio-tortilla" element={<PrecioTortilla />} />
-        <Route path="/Siem" element={<SIEM />} />
-        <Route path="/Mexico-trade" element={<MexicoTradeStatis />} />
-      </Routes>
-      <Footer />
+      <Navbar/>
+      <div style={{ paddingTop: "60px" }}>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header />
+              <section id="about"><About /></section>
+              <section id="projects"><Projects /></section>
+              <section id="contact"><Contact /></section>
+            </>
+          }/>
+          <Route path="/superstore-sales" element={<SuperStoreSales />} />
+          <Route path="/Ramen-ratings" element={<RamenRantings />} />
+          <Route path="/Amazon-delivery" element={<AmazonDelivery />} />
+          <Route path="/Precio-tortilla" element={<PrecioTortilla />} />
+          <Route path="/Siem" element={<SIEM />} />
+          <Route path="/Mexico-trade" element={<MexicoTradeStatis />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
