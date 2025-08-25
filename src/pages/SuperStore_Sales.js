@@ -113,29 +113,27 @@ Home Office       $   424,982.18
       <h2>  🎯 Propósito</h2>
 
       <p>
-        El proyecto busca evaluar el comportamiento de las ventas de una tienda minorista a partir de datos históricos, considerando diferentes dimensiones clave como producto, cliente, categoría y región. El objetivo es descubrir patrones relevantes, identificar áreas de oportunidad, anticipar riesgos potenciales y establecer estrategias basadas en datos que impulsen decisiones comerciales informadas.
-
-        Obtener KPI's:
-
-        KPI's de Ventas y Rendimiento Financiero
-        KPI's de Eficiencia Operativa
-        KPI's de Clientes y Mercado
-        Analizar el rendimiento de ventas
-
-        Analizar los ingresos por productos vendidos
-        Analizar su comportamiento en distintos contextos
-        Análisis de múltiples dimensiones (Productos, clientes, categorías y región)
-
-        Detectar oportunidades de mejora
-
-        ¿Dónde se puede aumentar ventas, eficiencia o márgenes?
-        Identificar riesgos
-
-        ¿Qué productos, categorías, clientes o región tiene bajas las ventas y representas un riesgo?
-        Encontrar palancas estratégicas
-
-        ¿Qué están funcionando bien y si se puede escalar?
+        El proyecto busca evaluar el comportamiento de las ventas de una tienda minorista a partir de datos históricos, considerando diferentes 
+        dimensiones clave como producto, cliente, categoría y región. El objetivo es descubrir patrones relevantes, identificar áreas de oportunidad, anticipar 
+        riesgos potenciales y establecer estrategias basadas en datos que impulsen decisiones comerciales informadas.
       </p>
+
+      <lu>
+        <li>Obtener KPI's:</li>
+        <dd><li>KPI's de Ventas y Rendimiento Financiero</li></dd>
+        <dd><li>KPI's de Eficiencia Operativa</li></dd>
+        <dd><li>KPI's de Clientes y Mercado</li></dd>
+        <li>Analizar el rendimiento de ventas</li>
+        <dd><li>Analizar los ingresos por productos vendidos</li></dd>
+        <dd><li>Analizar su comportamiento en distintos contextos</li></dd>
+        <li>Análisis de múltiples dimensiones (Productos, clientes, categorías y región)</li>
+        <li>Detectar oportunidades de mejora</li>
+        <dd><li>¿Dónde se puede aumentar ventas, eficiencia o márgenes?</li></dd>
+        <li>Identificar riesgos</li>
+        <dd><li>¿Qué productos, categorías, clientes o región tiene bajas las ventas y representas un riesgo?</li></dd>
+        <li>Encontrar palancas estratégicas</li>
+        <dd><li>¿Qué están funcionando bien y si se puede escalar?</li></dd>
+      </lu>
 
       <h2>🧪 Desarrollo del Proyecto</h2>
       
@@ -1102,7 +1100,7 @@ Home Office       $   424,982.18
       <img src="/SuperStoreSales/ventas_rendimiento.png" alt="Ventas y Rendimiento"/>
       <img src="/SuperStoreSales/logistica_entregas.png" alt="Logistica y Entregas"/>
       <img src="/SuperStoreSales/analisis_productos.png" alt="Análisis de Productos"/>
-
+      <br />
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
       </a>
