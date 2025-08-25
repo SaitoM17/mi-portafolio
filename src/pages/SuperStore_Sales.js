@@ -105,9 +105,8 @@ Home Office       $   424,982.18
       <br />
       
       <p>
-        Este proyecto consiste en un dashboard interactivo y reportes
-        ejecutivos para analizar la entrega de pedidos.  
-        Incluye análisis en Python, Pandas y SQL.
+      Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el 
+      rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.
       </p>
       
       <h2>  🎯 Propósito</h2>
