@@ -38,6 +38,12 @@ function RamenRantings() {
           <li>Uso de Power BI para presentar dashboards listos para ejecutivos.</li>
         </lu>
 
+        <br/>
+
+        <a href="https://github.com/SaitoM17/ramen_ratings.git" target="_blank" rel="noopener noreferrer">
+          Ver en GitHub
+        </a>
+
       </div>
     </div>
   );
