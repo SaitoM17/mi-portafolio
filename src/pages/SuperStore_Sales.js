@@ -221,9 +221,7 @@ Home Office       $   424,982.18
         para obtener información valiosa sobre el negocio.
       </p>
 
-      <p>
-        KPI's de Ventas y Rendimiento Financiero
-      </p>
+      <h4>KPI's de Ventas y Rendimiento Financiero</h4>
       
       <ul>
         <li>Los ingresos totales acumulados a lo largo del periodo analizado, que reflejan el rendimiento global del negocio.</li>
@@ -236,7 +234,7 @@ Home Office       $   424,982.18
         {salida1}
       </SyntaxHighlighter>
 
-      <p>KPI's de la Eficiencia Operativa</p>
+      <h4>KPI's de la Eficiencia Operativa</h4>
 
       <lu>
         <li>Este KPI es fundamental para evaluar la agilidad de la cadena de suministro y la satisfacción del cliente. Un tiempo de preparación corto y consistente indica un proceso logístico eficiente y una capacidad sólida para cumplir con los pedidos de manera oportuna.</li>
@@ -246,7 +244,7 @@ Home Office       $   424,982.18
         {salida2}
       </SyntaxHighlighter>
 
-      <p>KPI's de Clientes y Mercado</p>
+      <h4>KPI's de Clientes y Mercado</h4>
 
       <lu>
         <li>Se identificaron 793 clientes únicos, lo que indica una base de clientes relativamente amplia se muestran los 10 principales clientes por mayor ingresos generados por dichos clientes.</li>
@@ -521,7 +519,7 @@ Home Office       $   424,982.18
         operaciones y desarrollar estaegías avanzadas.
       </p>
 
-      <p>Segmentación de Clientes con Análisis RFM</p>
+      <h4>Segmentación de Clientes con Análisis RFM</h4>
 
       <p>
         Se utilizó el Análisis RFM (Recencia, Frecuencia, Monetario) para clasificar a los clientes en diferentes grupos estratégicos. 
@@ -536,7 +534,7 @@ Home Office       $   424,982.18
 
       <p>Este análisis ha permitido identificar dos grupos clave para la estrategia de negocio: Clientes VIP y Clientes en Riesgo.</p>
 
-      <p>Clientes VIP</p>
+      <h5>Clientes VIP</h5>
 
       <p>
         Este segmento incluye a los clientes más valiosos y leales. Tienen una alta recencia (compran a menudo), una alta frecuencia y un alto valor monetario. 
@@ -616,7 +614,7 @@ Home Office       $   424,982.18
         </tbody>
       </table>
 
-      <p>Clientes en Riesgo</p>
+      <h5>Clientes en Riesgo</h5>
 
       <p>
         Este grupo está compuesto por clientes que no han realizado una compra en un tiempo considerable (baja recencia), tienen una baja frecuencia y un bajo valor monetario. 
@@ -697,7 +695,7 @@ Home Office       $   424,982.18
         </tbody>
       </table>      
 
-      <p>Market Baskt Analysis</p>
+      <h4>Market Baskt Analysis</h4>
 
       <p>
         Se realizó un Market Basket Analysis utilizando el algoritmo Apriori para identificar combinaciones de productos que se compran juntos con frecuencia. 
@@ -711,7 +709,7 @@ Home Office       $   424,982.18
         reglas de asociación menos significativas.
       </p>
 
-      <p>Predicción de demanda (Arima/Prophet)</p>
+      <h4>Predicción de demanda (Arima/Prophet)</h4>
 
       <p>
         Este modelo de series de tiempo es ideal para pronosticar datos con patrones estacionales y tendencias claras, como las ventas. El proceso consiste en:
@@ -844,7 +842,7 @@ Home Office       $   424,982.18
         asegurando que se tenga el stock adecuado para cubrir la demanda proyectada.
       </p>
 
-      <p>Análisis ABC-XYZ</p>
+      <h4>Análisis ABC-XYZ</h4>
 
       <p>Este método es crucial para la gestión de inventario, ya que combina dos clasificaciones:</p>
 
@@ -1027,14 +1025,14 @@ Home Office       $   424,982.18
         </tbody>
       </table>
 
-      <p>Segmentación por Comportamiento(Clustering: K-Means)</p>
+      <h4>Segmentación por Comportamiento(Clustering: K-Means)</h4>
 
       <p>
         Para finalizar, se implementó el Análisis de Segmentación por Comportamiento utilizando el algoritmo de clustering K-Means. 
         El objetivo es agrupar a los clientes con comportamientos de compra similares para crear perfiles detallados y diseñar estrategias de marketing más efectivas.
       </p>
 
-      <p>Metodología K-Means</p>
+      <h5>Metodología K-Means</h5>
 
       <lu>
         <li>Preparación de datos: Se calculó la Recencia, Frecuencia y Valor Monetario de cada cliente, y se escalaron los datos para que el algoritmo K-Means funcionara correctamente.</li>
@@ -1044,7 +1042,7 @@ Home Office       $   424,982.18
         <img src="/SuperStoreSales/segmentacion_comportamiento_seg_clientes_k_means.png" alt="Segmentación K Means" />
       </lu>
 
-      <p>Perfiles de Clientes</p>
+      <h5>Perfiles de Clientes</h5>
 
       <p>Los perfiles de cada clúster se crearon basándose en sus valores promedio de Recencia, Frecuencia y Valor Monetario.</p>
 
