@@ -23,6 +23,9 @@ function RamenRantings() {
           <li>Productos destacados de 2012 a 2016</li>
         </lu>
 
+        <h2>📌 Vista previa del dashboard</h2>
+        <img src="/RamenRatings/Dashboard_ramen_ratings.png" alt="Ramen Rating " className="imagen-proyecto"/>
+
       </div>
     </div>
   );
