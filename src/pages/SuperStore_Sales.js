@@ -1099,6 +1099,12 @@ Home Office       $   424,982.18
         <li>Clúster 3: Clientes Inactivos. Tienen la recencia más alta, lo que indica que no han comprado en mucho tiempo. Tienen baja frecuencia y valor monetario.</li>
       </lu>
 
+      <h2>📌 Vista previa del Dashboard</h2>
+
+      <img src="/SuperStoreSales/ventas_rendimiento.png" alt="Ventas y Rendimiento"/>
+      <img src="/SuperStoreSales/logistica_entregas.png" alt="Logistica y Entregas"/>
+      <img src="/SuperStoreSales/analisis_productos.png" alt="Análisis de Productos"/>
+
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
       </a>
