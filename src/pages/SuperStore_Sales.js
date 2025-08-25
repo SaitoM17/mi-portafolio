@@ -1118,8 +1118,20 @@ Home Office       $   424,982.18
           <li>Oportunidades de retención: El análisis RFM también identificó a un grupo de Clientes Inactivos y En riesgo que necesitan ser reactivados.</li>
           <li>Fallas en el Market Basket Analysis: No se encontraron combinaciones de productos comprados juntos con una frecuencia suficiente. Esto puede deberse a la baja frecuencia de compra por cliente o al min_support establecido.</li>
         </lu>
+        
+        <h2>📈 Recomendaciones</h2>
+        <lu>
+          <li>Mejorar el pronóstico de la demanda: Para productos AX y AY (alta demanda, demanda predecible/estable), se puede implementar un pronóstico más preciso con datos de ventas más granulados (semanales o diarios) para optimizar el inventario.</li>
+          <li>Optimizar el inventario: Para los productos AZ (alto valor, demanda impredecible), se debe considerar un inventario de seguridad para evitar pérdidas de ventas, o incluso considerar la venta por pedido si los costos de almacenamiento son muy altos.</li>
+          <li>Segmentación de mercado: El análisis de clústeres sugiere que las estrategias de marketing deben ser diferentes para cada grupo de clientes. No se debe promocionar de la misma manera a los "Compradores Ocasionales" que a los "Grandes Compradores".</li>
+          <li>Análisis de rentabilidad por segmento: Se puede enriquecer el análisis con datos de rentabilidad para determinar si el segmento "Consumer" es el más rentable, o si los segmentos "Corporate" o "Home Office" tienen márgenes de ganancia más altos.</li>
+          <li>Identificar factores de estacionalidad: Investigar qué tipo de productos tienen mayor demanda en los picos de ventas (noviembre y diciembre) y en los meses de menor venta (febrero y agosto). Esto permitiría una mejor planificación de inventario y campañas de marketing para esas temporadas.</li>
+          <li>Analizar la venta cruzada por región: El análisis puede ser más efectivo si se segmenta por región, ya que los patrones de compra pueden variar geográficamente.</li>
+          <li>Integrar datos adicionales: Incluir datos de publicidad, promociones, o incluso el clima puede enriquecer los modelos de predicción y los análisis de comportamiento de compra.</li>
+        </lu>
 
         <br />
+        
         <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
           Ver en GitHub
         </a>
