@@ -31,6 +31,13 @@ function RamenRantings() {
           Aunque Nissin es la marca con más productos evaluados (368), MyKuali es la mejor calificada con un promedio de ⭐ 4.95 estrellas entre 22 productos.
         </p>
 
+        <h2>🧠 Lecciones aprendidas</h2>
+        <lu>
+          <li>Cómo aplicar filtros efectivos (por volumen de productos) para evitar sesgos.</li>
+          <li>Cómo destacar insights narrativos que expliquen el valor del análisis.</li>
+          <li>Uso de Power BI para presentar dashboards listos para ejecutivos.</li>
+        </lu>
+
       </div>
     </div>
   );
