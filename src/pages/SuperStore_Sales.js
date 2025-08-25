@@ -1,5 +1,6 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import "./proyectPages.css";
 
 function SuperStoreSales() {
 
@@ -98,10 +99,10 @@ Home Office       $   424,982.18
   `;
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="contenedor-proyecto">
       
       <h1>📦 SuperStore Sales</h1>
-      <img src="/img/SuperStore_Sales.jpg" alt="Amazon Delivery" style={{ maxWidth: "400px" }} />
+      <img src="/img/SuperStore_Sales.jpg" alt="Amazon Delivery" className="imagen-principal" />
       <br />
       
       <p>
@@ -167,7 +168,7 @@ Home Office       $   424,982.18
         script de Python y la visualización adjunta, ha demostrado que estas fluctuaciones en las ventas no son errores de datos. 
         Por el contrario, representan escenarios de precios volátiles y estratégicos, algo común en mercados dinámicos.
       </p>
-      <img src="/SuperStoreSales/graficos_evolucion_ventas_original.png" alt="Evolución de las Ventas"/>
+      <img src="/SuperStoreSales/graficos_evolucion_ventas_original.png" alt="Evolución de las Ventas" className="imagen-proyecto"/>
       <p>
         Como se puede observar en el gráfico, los precios fluctúan ampliamente a lo largo de los años 2015 a 2018. Esto sugiere que las 
         variaciones son parte del comportamiento natural del mercado, posiblemente debido a promociones, cambios estacionales o estrategias de la empresa.
@@ -198,7 +199,7 @@ Home Office       $   424,982.18
         El script de Python utilizado para esta tarea es el siguiente:
       </p>
 
-      <SyntaxHighlighter language="python" style={dracula}>
+      <SyntaxHighlighter language="python" style={dracula} className="code-block">
         {code}
       </SyntaxHighlighter>
 
@@ -227,7 +228,7 @@ Home Office       $   424,982.18
         <li>La distribución geográfica de las ventas revela cuáles son las regiones más importantes para el negocio.</li>
       </ul>
 
-      <SyntaxHighlighter language="python" style={dracula}>
+      <SyntaxHighlighter language="python" style={dracula} className="code-block">
         {salida1}
       </SyntaxHighlighter>
 
@@ -237,7 +238,7 @@ Home Office       $   424,982.18
         <li>Este KPI es fundamental para evaluar la agilidad de la cadena de suministro y la satisfacción del cliente. Un tiempo de preparación corto y consistente indica un proceso logístico eficiente y una capacidad sólida para cumplir con los pedidos de manera oportuna.</li>
       </lu>
 
-      <SyntaxHighlighter language="python" style={dracula}>
+      <SyntaxHighlighter language="python" style={dracula} className="code-block">
         {salida2}
       </SyntaxHighlighter>
 
@@ -249,7 +250,7 @@ Home Office       $   424,982.18
         <li>El segmento de clientes "Consumer" es el más rentable, aportando más de la mitad de los ingresos totales. El segmento "Corporate" sigue en segundo lugar, mientras que el segmento "Home Office" es el que menos ingresos genera.</li>
       </lu>
 
-      <SyntaxHighlighter language="python" style={dracula}>
+      <SyntaxHighlighter language="python" style={dracula} className="code-block">
         {salida3}
       </SyntaxHighlighter>
 
@@ -258,13 +259,13 @@ Home Office       $   424,982.18
         acumulados a lo largo de los cuatro años. 
       </p>
 
-      <img src="/SuperStoreSales/productos_topmas_ventas.png" alt="Prodcutos Top de las Ventas"/>
+      <img src="/SuperStoreSales/productos_topmas_ventas.png" alt="Prodcutos Top de las Ventas" className="imagen-proyecto"/>
 
       <p>
         El producto con el ingreso más alto es la Canon imageCLASS 2200 Advanced Copier, que generó $61,599.82 USD.
       </p>
 
-      <img src="/SuperStoreSales/comportamiento_ventas_annios.png" alt="Comportamiento de las Ventas"/>
+      <img src="/SuperStoreSales/comportamiento_ventas_annios.png" alt="Comportamiento de las Ventas" className="imagen-proyecto"/>
 
       <p>
         El comportamiento de las ventas a lo largo de los años 2015 a 2018 muestra un claro patrón estacional. Como se puede 
@@ -538,78 +539,80 @@ Home Office       $   424,982.18
         La estrategia para este grupo es de fidelización, ofreciéndoles promociones exclusivas, programas de lealtad y atención personalizada para mantener su compromiso.
       </p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Customer ID</th>
-            <th>Recency</th>
-            <th>Frequency</th>
-            <th>Monetary</th>
-            <th>R_score</th>
-            <th>F_score</th>
-            <th>M_score</th>
-            <th>RFM_score</th>
-            <th>Segmento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AB-10105</td>
-            <td>41</td>
-            <td>20</td>
-            <td>14473.571</td>
-            <td>4</td>
-            <td>5</td>
-            <td>5</td>
-            <td>455</td>
-            <td>VIP</td>
-          </tr>
-          <tr>
-            <td>AH-10075</td>
-            <td>34</td>
-            <td>20</td>
-            <td>3250.337</td>
-            <td>4</td>
-            <td>5</td>
-            <td>4</td>
-            <td>454</td>
-            <td>VIP</td>
-          </tr>
-          <tr>
-            <td>AI-10855</td>
-            <td>13</td>
-            <td>18</td>
-            <td>4375.786</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>555</td>
-            <td>VIP</td>
-          </tr>
-          <tr>
-            <td>AS-10090</td>
-            <td>28</td>
-            <td>25</td>
-            <td>3255.310</td>
-            <td>4</td>
-            <td>5</td>
-            <td>4</td>
-            <td>454</td>
-            <td>VIP</td>
-          </tr>
-          <tr>
-            <td>AT-10735</td>
-            <td>13</td>
-            <td>16</td>
-            <td>3831.864</td>
-            <td>5</td>
-            <td>4</td>
-            <td>4</td>
-            <td>544</td>
-            <td>VIP</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="contenedor-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Recency</th>
+              <th>Frequency</th>
+              <th>Monetary</th>
+              <th>R_score</th>
+              <th>F_score</th>
+              <th>M_score</th>
+              <th>RFM_score</th>
+              <th>Segmento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AB-10105</td>
+              <td>41</td>
+              <td>20</td>
+              <td>14473.571</td>
+              <td>4</td>
+              <td>5</td>
+              <td>5</td>
+              <td>455</td>
+              <td>VIP</td>
+            </tr>
+            <tr>
+              <td>AH-10075</td>
+              <td>34</td>
+              <td>20</td>
+              <td>3250.337</td>
+              <td>4</td>
+              <td>5</td>
+              <td>4</td>
+              <td>454</td>
+              <td>VIP</td>
+            </tr>
+            <tr>
+              <td>AI-10855</td>
+              <td>13</td>
+              <td>18</td>
+              <td>4375.786</td>
+              <td>5</td>
+              <td>5</td>
+              <td>5</td>
+              <td>555</td>
+              <td>VIP</td>
+            </tr>
+            <tr>
+              <td>AS-10090</td>
+              <td>28</td>
+              <td>25</td>
+              <td>3255.310</td>
+              <td>4</td>
+              <td>5</td>
+              <td>4</td>
+              <td>454</td>
+              <td>VIP</td>
+            </tr>
+            <tr>
+              <td>AT-10735</td>
+              <td>13</td>
+              <td>16</td>
+              <td>3831.864</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td>544</td>
+              <td>VIP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h5>Clientes en Riesgo</h5>
 
@@ -619,78 +622,80 @@ Home Office       $   424,982.18
         ofertas personalizadas o encuestas para entender la razón de su inactividad.
       </p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Customer ID</th>
-            <th>Recency</th>
-            <th>Frequency</th>
-            <th>Monetary</th>
-            <th>R_score</th>
-            <th>F_score</th>
-            <th>M_score</th>
-            <th>RFM_score</th>
-            <th>Segmento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AB-10015</td>
-            <td>415</td>
-            <td>6</td>
-            <td>886.156</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>111</td>
-            <td>En riesgo</td>
-          </tr>
-          <tr>
-            <td>AC-10420</td>
-            <td>232</td>
-            <td>5</td>
-            <td>925.800</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>111</td>
-            <td>En riesgo</td>
-          </tr>
-          <tr>
-            <td>AC-10660</td>
-            <td>282</td>
-            <td>6</td>
-            <td>657.316</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>111</td>
-            <td>En riesgo</td>
-          </tr>
-          <tr>
-            <td>AF-10885</td>
-            <td>415</td>
-            <td>7</td>
-            <td>861.565</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>111</td>
-            <td>En riesgo</td>
-          </tr>
-          <tr>
-            <td>AG-10300</td>
-            <td>118</td>
-            <td>5</td>
-            <td>367.548</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-            <td>211</td>
-            <td>En riesgo</td>
-          </tr>
-        </tbody>
-      </table>      
+      <div className="contenedor-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Recency</th>
+              <th>Frequency</th>
+              <th>Monetary</th>
+              <th>R_score</th>
+              <th>F_score</th>
+              <th>M_score</th>
+              <th>RFM_score</th>
+              <th>Segmento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AB-10015</td>
+              <td>415</td>
+              <td>6</td>
+              <td>886.156</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>111</td>
+              <td>En riesgo</td>
+            </tr>
+            <tr>
+              <td>AC-10420</td>
+              <td>232</td>
+              <td>5</td>
+              <td>925.800</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>111</td>
+              <td>En riesgo</td>
+            </tr>
+            <tr>
+              <td>AC-10660</td>
+              <td>282</td>
+              <td>6</td>
+              <td>657.316</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>111</td>
+              <td>En riesgo</td>
+            </tr>
+            <tr>
+              <td>AF-10885</td>
+              <td>415</td>
+              <td>7</td>
+              <td>861.565</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>111</td>
+              <td>En riesgo</td>
+            </tr>
+            <tr>
+              <td>AG-10300</td>
+              <td>118</td>
+              <td>5</td>
+              <td>367.548</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>211</td>
+              <td>En riesgo</td>
+            </tr>
+          </tbody>
+        </table>      
+      </div>
 
       <h4>Market Baskt Analysis</h4>
 
@@ -726,7 +731,7 @@ Home Office       $   424,982.18
         del modelo (Predicción) y su respectivo Intervalo de confianza.
       </p>
 
-      <img src="/SuperStoreSales/ejemplo_arima_prophet.png" alt='Ejemplo de productos' />
+      <img src="/SuperStoreSales/ejemplo_arima_prophet.png" alt='Ejemplo de productos' className="imagen-proyecto"/>
 
       <p>
         Se puede observar que la predicción captura el patrón estacional, con un pico significativo en abril de 2019, que probablemente se deba a la 
@@ -872,156 +877,158 @@ Home Office       $   424,982.18
         CZ (productos de bajo valor con demanda impredecible), lo que facilita la toma de decisiones estratégicas.
       </p>
 
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Product Name</th>
-            <th>Sales_totales</th>
-            <th>Porcentaje</th>
-            <th>Porcentaje_acumulado</th>
-            <th>ABC</th>
-            <th>mean</th>
-            <th>std</th>
-            <th>cv</th>
-            <th>XYZ</th>
-            <th>ABC_XYZ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>Canon imageCLASS 2200 Advanced Copier</td>
-            <td>61599.824</td>
-            <td>2.723804</td>
-            <td>2.723804</td>
-            <td>A</td>
-            <td>12319.964800</td>
-            <td>3520.927315</td>
-            <td>28.579037</td>
-            <td>Z</td>
-            <td>AZ</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Fellowes PB500 Electric Punch Plastic Comb Bin...</td>
-            <td>27453.384</td>
-            <td>1.213926</td>
-            <td>3.937730</td>
-            <td>A</td>
-            <td>2745.338400</td>
-            <td>1851.752901</td>
-            <td>67.450807</td>
-            <td>Z</td>
-            <td>AZ</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Cisco TelePresence System EX90 Videoconferenci...</td>
-            <td>22638.480</td>
-            <td>1.001022</td>
-            <td>4.938752</td>
-            <td>A</td>
-            <td>22638.480000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>AZ</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>HON 5400 Series Task Chairs for Big and Tall</td>
-            <td>21870.576</td>
-            <td>0.967067</td>
-            <td>5.905819</td>
-            <td>A</td>
-            <td>2733.822000</td>
-            <td>1212.397259</td>
-            <td>44.348069</td>
-            <td>Z</td>
-            <td>AZ</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>GBC DocuBind TL300 Electric Binding System</td>
-            <td>19823.479</td>
-            <td>0.876549</td>
-            <td>6.782368</td>
-            <td>A</td>
-            <td>1802.134455</td>
-            <td>1032.477608</td>
-            <td>57.291930</td>
-            <td>Z</td>
-            <td>AZ</td>
-          </tr>
-          <tr>
-            <td>1844</td>
-            <td>Acme Serrated Blade Letter Opener</td>
-            <td>7.632</td>
-            <td>0.000337</td>
-            <td>99.999074</td>
-            <td>C</td>
-            <td>7.632000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>CZ</td>
-          </tr>
-          <tr>
-            <td>1845</td>
-            <td>Grip Seal Envelopes</td>
-            <td>7.072</td>
-            <td>0.000313</td>
-            <td>99.999387</td>
-            <td>C</td>
-            <td>7.072000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>CZ</td>
-          </tr>
-          <tr>
-            <td>1846</td>
-            <td>Xerox 20</td>
-            <td>6.480</td>
-            <td>0.000287</td>
-            <td>99.999673</td>
-            <td>C</td>
-            <td>6.480000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>CZ</td>
-          </tr>
-          <tr>
-            <td>1847</td>
-            <td>Avery 5</td>
-            <td>5.760</td>
-            <td>0.000255</td>
-            <td>99.999928</td>
-            <td>C</td>
-            <td>5.760000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>CZ</td>
-          </tr>
-          <tr>
-            <td>1848</td>
-            <td>Eureka Disposable Bags for Sanitaire Vibra Gro...</td>
-            <td>1.624</td>
-            <td>0.000072</td>
-            <td>100.000000</td>
-            <td>C</td>
-            <td>1.624000</td>
-            <td>NaN</td>
-            <td>NaN</td>
-            <td>Z</td>
-            <td>CZ</td>
-          </tr>
-        </tbody>
-      </table>
-
+      <div className="contenedor-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Product Name</th>
+              <th>Sales_totales</th>
+              <th>Porcentaje</th>
+              <th>Porcentaje_acumulado</th>
+              <th>ABC</th>
+              <th>mean</th>
+              <th>std</th>
+              <th>cv</th>
+              <th>XYZ</th>
+              <th>ABC_XYZ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>Canon imageCLASS 2200 Advanced Copier</td>
+              <td>61599.824</td>
+              <td>2.723804</td>
+              <td>2.723804</td>
+              <td>A</td>
+              <td>12319.964800</td>
+              <td>3520.927315</td>
+              <td>28.579037</td>
+              <td>Z</td>
+              <td>AZ</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Fellowes PB500 Electric Punch Plastic Comb Bin...</td>
+              <td>27453.384</td>
+              <td>1.213926</td>
+              <td>3.937730</td>
+              <td>A</td>
+              <td>2745.338400</td>
+              <td>1851.752901</td>
+              <td>67.450807</td>
+              <td>Z</td>
+              <td>AZ</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Cisco TelePresence System EX90 Videoconferenci...</td>
+              <td>22638.480</td>
+              <td>1.001022</td>
+              <td>4.938752</td>
+              <td>A</td>
+              <td>22638.480000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>AZ</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>HON 5400 Series Task Chairs for Big and Tall</td>
+              <td>21870.576</td>
+              <td>0.967067</td>
+              <td>5.905819</td>
+              <td>A</td>
+              <td>2733.822000</td>
+              <td>1212.397259</td>
+              <td>44.348069</td>
+              <td>Z</td>
+              <td>AZ</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>GBC DocuBind TL300 Electric Binding System</td>
+              <td>19823.479</td>
+              <td>0.876549</td>
+              <td>6.782368</td>
+              <td>A</td>
+              <td>1802.134455</td>
+              <td>1032.477608</td>
+              <td>57.291930</td>
+              <td>Z</td>
+              <td>AZ</td>
+            </tr>
+            <tr>
+              <td>1844</td>
+              <td>Acme Serrated Blade Letter Opener</td>
+              <td>7.632</td>
+              <td>0.000337</td>
+              <td>99.999074</td>
+              <td>C</td>
+              <td>7.632000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>CZ</td>
+            </tr>
+            <tr>
+              <td>1845</td>
+              <td>Grip Seal Envelopes</td>
+              <td>7.072</td>
+              <td>0.000313</td>
+              <td>99.999387</td>
+              <td>C</td>
+              <td>7.072000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>CZ</td>
+            </tr>
+            <tr>
+              <td>1846</td>
+              <td>Xerox 20</td>
+              <td>6.480</td>
+              <td>0.000287</td>
+              <td>99.999673</td>
+              <td>C</td>
+              <td>6.480000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>CZ</td>
+            </tr>
+            <tr>
+              <td>1847</td>
+              <td>Avery 5</td>
+              <td>5.760</td>
+              <td>0.000255</td>
+              <td>99.999928</td>
+              <td>C</td>
+              <td>5.760000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>CZ</td>
+            </tr>
+            <tr>
+              <td>1848</td>
+              <td>Eureka Disposable Bags for Sanitaire Vibra Gro...</td>
+              <td>1.624</td>
+              <td>0.000072</td>
+              <td>100.000000</td>
+              <td>C</td>
+              <td>1.624000</td>
+              <td>NaN</td>
+              <td>NaN</td>
+              <td>Z</td>
+              <td>CZ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
       <h4>Segmentación por Comportamiento(Clustering: K-Means)</h4>
 
       <p>
@@ -1034,9 +1041,9 @@ Home Office       $   424,982.18
       <lu>
         <li>Preparación de datos: Se calculó la Recencia, Frecuencia y Valor Monetario de cada cliente, y se escalaron los datos para que el algoritmo K-Means funcionara correctamente.</li>
         <li>Método del Codo: Se utilizó el Método del Codo para determinar el número óptimo de clústeres. Como se observa en el gráfico, el "codo" más pronunciado se encuentra en k=4, lo que indica que 4 clústeres son la mejor opción para segmentar a los clientes de manera significativa.</li>
-        <img src="/SuperStoreSales/segmentacion_comportamiento_metodo_codo.png" alt="Método del Codo" />
+        <img src="/SuperStoreSales/segmentacion_comportamiento_metodo_codo.png" alt="Método del Codo" className="imagen-proyecto" />
         <li>Modelado y Segmentación: Se entrenó el modelo K-Means con k=4 y se asignó a cada cliente a un clúster. La visualización de los clústeres confirma que el modelo logró agrupar a los clientes de manera coherente.</li>
-        <img src="/SuperStoreSales/segmentacion_comportamiento_seg_clientes_k_means.png" alt="Segmentación K Means" />
+        <img src="/SuperStoreSales/segmentacion_comportamiento_seg_clientes_k_means.png" alt="Segmentación K Means" className="imagen-proyecto" />
       </lu>
 
       <h5>Perfiles de Clientes</h5>
@@ -1096,9 +1103,9 @@ Home Office       $   424,982.18
 
       <h2>📌 Vista previa del Dashboard</h2>
 
-      <img src="/SuperStoreSales/ventas_rendimiento.png" alt="Ventas y Rendimiento"/>
-      <img src="/SuperStoreSales/logistica_entregas.png" alt="Logistica y Entregas"/>
-      <img src="/SuperStoreSales/analisis_productos.png" alt="Análisis de Productos"/>
+      <img src="/SuperStoreSales/ventas_rendimiento.png" alt="Ventas y Rendimiento" className="imagen-proyecto" />
+      <img src="/SuperStoreSales/logistica_entregas.png" alt="Logistica y Entregas" className="imagen-proyecto" />
+      <img src="/SuperStoreSales/analisis_productos.png" alt="Análisis de Productos" className="imagen-proyecto" />
       <br />
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
