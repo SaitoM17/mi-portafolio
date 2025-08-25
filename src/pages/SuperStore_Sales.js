@@ -1107,6 +1107,18 @@ Home Office       $   424,982.18
         <img src="/SuperStoreSales/ventas_rendimiento.png" alt="Ventas y Rendimiento" className="imagen-proyecto" />
         <img src="/SuperStoreSales/logistica_entregas.png" alt="Logistica y Entregas" className="imagen-proyecto" />
         <img src="/SuperStoreSales/analisis_productos.png" alt="Análisis de Productos" className="imagen-proyecto" />
+
+        <h2>💡 Insight clave</h2>
+
+        <lu>
+          <li>Alta variabilidad de la demanda (Clase Z): La mayoría de los productos muestran una demanda irregular e impredecible. Esta variabilidad hace que la gestión de inventario sea compleja.</li>
+          <li>Productos clave (Clase A): Un pequeño número de productos, como la Canon imageCLASS 2200 Advanced Copier, representan una porción significativa de los ingresos.</li>
+          <li>Segmentos de alto valor: El segmento "Consumer" es el que más ingresos genera. El análisis RFM identificó un grupo de Clientes VIP que son cruciales para el negocio.</li>
+          <li>Estacionalidad: Las ventas tienen picos en los meses de septiembre, noviembre y diciembre.</li>
+          <li>Oportunidades de retención: El análisis RFM también identificó a un grupo de Clientes Inactivos y En riesgo que necesitan ser reactivados.</li>
+          <li>Fallas en el Market Basket Analysis: No se encontraron combinaciones de productos comprados juntos con una frecuencia suficiente. Esto puede deberse a la baja frecuencia de compra por cliente o al min_support establecido.</li>
+        </lu>
+
         <br />
         <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
           Ver en GitHub
