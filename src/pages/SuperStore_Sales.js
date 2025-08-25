@@ -514,6 +514,591 @@ Home Office       $   424,982.18
         </tbody>
       </table>
 
+      <h3>5. Modelado o reportes</h3>
+
+      <p>
+        En la siguiente fase del proyecto, se implementaron modelos de análisis para segmentar a los clientes, entender su comportamiento, optimizar las 
+        operaciones y desarrollar estaegías avanzadas.
+      </p>
+
+      <p>Segmentación de Clientes con Análisis RFM</p>
+
+      <p>
+        Se utilizó el Análisis RFM (Recencia, Frecuencia, Monetario) para clasificar a los clientes en diferentes grupos estratégicos. 
+        Este modelo evalúa el comportamiento de compra de cada cliente basándose en:
+      </p>
+
+      <lu>
+        <li>Recencia (R): Cuánto tiempo ha pasado desde la última compra.</li>
+        <li>Frecuencia (F): Con qué frecuencia el cliente realiza compras.</li>
+        <li>Monetario (M): Cuánto dinero ha gastado el cliente en total.</li>
+      </lu>
+
+      <p>Este análisis ha permitido identificar dos grupos clave para la estrategia de negocio: Clientes VIP y Clientes en Riesgo.</p>
+
+      <p>Clientes VIP</p>
+
+      <p>
+        Este segmento incluye a los clientes más valiosos y leales. Tienen una alta recencia (compran a menudo), una alta frecuencia y un alto valor monetario. 
+        La estrategia para este grupo es de fidelización, ofreciéndoles promociones exclusivas, programas de lealtad y atención personalizada para mantener su compromiso.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Recency</th>
+            <th>Frequency</th>
+            <th>Monetary</th>
+            <th>R_score</th>
+            <th>F_score</th>
+            <th>M_score</th>
+            <th>RFM_score</th>
+            <th>Segmento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AB-10105</td>
+            <td>41</td>
+            <td>20</td>
+            <td>14473.571</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+            <td>455</td>
+            <td>VIP</td>
+          </tr>
+          <tr>
+            <td>AH-10075</td>
+            <td>34</td>
+            <td>20</td>
+            <td>3250.337</td>
+            <td>4</td>
+            <td>5</td>
+            <td>4</td>
+            <td>454</td>
+            <td>VIP</td>
+          </tr>
+          <tr>
+            <td>AI-10855</td>
+            <td>13</td>
+            <td>18</td>
+            <td>4375.786</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>555</td>
+            <td>VIP</td>
+          </tr>
+          <tr>
+            <td>AS-10090</td>
+            <td>28</td>
+            <td>25</td>
+            <td>3255.310</td>
+            <td>4</td>
+            <td>5</td>
+            <td>4</td>
+            <td>454</td>
+            <td>VIP</td>
+          </tr>
+          <tr>
+            <td>AT-10735</td>
+            <td>13</td>
+            <td>16</td>
+            <td>3831.864</td>
+            <td>5</td>
+            <td>4</td>
+            <td>4</td>
+            <td>544</td>
+            <td>VIP</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Clientes en Riesgo</p>
+
+      <p>
+        Este grupo está compuesto por clientes que no han realizado una compra en un tiempo considerable (baja recencia), tienen una baja frecuencia y un bajo valor monetario. 
+        Estos clientes están en peligro de dejar de comprar por completo. La estrategia para este segmento debe enfocarse en la retención, a través de campañas de reactivación, 
+        ofertas personalizadas o encuestas para entender la razón de su inactividad.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Recency</th>
+            <th>Frequency</th>
+            <th>Monetary</th>
+            <th>R_score</th>
+            <th>F_score</th>
+            <th>M_score</th>
+            <th>RFM_score</th>
+            <th>Segmento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AB-10015</td>
+            <td>415</td>
+            <td>6</td>
+            <td>886.156</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>111</td>
+            <td>En riesgo</td>
+          </tr>
+          <tr>
+            <td>AC-10420</td>
+            <td>232</td>
+            <td>5</td>
+            <td>925.800</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>111</td>
+            <td>En riesgo</td>
+          </tr>
+          <tr>
+            <td>AC-10660</td>
+            <td>282</td>
+            <td>6</td>
+            <td>657.316</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>111</td>
+            <td>En riesgo</td>
+          </tr>
+          <tr>
+            <td>AF-10885</td>
+            <td>415</td>
+            <td>7</td>
+            <td>861.565</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>111</td>
+            <td>En riesgo</td>
+          </tr>
+          <tr>
+            <td>AG-10300</td>
+            <td>118</td>
+            <td>5</td>
+            <td>367.548</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>211</td>
+            <td>En riesgo</td>
+          </tr>
+        </tbody>
+      </table>      
+
+      <p>Market Baskt Analysis</p>
+
+      <p>
+        Se realizó un Market Basket Analysis utilizando el algoritmo Apriori para identificar combinaciones de productos que se compran juntos con frecuencia. 
+        Sin embargo, con el umbral de soporte (min_support) establecido en 0.002, no se encontraron conjuntos de productos que cumplieran con el criterio. Esto significa 
+        que ninguna combinación de dos o más productos se compró junta en al menos el 0.2% de todas las transacciones.
+      </p>
+
+      <p>
+        Este resultado sugiere que el conjunto de datos de Superstore Sales no tiene patrones de compra conjunta lo suficientemente fuertes o frecuentes para ser 
+        detectados con el soporte mínimo actual. Para obtener resultados, se podría probar un valor de min_support más bajo, aunque esto podría generar una gran cantidad de 
+        reglas de asociación menos significativas.
+      </p>
+
+      <p>Predicción de demanda (Arima/Prophet)</p>
+
+      <p>
+        Este modelo de series de tiempo es ideal para pronosticar datos con patrones estacionales y tendencias claras, como las ventas. El proceso consiste en:
+      </p>
+
+      <lu>
+        <li>Seleccionar un producto del conjunto de datos.</li>
+        <li>Agrupar las ventas de ese producto por mes.</li>
+        <li>Entrenar el modelo Prophet con los datos históricos.</li>
+        <li>Proyectar las ventas para los próximos 12 meses.</li>
+      </lu>
+
+      <p>En el ejemplo proporcionado, el modelo predijo la demanda para el producto "Riverside Furniture Stanwyck Manor Table Series".</p>
+
+      <p>
+        La gráfica muestra la proyección de la demanda del producto, combinando las ventas históricas (Ventas reales) con la predicción 
+        del modelo (Predicción) y su respectivo Intervalo de confianza.
+      </p>
+
+      <img src="/SuperStoreSales/ejemplo_arima_prophet.png" alt='Ejemplo de productos' />
+
+      <p>
+        Se puede observar que la predicción captura el patrón estacional, con un pico significativo en abril de 2019, que probablemente se deba a la 
+        misma estacionalidad que afecta a los meses de otoño de cada año (septiembre, noviembre y diciembre). La predicción para 2019 muestra una tendencia de 
+        crecimiento para la segunda mitad del año.
+      </p>
+
+      <p>Los resultados numéricos de la proyección para los últimos 12 meses son los siguientes:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ds</th>
+            <th>yhat</th>
+            <th>yhat_lower</th>
+            <th>yhat_upper</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>42</td>
+            <td>2018-10-31</td>
+            <td>104.380368</td>
+            <td>38.301542</td>
+            <td>169.824553</td>
+          </tr>
+          <tr>
+            <td>43</td>
+            <td>2018-11-30</td>
+            <td>111.117632</td>
+            <td>48.140810</td>
+            <td>180.131905</td>
+          </tr>
+          <tr>
+            <td>44</td>
+            <td>2018-12-31</td>
+            <td>118.401803</td>
+            <td>46.573913</td>
+            <td>185.213402</td>
+          </tr>
+          <tr>
+            <td>45</td>
+            <td>2019-01-31</td>
+            <td>123.434407</td>
+            <td>53.825881</td>
+            <td>188.312556</td>
+          </tr>
+          <tr>
+            <td>46</td>
+            <td>2019-02-28</td>
+            <td>82.903667</td>
+            <td>15.981512</td>
+            <td>148.599781</td>
+          </tr>
+          <tr>
+            <td>47</td>
+            <td>2019-03-31</td>
+            <td>96.812380</td>
+            <td>23.706307</td>
+            <td>166.625854</td>
+          </tr>
+          <tr>
+            <td>48</td>
+            <td>2019-04-30</td>
+            <td>418.275813</td>
+            <td>343.802698</td>
+            <td>485.045790</td>
+          </tr>
+          <tr>
+            <td>49</td>
+            <td>2019-05-31</td>
+            <td>57.192949</td>
+            <td>-17.439616</td>
+            <td>128.563516</td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td>2019-06-30</td>
+            <td>94.289320</td>
+            <td>16.170017</td>
+            <td>168.344326</td>
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>2019-07-31</td>
+            <td>129.246162</td>
+            <td>46.181183</td>
+            <td>212.691419</td>
+          </tr>
+          <tr>
+            <td>52</td>
+            <td>2019-08-31</td>
+            <td>162.789632</td>
+            <td>73.549253</td>
+            <td>252.682909</td>
+          </tr>
+          <tr>
+            <td>53</td>
+            <td>2019-09-30</td>
+            <td>327.603421</td>
+            <td>234.645271</td>
+            <td>422.919121</td>
+          </tr>
+        </tbody>
+      </table>      
+
+      <p>
+        Estos resultados permiten a la empresa tomar decisiones informadas sobre la gestión de inventario y la planificación de ventas para los próximos meses, 
+        asegurando que se tenga el stock adecuado para cubrir la demanda proyectada.
+      </p>
+
+      <p>Análisis ABC-XYZ</p>
+
+      <p>Este método es crucial para la gestión de inventario, ya que combina dos clasificaciones:</p>
+
+      <lu>
+        <li>Análisis ABC: Clasifica los productos según su contribución a los ingresos totales (principio de Pareto).</li>
+          <dd><li>Clase A: Productos que representan aproximadamente el 80% de las ventas.</li></dd>
+          <dd><li>Clase B: Productos que representan el siguiente 15% de las ventas.</li></dd>
+          <dd><li>Clase C: Productos que representan el 5% restante de las ventas.</li></dd>
+        <li>Análisis XYZ: Clasifica los productos según la variabilidad de su demanda.</li>
+          <dd><li>Clase X: Demanda constante y predecible (bajo coeficiente de variación).</li></dd>
+          <dd><li>Clase Y: Demanda con variaciones estacionales o de tendencia (coeficiente de variación medio).</li></dd>
+          <dd><li>Clase Z: Demanda irregular e impredecible (alto coeficiente de variación).</li></dd>
+      </lu>
+
+      <p>La combinación de estas dos clasificaciones permite crear categorías de productos para una gestión de inventario más precisa.</p>
+
+      <p>
+        El análisis arrojó una clasificación detallada de cada producto. Por ejemplo, los productos más rentables, como la Canon imageCLASS 2200 Advanced Copier y 
+        la Fellowes PB500 Electric Punch Plastic Comb Binding Machine, son clasificados como Clase A debido a su alta contribución a los ingresos.
+      </p>
+
+      <p>
+        Sin embargo, en el análisis XYZ, la mayoría de los productos se clasifican como Clase Z debido a la alta variabilidad de sus ventas (representada por el coeficiente de variación, cv). 
+        El valor NaN en la columna std y cv para muchos productos se debe a que solo hay una venta registrada, lo que impide el cálculo de la desviación estándar. 
+        Esto sugiere una demanda generalmente irregular para muchos artículos.
+      </p>
+
+      <p>
+        La combinación de ambas clasificaciones crea categorías de productos, como AZ (productos de alto valor con demanda impredecible) y 
+        CZ (productos de bajo valor con demanda impredecible), lo que facilita la toma de decisiones estratégicas.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product Name</th>
+            <th>Sales_totales</th>
+            <th>Porcentaje</th>
+            <th>Porcentaje_acumulado</th>
+            <th>ABC</th>
+            <th>mean</th>
+            <th>std</th>
+            <th>cv</th>
+            <th>XYZ</th>
+            <th>ABC_XYZ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>Canon imageCLASS 2200 Advanced Copier</td>
+            <td>61599.824</td>
+            <td>2.723804</td>
+            <td>2.723804</td>
+            <td>A</td>
+            <td>12319.964800</td>
+            <td>3520.927315</td>
+            <td>28.579037</td>
+            <td>Z</td>
+            <td>AZ</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Fellowes PB500 Electric Punch Plastic Comb Bin...</td>
+            <td>27453.384</td>
+            <td>1.213926</td>
+            <td>3.937730</td>
+            <td>A</td>
+            <td>2745.338400</td>
+            <td>1851.752901</td>
+            <td>67.450807</td>
+            <td>Z</td>
+            <td>AZ</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Cisco TelePresence System EX90 Videoconferenci...</td>
+            <td>22638.480</td>
+            <td>1.001022</td>
+            <td>4.938752</td>
+            <td>A</td>
+            <td>22638.480000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>AZ</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>HON 5400 Series Task Chairs for Big and Tall</td>
+            <td>21870.576</td>
+            <td>0.967067</td>
+            <td>5.905819</td>
+            <td>A</td>
+            <td>2733.822000</td>
+            <td>1212.397259</td>
+            <td>44.348069</td>
+            <td>Z</td>
+            <td>AZ</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>GBC DocuBind TL300 Electric Binding System</td>
+            <td>19823.479</td>
+            <td>0.876549</td>
+            <td>6.782368</td>
+            <td>A</td>
+            <td>1802.134455</td>
+            <td>1032.477608</td>
+            <td>57.291930</td>
+            <td>Z</td>
+            <td>AZ</td>
+          </tr>
+          <tr>
+            <td>1844</td>
+            <td>Acme Serrated Blade Letter Opener</td>
+            <td>7.632</td>
+            <td>0.000337</td>
+            <td>99.999074</td>
+            <td>C</td>
+            <td>7.632000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>CZ</td>
+          </tr>
+          <tr>
+            <td>1845</td>
+            <td>Grip Seal Envelopes</td>
+            <td>7.072</td>
+            <td>0.000313</td>
+            <td>99.999387</td>
+            <td>C</td>
+            <td>7.072000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>CZ</td>
+          </tr>
+          <tr>
+            <td>1846</td>
+            <td>Xerox 20</td>
+            <td>6.480</td>
+            <td>0.000287</td>
+            <td>99.999673</td>
+            <td>C</td>
+            <td>6.480000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>CZ</td>
+          </tr>
+          <tr>
+            <td>1847</td>
+            <td>Avery 5</td>
+            <td>5.760</td>
+            <td>0.000255</td>
+            <td>99.999928</td>
+            <td>C</td>
+            <td>5.760000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>CZ</td>
+          </tr>
+          <tr>
+            <td>1848</td>
+            <td>Eureka Disposable Bags for Sanitaire Vibra Gro...</td>
+            <td>1.624</td>
+            <td>0.000072</td>
+            <td>100.000000</td>
+            <td>C</td>
+            <td>1.624000</td>
+            <td>NaN</td>
+            <td>NaN</td>
+            <td>Z</td>
+            <td>CZ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Segmentación por Comportamiento(Clustering: K-Means)</p>
+
+      <p>
+        Para finalizar, se implementó el Análisis de Segmentación por Comportamiento utilizando el algoritmo de clustering K-Means. 
+        El objetivo es agrupar a los clientes con comportamientos de compra similares para crear perfiles detallados y diseñar estrategias de marketing más efectivas.
+      </p>
+
+      <p>Metodología K-Means</p>
+
+      <lu>
+        <li>Preparación de datos: Se calculó la Recencia, Frecuencia y Valor Monetario de cada cliente, y se escalaron los datos para que el algoritmo K-Means funcionara correctamente.</li>
+        <li>Método del Codo: Se utilizó el Método del Codo para determinar el número óptimo de clústeres. Como se observa en el gráfico, el "codo" más pronunciado se encuentra en k=4, lo que indica que 4 clústeres son la mejor opción para segmentar a los clientes de manera significativa.</li>
+        <img src="/SuperStoreSales/segmentacion_comportamiento_metodo_codo.png" alt="Método del Codo" />
+        <li>Modelado y Segmentación: Se entrenó el modelo K-Means con k=4 y se asignó a cada cliente a un clúster. La visualización de los clústeres confirma que el modelo logró agrupar a los clientes de manera coherente.</li>
+        <img src="/SuperStoreSales/segmentacion_comportamiento_seg_clientes_k_means.png" alt="Segmentación K Means" />
+      </lu>
+
+      <p>Perfiles de Clientes</p>
+
+      <p>Los perfiles de cada clúster se crearon basándose en sus valores promedio de Recencia, Frecuencia y Valor Monetario.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cluster</th>
+            <th>Recency</th>
+            <th>Frequency</th>
+            <th>Monetary</th>
+            <th>Num_Clientes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>73.24</td>
+            <td>17.18</td>
+            <td>3599.82</td>
+            <td>268</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>93.18</td>
+            <td>8.70</td>
+            <td>1561.23</td>
+            <td>357</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>110.64</td>
+            <td>20.92</td>
+            <td>9500.93</td>
+            <td>61</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>541.57</td>
+            <td>7.59</td>
+            <td>1494.11</td>
+            <td>107</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <p>A partir de estos perfiles, se pueden definir los siguientes segmentos:</p>
+
+      <lu>
+        <li>Clúster 0: Compradores Frecuentes. Clientes con una recencia relativamente baja y una alta frecuencia de compra.</li>
+        <li>Clúster 1: Compradores Ocasionales. Tienen una recencia y frecuencia promedio.</li>
+        <li>Clúster 2: Grandes Compradores. Estos clientes tienen la recencia más alta y la frecuencia más alta, además del valor monetario más alto, por lo que son clientes de alto valor.</li>
+        <li>Clúster 3: Clientes Inactivos. Tienen la recencia más alta, lo que indica que no han comprado en mucho tiempo. Tienen baja frecuencia y valor monetario.</li>
+      </lu>
+
       <a href="https://github.com/SaitoM17/amazon_delivery" target="_blank" rel="noopener noreferrer">
         Ver en GitHub
       </a>
