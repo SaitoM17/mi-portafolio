@@ -473,6 +473,16 @@ print('Tipo de Order_Date después de la primera conversion:', df_amazon_deliver
 print('\nColumna con solo la fehca')
 print(df_amazon_delivery['Order_Date'].head(3))`;
 
+  const code58 = `# Calcular el tiempo promedio de entrega (Delivery_Time)
+promedio_delivery_time = np.mean(df_amazon_delivery['Delivery_Time'])
+
+# Convertir el total de minutos a horas y minutos
+horas = int(promedio_delivery_time // 60) # Obtiene la parte entera de las horas
+minutos_restantes = promedio_delivery_time % 60 # Obtiene el resto de minutos
+
+print(f'Promedio del tiempo de entrega (Delivery_Time): {promedio_delivery_time:.2f} minutos')
+print(f'Que equivale a: {horas} horas y {minutos_restantes:.0f} minutos') # Redondea los minutos a un entero`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -508,6 +518,9 @@ Columna con solo la fehca
 1   2022-03-25
 2   2022-03-19
 Name: Order_Date, dtype: datetime64[ns]`;
+
+  const salida4 = `Promedio del tiempo de entrega (Delivery_Time): 124.91 minutos
+Que equivale a: 2 horas y 5 minutos`;
 
   return (
     <div className="pagina-proyecto">
@@ -1073,6 +1086,20 @@ Name: Order_Date, dtype: datetime64[ns]`;
             {salida3}
           </SyntaxHighlighter>
         </ol>
+        
+        <h4>1. Evaluar la Eficiencia General de las Entregas</h4>
+        <h5>Tiempo Promedio de Entrega</h5>
+        <p>Se calcula el tiempo promedio que tarda una entrega desde que el pedido es realizado hasta que llega al cliente.</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code58}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida4}
+        </SyntaxHighlighter>
+        <ul>
+          <li><p>Análisis: El tiempo promedio de entrega es de 2 horas y 5 minutos (2:05).</p></li>
+        </ul>
       </div>
     </div>
   );
