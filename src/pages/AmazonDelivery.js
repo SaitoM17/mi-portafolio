@@ -25,6 +25,9 @@ function AmazonDelivery() {
           <li>Reconocer el desempeño individual de los repartidores, destacando a los más eficientes y detectando áreas de mejora.</li>
         </lu>
 
+        <h2>🧪 Desarrollo del Proyecto</h2>
+
+        
       </div>
     </div>
   );
