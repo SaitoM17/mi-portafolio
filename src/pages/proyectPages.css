@@ -51,6 +51,16 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
 }
 
+.pagina-proyecto .imagen-ramen {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
+}
+
 /*Imágenes*/
 .pagina-proyecto .imagen-proyecto {
   width: 100%;
