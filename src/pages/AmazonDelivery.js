@@ -15,6 +15,16 @@ function AmazonDelivery() {
           con información valiosa para entender y mejorar la eficiencia operativa.
         </p>
 
+        <h2>🎯 Propósito</h2>
+        <p>
+          El propósito principal de este proyecto es optimizar la eficiencia en la entrega de pedidos. Para lograrlo, analizaremos datos en tiempo real con el fin de:
+        </p>
+        <lu>
+          <li>Evaluar la eficiencia general de nuestras entregas.</li>
+          <li>Identificar zonas geográficas y franjas horarias con mayores desafíos operativos.</li>
+          <li>Reconocer el desempeño individual de los repartidores, destacando a los más eficientes y detectando áreas de mejora.</li>
+        </lu>
+
       </div>
     </div>
   );
