@@ -444,6 +444,16 @@ WHERE Traffic IS NULL;`;
     COUNT(*) AS cant_registro
 FROM
     amazon;`;
+  
+  const code51 = `SELECT
+    COUNT(*) AS cantidad_registros
+FROM
+    amazon;`;
+
+  const code52 = `SELECT
+    *
+FROM
+    amazon;`;
 
   return (
     <div className="pagina-proyecto">
@@ -808,6 +818,30 @@ FROM
             </SyntaxHighlighter>
           </ul>
         </ol>
+
+        <h3>4. Exportación de datos limpios</h3>
+        <p>
+          Una vez que los datos han sido limpiados y preprocesados, se preparan para la exportación. Esto implica verificar la cantidad final de registros 
+          y seleccionar todos los datos de la tabla amazon para su posterior uso.
+        </p>
+        <p>
+          Conteo final de registros: Esta consulta confirma el número total de registros en la tabla después de todas las operaciones de limpieza, imputación y eliminación.
+        </p>
+        <SyntaxHighlighter language="sql" style={dracula} className="code-block">
+          {code51}
+        </SyntaxHighlighter>
+        <p>Resultado: 43644 registros.</p>
+        <p>
+          Selección de datos para exportar: Esta consulta selecciona todas las columnas y filas de la tabla amazon, que ahora contiene los datos limpios y transformados.
+        </p>
+        <SyntaxHighlighter language="sql" style={dracula} className="code-block">
+          {code52}
+        </SyntaxHighlighter>
+        <p>
+          Pasos para exportar los datos desde MySQL Workbench: Después de ejecutar la consulta SELECT * FROM amazon;, puedes exportar los resultados 
+          haciendo clic en la opción "Export" (o un icono similar a un disquete/flecha hacia abajo) que suele aparecer en la barra de herramientas de 
+          resultados de la consulta en MySQL Workbench. Esto te permitirá guardar los datos en un formato de archivo como CSV, JSON, etc.
+        </p>
       </div>
     </div>
   );
