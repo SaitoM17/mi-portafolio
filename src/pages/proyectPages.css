@@ -40,6 +40,23 @@
   margin-bottom: 0.5rem;
 }
 
+.pagina-proyecto h4 {
+  font-size: 1.3rem; /* Más pequeño que h3 */
+  font-weight: 600;
+  margin: 1.2rem 0 0.6rem 0;
+  color: #002855; /* Azul corporativo */
+  border-left: 4px solid #00aaff; /* Acento sutil */
+  padding-left: 0.6rem;
+}
+
+.pagina-proyecto h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem 0;
+  color: #444; /* Gris elegante */
+  letter-spacing: 0.3px;
+}
+
 /*Imagen Principal*/
 .pagina-proyecto .imagen-principal {
   width: 100%;
