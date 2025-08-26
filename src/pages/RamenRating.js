@@ -6,7 +6,7 @@ function RamenRantings() {
       <div className="contenedor-proyecto">
 
         <h1>🍵 Ramen Ratings</h1>
-        <img src="/img/Ramen.jpg" alt="Ramen" className="imagen-principal" />
+        <img src="/img/Ramen.jpg" alt="Ramen" className="imagen-ramen" />
         <br/>
 
         <h2>Analisis de Ramen (Ramen Ratings Dashboard - Power BI)</h2>
