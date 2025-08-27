@@ -573,6 +573,19 @@ clima_trafico_tiempo_entrega['Delivery_Time_Formatted'] = \
 print("Tabla Dinámica Impacto del Clima y Tráfico en el Tiempo de Entregas")
 clima_trafico_tiempo_entrega`;
 
+  const code63 = `# Agrupar por vehiculo para eficacia
+tipo_vehiculo_promedio = pd.pivot_table(df_amazon_delivery,
+                                        values='Delivery_Time',
+                                        index=['Vehicle'],
+                                        aggfunc='mean')
+
+# Aplicar el formateo a la columna de resultados de la tabla dinámica
+tipo_vehiculo_promedio['Delivery_Time_Formatted'] = \
+    tipo_vehiculo_promedio['Delivery_Time'].apply(format_minutes_to_hh_mm_ss)
+
+print("Tabla Dinámica del Tipo de Vehiculo en el Tiempo de Entregas")
+tipo_vehiculo_promedio`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -652,6 +665,14 @@ Windy      High         128.680168              2:08:40
            Jam          142.869584              2:22:52
            Low           98.702198              1:38:42
            Medium       130.675721              2:10:40`;
+
+  const salida9 = `Tabla Dinámica del Tipo de Vehiculo en el Tiempo de Entregas
+            Delivery_Time Delivery_Time_Formatted
+Vehicle
+bicycle        122.857143              2:02:51
+motorcycle     131.030324              2:11:01
+scooter        116.375385              1:56:22
+van            116.074640              1:56:04`;
 
   return (
     <div className="pagina-proyecto">
@@ -1437,6 +1458,22 @@ Windy      High         128.680168              2:08:40
             Análisis: La tabla dinámica muestra los diferentes tiempos de entrega (tanto en minutos como en formato de hora para facilitar la lectura). 
             Se observa claramente que las condiciones de tráfico "Jam" (atasco) y "High" (alto) resultan en tiempos de entrega significativamente mayores, 
             independientemente del clima. Las entregas en condiciones de tráfico "Low" (bajo) y clima "Sunny" (soleado) son las más rápidas.
+          </li>
+        </ul>
+        <h5>Eficiencia por Tipo de Vehículo</h5>
+        <p>Se analiza el tiempo promedio de entrega según el tipo de vehículo utilizado (Vehicle).</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code63}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida9}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Análisis: La tabla dinámica muestra el tiempo promedio que se tarda en entregar el paquete por tipo de vehículo. 
+            Se observa que el scooter y la van son los tipos de vehículos que tienen un mejor tiempo promedio de entrega, 
+            siendo ligeramente más rápidos que las motorcycle y bicycle.
           </li>
         </ul>
       </div>
