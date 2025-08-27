@@ -705,6 +705,15 @@ challenges_by_geo_bin = df_amazon_delivery.groupby(['Lat_Bin', 'Lon_Bin']).agg(
 challenges_by_geo_bin['Percentage_Challenging'] = (
     challenges_by_geo_bin['Num_Challenging_Deliveries'] / challenges_by_geo_bin['Total_Deliveries']) * 100`;
 
+  const code73 = `# Exportar el DataFrame completo con las nuevas columnas
+df_amazon_delivery.to_csv('../data/processed/datos_entrega_procesados.csv', index=False)
+
+# Exportar los datos agregados por área y franja horaria para gráficos específicos
+challenges_by_area_timeslot.to_csv('../data/processed/desafios_por_area_y_hora.csv', index=False)
+
+# Exportar datos agregados por bins geográficos para mapas de calor
+challenges_by_geo_bin.to_csv('../data/processed/desafios_por_zona_geografica.csv', index=False)`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -1998,6 +2007,19 @@ Name: Order_ID, dtype: int64`;
               recursos en áreas y momentos específicos para mejorar la eficiencia.
             </li>
           </dd>
+        </ul>
+        <h5>Exportación de Datos para Tableau</h5>
+        <p>
+          Los DataFrames procesados y agregados se exportan a archivos CSV. Estos archivos están listos para ser utilizados en herramientas de 
+          visualización como Tableau, lo que permitirá la creación de dashboards interactivos para un análisis más profundo y la comunicación de hallazgos.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code73}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Propósito: Facilitar la creación de visualizaciones y dashboards que permitan una comprensión más intuitiva de los datos y los desafíos operativos.
+          </li>
         </ul>
       </div>
     </div>
