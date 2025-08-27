@@ -2584,6 +2584,42 @@ Name: Order_ID, dtype: int64`;
             traduce en un impacto absoluto significativo.
           </p>
         </ul>
+
+        <h2>⚙️ Recomendaciones</h2>
+        <ul>
+          <li>
+            Análisis de Datos Geográficos Avanzado: Utiliza herramientas de mapeo y análisis de datos geográficos para identificar patrones de tráfico, 
+            cuellos de botella y las rutas más eficientes en diferentes momentos del día y bajo diversas condiciones.
+          </li>
+          <li>
+            Monitoreo de Tráfico y Clima en Tiempo Real: Implementa sistemas que proporcionen a los agentes información en tiempo real sobre las condiciones 
+            de tráfico y el clima. Esto les permitiría ajustar sus rutas de forma dinámica o, en su defecto, que el sistema sugiera rutas alternativas automáticamente. 
+            Ofreciento también a los clientes tiempos de entrega más precisos y dinámicos, que consideren las condiciones actuales de tráfico y clima.
+          </li>
+          <li>
+            Optimización de Recursos Nocturnos: Evalúa si el personal y los vehículos asignados a la madrugada son suficientes y están bien capacitados para 
+            manejar el alto volumen y la complejidad de las entregas en ese horario. Considera la posibilidad de aumentar el personal o reasignar rutas 
+            para equilibrar la carga de trabajo.
+          </li>
+          <li>
+            Tecnología de Navegación Avanzada: Proporciona a tus agentes herramientas de navegación que no solo ofrezcan rutas, sino que también puedan 
+            identificar los puntos de entrega más desafiantes en áreas semi-urbanas y sugerir las mejores prácticas para abordarlos 
+            (por ejemplo, puntos de referencia, acceso a propiedades).
+          </li>
+          <li>
+            Monitoreo del Rendimiento por Métricas Clave: Además de la calificación general, monitorea métricas específicas como el porcentaje de entregas 
+            a tiempo, la variabilidad del tiempo de entrega y el número de entregas desafiantes por agente. Esto proporcionará una imagen más 
+            completa de su desempeño.
+          </li>
+          <li>
+            Programas de Capacitación Continua: Desarrolla programas de capacitación que se enfoquen en la optimización de rutas, la gestión del tiempo y la 
+            navegación eficiente, especialmente para agentes que operan en áreas con tiempos de entrega más prolongados.
+          </li>
+          <li>
+            Incentivos por Desempeño: Crea un sistema de incentivos que recompense a los agentes por mantener altas calificaciones y por cumplir con los 
+            objetivos de eficiencia en la entrega, reforzando la correlación entre la calidad del servicio y el rendimiento.
+          </li>
+        </ul>
       </div>
     </div>
   );
