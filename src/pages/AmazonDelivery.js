@@ -2620,6 +2620,11 @@ Name: Order_ID, dtype: int64`;
             objetivos de eficiencia en la entrega, reforzando la correlación entre la calidad del servicio y el rendimiento.
           </li>
         </ul>
+
+        <a href="https://github.com/SaitoM17/amazon_delivery.git" target="_blank" rel="noopener noreferrer">
+          Ver en GitHub
+        </a>
+
       </div>
     </div>
   );
