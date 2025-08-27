@@ -2021,6 +2021,22 @@ Name: Order_ID, dtype: int64`;
             Propósito: Facilitar la creación de visualizaciones y dashboards que permitan una comprensión más intuitiva de los datos y los desafíos operativos.
           </li>
         </ul>
+        <h5>Enlaces a los Gráficos Creados con Tableau</h5>
+        <p>Los siguientes enlaces corresponden a los dashboards interactivos creados en Tableau, que visualizan los hallazgos del análisis exploratorio de datos:</p>
+        <lu>
+          <li>
+            <a href="https://public.tableau.com/app/profile/said.mariano/viz/Amazon_Delivery_Parte1/PromediodeTiempodeEntregaporFranjaHoraria" 
+            target="_blank" rel="noopener noreferrer">
+              Amazon_Delivery_Parte1
+            </a>
+          </li>
+          <li>
+            <a href="https://public.tableau.com/app/profile/said.mariano/viz/Amazon_Delivery_Parte2/MapadeCalorCruzadoPromediodeTiempodeEntregaporreayFranjaHoraria" 
+            target="_blank" rel="noopener noreferrer">
+              Amazon_Delivery_Parte2
+            </a>
+          </li>
+        </lu>
       </div>
     </div>
   );
