@@ -502,6 +502,24 @@ segundos = round(promedio_en_segundos % 60)
 print(f'Promedio de Procesamiento de la orden del pedido (Order_Processing_Time): {promedio_order_processing_time}')
 print(f'Promedio de Procesamiento de la orden del pedido: {minutos}:{segundos} minutos')`;
 
+  const code60 = `# Calcular el porcentaje de entregas a tiempo (Número de entregas a tiempo / Número total de entregas * 100)
+# Porcentaje de las entregas que queremos que se consideren "a tiempo"
+# Encontrar el tiempo por debajo del cual está el 95% de las entregas
+percentil_deseado = 95 # Calcular el Percentil
+umbral_calculado = df_amazon_delivery['Delivery_Time'].quantile(percentil_deseado / 100)
+
+print(f'Basado en el {percentil_deseado}% de tus entregas históricas:')
+print(f'El {percentil_deseado}º percentil del tiempo de entrega es: {umbral_calculado:.2f} minutos')
+
+numero_entregas_a_tiempo = len(df_amazon_delivery[df_amazon_delivery['Delivery_Time'] <= umbral_calculado])
+numero_total_entregas = len(df_amazon_delivery)
+porcentaje_entregas_a_tiempo = (numero_entregas_a_tiempo / numero_total_entregas) * 100
+
+print(f'\nUsando {umbral_calculado:.2f} minutos como umbral de "a tiempo":')
+print(f'Número de entregas a tiempo: {numero_entregas_a_tiempo}')
+print(f'Número total de entregas: {numero_total_entregas}')
+print(f'Porcentaje de Entregas a Tiempo (con umbral basado en datos): {porcentaje_entregas_a_tiempo:.2f}%')`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -543,6 +561,14 @@ Que equivale a: 2 horas y 5 minutos`;
 
   const salida5 = `Promedio de Procesamiento de la orden del pedido (Order_Processing_Time): 0 days 00:09:59.446728072
 Promedio de Procesamiento de la orden del pedido: 9:59 minutos`;
+
+  const salida6 = `Basado en el 95% de tus entregas históricas:
+El 95º percentil del tiempo de entrega es: 215.00 minutos
+
+Usando 215.00 minutos como umbral de "a tiempo":
+Número de entregas a tiempo: 41559
+Número total de entregas: 43644
+Porcentaje de Entregas a Tiempo (con umbral basado en datos): 95.22%`;
 
   return (
     <div className="pagina-proyecto">
@@ -1137,6 +1163,22 @@ Promedio de Procesamiento de la orden del pedido: 9:59 minutos`;
         </SyntaxHighlighter>
         <ul>
           <li>Análisis: El tiempo que tarda la tienda o el centro de distribución en preparar el pedido para su recolección es de aproximadamente 9 minutos y 59 segundos.</li>
+        </ul>
+        <h5>Porcentaje de Entregas a Tiempo</h5>
+        <p>
+          Se calcula el porcentaje de entregas que se consideran "a tiempo" basándose en un umbral determinado por el percentil 95 del tiempo de entrega histórico. 
+          Esto permite definir "a tiempo" de una manera que se ajusta al comportamiento real de las entregas.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code60}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida6}
+        </SyntaxHighlighter>
+        <ul>
+          <li>Análisis: El 95.22% de los clientes esperan (y reciben) su pedido en 215 minutos (3 horas y 35 minutos). 
+          "Se utiliza esta medida ya que no existe una parametros (tiempo estimado de "Entregas a tiempo")</li>
         </ul>
       </div>
     </div>
