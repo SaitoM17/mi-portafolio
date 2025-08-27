@@ -739,6 +739,44 @@ plt.legend().remove()
 plt.tight_layout()
 plt.show()`;
 
+  const code75 = `porcentaje_entregas_desafientes_agente = pd.pivot_table(
+    df_amazon_delivery,
+    values=['Is_Challenging_Delivery', 'Order_ID'],
+    index='Agent_Rating',
+    aggfunc={
+        'Is_Challenging_Delivery': 'sum',
+        'Order_ID': 'count'
+    })
+
+porcentaje_entregas_desafientes_agente['Ratio_Challenging_to_Total_Orders'] = \
+    porcentaje_entregas_desafientes_agente['Is_Challenging_Delivery'] / porcentaje_entregas_desafientes_agente['Order_ID']
+
+porcentaje_entregas_desafientes_agente_ordenado = porcentaje_entregas_desafientes_agente.sort_values(by='Ratio_Challenging_to_Total_Orders', ascending=False)
+
+plt.figure(figsize=(19,6))
+# Obtener el orden de las categorías de Agent_Rating del índice de prueba_1
+order_of_bars = porcentaje_entregas_desafientes_agente_ordenado.index
+ax = sns.barplot(x='Agent_Rating',
+                 y='Ratio_Challenging_to_Total_Orders',
+                 data=porcentaje_entregas_desafientes_agente,
+                 order=order_of_bars,
+                 hue='Agent_Rating',
+                 palette='viridis',
+                 legend=False)
+
+plt.title('Porcentaje de Entregas Desafiantes por Calificación de Agente')
+plt.xlabel('Agent Ranking')
+plt.ylabel('Porcentaje de Entregas Desafiantes')
+plt.xticks(rotation=45, ha='right')
+plt.ylim(0,1)
+# Agregar valores encima de las barras
+for p in ax.patches:
+    ax.annotate(f'{p.get_height():.3f}', (p.get_x() + p.get_width() / 2., p.get_height()),
+                ha='center', va='center', xytext=(0, 10), textcoords='offset points')
+
+plt.tight_layout()
+plt.show()`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -2071,13 +2109,36 @@ Name: Order_ID, dtype: int64`;
         <SyntaxHighlighter language="python" style={dracula} className="code-block">
           {code74}
         </SyntaxHighlighter>
-        <img src="/AmazonDelivery/Promedio_Tiempo_Calificacion_Agente.png" alt="Evolución de las Ventas" className="imagen-proyecto"/>
+        <img src="/AmazonDelivery/Promedio_Tiempo_Calificacion_Agente.png" alt="Promedio tiempo de calificación de agentes" className="imagen-proyecto"/>
         <ul>
           <li>
             Análisis: Como se había observado anteriormente en la 'Tabla Dinámica por Agent_Rating en el Tiempo de Entregas', los datos sugieren una clara relación 
             inversa entre la calificación del agente y el tiempo de entrega. Generalmente, los agentes con calificaciones más altas tienden a tener tiempos de 
             entrega promedio más bajos, con la notable excepción de un agente con una calificación de 1.0 que, a pesar de su baja calificación, muestra un 
             tiempo promedio de entrega relativamente bajo (132 minutos). Esto podría indicar un caso atípico o una baja cantidad de pedidos para ese agente específico.
+          </li>
+        </ul>
+        <h5>Porcentaje de Entregas Desafiantes por Calificación de Agente</h5>
+        <p>
+          Este análisis calcula el porcentaje de entregas desafiantes (aquellas que superan el umbral de tiempo) para cada calificación de agente. 
+          Es crucial para entender qué calificaciones están asociadas con una mayor proporción de entregas problemáticas.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code75}
+        </SyntaxHighlighter>
+        <img src="/AmazonDelivery/porcentaje_de_entregas_desafiantes_calificacion_de_agente_ordenado.png" alt="Porcentaje de entregas desaiantes pro calificación de agente" 
+        className="imagen-proyecto"/>
+        <ul>
+          <li>
+            Análisis: Contrario a lo que se podría intuir inicialmente, los agentes con calificaciones más altas (por ejemplo, 4.1, 3.7, 4.2, 4.4, 4.0, 3.1, 3.9) 
+            son los que presentan un mayor porcentaje de entregas desafiantes. Este es un hallazgo crítico e inesperado, ya que uno esperaría que los agentes mejor 
+            calificados tuvieran menos problemas de entrega.
+
+            Los agentes con calificaciones muy bajas o intermedias (por ejemplo, 2.7, 2.8, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 2.9, 3.0) tienen un porcentaje de 
+            entregas desafiantes mucho menor, e incluso del 0% en algunos casos (2.7, 2.8, 3.0). Si asumimos que una calificación de agente más alta 
+            (por ejemplo, 4.0, 4.5, 5.0) debería indicar un mejor rendimiento general, este gráfico sugiere que para el aspecto del 
+            "tiempo de entrega desafiante", la relación es inversa o, al menos, no lineal. Los agentes con calificaciones promedio-altas (4.0-4.4) son los que 
+            consistentemente tienen un porcentaje de entregas desafiantes por encima del 10%.
           </li>
         </ul>
       </div>
