@@ -598,6 +598,17 @@ tipo_area_promedio['Delivery_Time_Formatted'] = \
 print('Tabla Dinámica por Tipo de Área en el Tiempo de Entregas')
 tipo_area_promedio`;
 
+  const code65 = `agente_tiempo_entrega_promedio = pd.pivot_table(df_amazon_delivery,
+                                                values='Delivery_Time',
+                                                index=['Agent_Rating'],
+                                                aggfunc='mean')
+
+agente_tiempo_entrega_promedio['Delivery_Time_Formatted'] = \
+    agente_tiempo_entrega_promedio['Delivery_Time'].apply(format_minutes_to_hh_mm_ss)
+
+print('Tabla Dinámica por Agent_Rating en el Tiempo de Entregas')
+agente_tiempo_entrega_promedio.sort_values(by='Agent_Rating',ascending=False)`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -693,6 +704,38 @@ Metropolitian     129.707626              2:09:42
 Other             104.525110              1:44:31
 Semi-Urban        238.552632              3:58:33
 Urban             109.433871              1:49:26`;
+
+  const salida11 = `Tabla Dinámica por Agent_Rating en el Tiempo de Entregas
+              Delivery_Time Delivery_Time_Formatted
+Agent_Rating
+6.0        111.642857              1:51:38
+5.0        120.976727              2:00:58
+4.9        114.763670              1:54:45
+4.8        113.962927              1:53:57
+4.7        115.208905              1:55:12
+4.6        116.644524              1:56:38
+4.5        112.076294              1:52:04
+4.4        165.235856              2:45:14
+4.3        165.139106              2:45:08
+4.2        165.612835              2:45:36
+4.1        165.173427              2:45:10
+4.0        163.881151              2:43:52
+3.9        178.284264              2:58:17
+3.8        175.328947              2:55:19
+3.7        172.773333              2:52:46
+3.6        171.357488              2:51:21
+3.5        173.040161              2:53:02
+3.4        173.468750              2:53:28
+3.3        180.200000              3:00:12
+3.2        177.172414              2:57:10
+3.1        182.758621              3:02:45
+3.0        163.333333              2:43:20
+2.9        175.578947              2:55:34
+2.8        168.842105              2:48:50
+2.7        179.318182              2:59:19
+2.6        172.772727              2:52:46
+2.5        180.300000              3:00:18
+1.0        132.045455              2:12:02`;
 
   return (
     <div className="pagina-proyecto">
@@ -1512,6 +1555,20 @@ Urban             109.433871              1:49:26`;
             lo que podría indicar desafíos logísticos en estas zonas.
           </li>
         </ul>
+        <h5>Calificación del Agente y el Tiempo de Entregas</h5>
+        <p>Se examina la relación entre la calificación del agente de entrega (Agent_Rating) y el tiempo promedio de entrega.</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code65}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida11}
+        </SyntaxHighlighter>
+        <p>
+          Análisis: La tabla dinámica muestra que los agentes con mejor calificación (Agent_Rating más alto) tienden a tener los mejores tiempos de entrega. 
+          Hay una correlación inversa notable: a medida que la calificación del agente disminuye, el tiempo de entrega promedio tiende a aumentar. 
+          Esto sugiere que la experiencia y el rendimiento del agente son factores significativos en la eficiencia de la entrega.
+        </p>
       </div>
     </div>
   );
