@@ -609,6 +609,20 @@ agente_tiempo_entrega_promedio['Delivery_Time_Formatted'] = \
 print('Tabla Dinámica por Agent_Rating en el Tiempo de Entregas')
 agente_tiempo_entrega_promedio.sort_values(by='Agent_Rating',ascending=False)`;
 
+  const code66 = `# Transformar Delivery_Time de minutos a una hora (formato hora)
+df_amazon_delivery['Delivery_Duration'] = pd.to_timedelta(df_amazon_delivery['Delivery_Time'], unit='minutes')
+
+# Fecha y hora de la recolección
+df_amazon_delivery['Pickup_Timestamp'] = df_amazon_delivery['Order_Date'] + df_amazon_delivery['Pickup_Time_TD']
+
+# Fecha y hora en que se completó la entrega
+df_amazon_delivery['Delivery_Completion_Timestamp'] = df_amazon_delivery['Pickup_Timestamp'] + df_amazon_delivery['Delivery_Duration']
+
+df_amazon_delivery['Delivery_Hour'] = df_amazon_delivery['Delivery_Completion_Timestamp'].dt.hour
+df_amazon_delivery['Delivery_Day_of_Week'] = df_amazon_delivery['Delivery_Completion_Timestamp'].dt.day_name()
+
+df_amazon_delivery[['Order_ID', 'Order_Date', 'Order_Time', 'Pickup_Time', 'Pickup_Timestamp','Delivery_Duration' ,'Delivery_Completion_Timestamp', 'Delivery_Hour', 'Delivery_Day_of_Week']].head(5)`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -1569,6 +1583,98 @@ Agent_Rating
           Hay una correlación inversa notable: a medida que la calificación del agente disminuye, el tiempo de entrega promedio tiende a aumentar. 
           Esto sugiere que la experiencia y el rendimiento del agente son factores significativos en la eficiencia de la entrega.
         </p>
+        <h4>2. Identificar zonas geográficas y franjas horarias con mayor desafíos operativos</h4>
+        <h5>Calcular el Momento de Llegada</h5>
+        <p>
+          Se crean nuevas columnas para obtener una visión temporal más detallada de las entregas: * Delivery_Duration: Convierte Delivery_Time (en minutos) 
+          a un formato de timedelta. * Pickup_Timestamp: Combina Order_Date y Pickup_Time_TD para obtener la fecha y hora exactas de la recolección. * 
+          Delivery_Completion_Timestamp: Calcula la fecha y hora en que se completó la entrega, sumando Delivery_Duration a Pickup_Timestamp. * Delivery_Hour: 
+          Extrae la hora de Delivery_Completion_Timestamp. * Delivery_Day_of_Week: Extrae el día de la semana de Delivery_Completion_Timestamp.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code66}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <div className="contenedor-tabla">
+          <table>
+            <thead>
+              <tr>
+                <th>Order_ID</th>
+                <th>Order_Date</th>
+                <th>Order_Time</th>
+                <th>Pickup_Time</th>
+                <th>Pickup_Timestamp</th>
+                <th>Delivery_Duration</th>
+                <th>Delivery_Completion_Timestamp</th>
+                <th>Delivery_Hour</th>
+                <th>Delivery_Day_of_Week</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ialx566343618</td>
+                <td>2022-03-19</td>
+                <td>11:30:00</td>
+                <td>11:45:00</td>
+                <td>2022-03-19 11:45:00</td>
+                <td>0 days 02:00:00</td>
+                <td>2022-03-19 13:45:00</td>
+                <td>13</td>
+                <td>Saturday</td>
+              </tr>
+              <tr>
+                <td>akqg208421122</td>
+                <td>2022-03-25</td>
+                <td>19:45:00</td>
+                <td>19:50:00</td>
+                <td>2022-03-25 19:50:00</td>
+                <td>0 days 02:45:00</td>
+                <td>2022-03-25 22:35:00</td>
+                <td>22</td>
+                <td>Friday</td>
+              </tr>
+              <tr>
+                <td>njpu434582536</td>
+                <td>2022-03-19</td>
+                <td>08:30:00</td>
+                <td>08:45:00</td>
+                <td>2022-03-19 08:45:00</td>
+                <td>0 days 02:10:00</td>
+                <td>2022-03-19 10:55:00</td>
+                <td>10</td>
+                <td>Saturday</td>
+              </tr>
+              <tr>
+                <td>rjto796129700</td>
+                <td>2022-04-05</td>
+                <td>18:00:00</td>
+                <td>18:10:00</td>
+                <td>2022-04-05 18:10:00</td>
+                <td>0 days 01:45:00</td>
+                <td>2022-04-05 19:55:00</td>
+                <td>19</td>
+                <td>Tuesday</td>
+              </tr>
+              <tr>
+                <td>zguw716275638</td>
+                <td>2022-03-26</td>
+                <td>13:30:00</td>
+                <td>13:45:00</td>
+                <td>2022-03-26 13:45:00</td>
+                <td>0 days 02:30:00</td>
+                <td>2022-03-26 16:15:00</td>
+                <td>16</td>
+                <td>Saturday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li>
+            Análisis: La columna Delivery_Completion_Timestamp muestra la fecha y hora exactas en que se completó cada entrega, incluyendo el día de la semana. 
+            Esto es crucial para analizar patrones temporales de entrega.
+          </li>
+        </ul>
       </div>
     </div>
   );
