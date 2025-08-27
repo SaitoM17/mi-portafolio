@@ -8,6 +8,19 @@ print('Identificar Valores Nulos por Columnas')
 valores_nulos = df_tortilla_price.isnull().sum()
 print(valores_nulos)`;
 
+  const code2 = `# Verificar la cantidad de filas y columnas 
+num_fias, num_columnas = df_tortilla_prices.shape
+print(f'Número de filas: {num_fias}\nNúmero de columnas: {num_columnas}')`;
+
+  const code3 = `# Eliminar las filas con los valores nulos
+df_tortilla_prices_sin_nulos = df_tortilla_prices.dropna()
+
+# Verificar la cantidad de filas y columnas
+num_filas_sin_nulos, num_columnas_sin_nulos = df_tortilla_prices_sin_nulos.shape
+print(f'Número de filas: {num_filas_sin_nulos}\nNúmero de columnas: {num_columnas_sin_nulos}')`;
+
+  const code4 = `df_tortilla_prices_sin_nulos.to_csv('../data/processed/tortilla_prices_sin_nulos.csv', index=False)`;
+
   const salida1 = `Identificar Valores Nulos por Columnas
 State                    0
 City                     0
@@ -17,6 +30,12 @@ Day                      0
 Store type               0
 Price per kilogram    6390
 dtype: int64`;
+
+  const salida2 = `Número de filas: 289146
+Número de columnas: 7`;
+
+  const salida3 = `Número de filas: 282756
+Número de columnas: 7`;
 
   return (
     <div className="pagina-proyecto">
@@ -52,6 +71,36 @@ dtype: int64`;
         </SyntaxHighlighter>
         <SyntaxHighlighter language="bash" style={dracula} className="code-block">
           {salida1}
+        </SyntaxHighlighter>
+
+        <h3>Limpieza y preprocesamiento</h3>
+        <p>
+          En la limpieza de los datos el un único problema crítico es: la presencia de valores nulos en la columna Price per kilogram. 
+          Debido a su relevancia central para el análisis, se decidió eliminar esos registros para mantener la integridad estadística del estudio. 
+          Otras columnas como las fechas y entidades se dejaron intactas en esta fase, ya que no presentaban problemas estructurales, y serían 
+          transformadas más adelante cuando fuera necesario.
+        </p>
+        <p>Código para verificar la cantidad de filas y columnas:</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code2}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida2}
+        </SyntaxHighlighter>
+        <p>Código para eliminar las filas con valores nulos:</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code3}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida3}
+        </SyntaxHighlighter>
+        <p>
+          Para finalizar la limpieza y preprocesamiento de los datos se guardaron los datos sin valores nulos en un nuevo archivo csv.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code4}
         </SyntaxHighlighter>
       </div>
     </div>
