@@ -540,6 +540,39 @@ df_amazon_delivery["Distance_km"] = haversine_vector(
 
 df_amazon_delivery.head(5)`;
 
+  const code62 = `# Formato de salida para la tabla dinamica (para el tiempo que sea más facil de leer)
+df_copia = df_amazon_delivery[['Order_ID', 'Delivery_Time']].copy()
+
+# Crear una función para convertir minutos a formato legible
+def format_minutes_to_hh_mm_ss(minutes):
+    if pd.isna(minutes): # Manejar valores NaN si existen
+        return np.nan
+
+    total_seconds = int(minutes * 60)  # Convertir a segundos totales y asegurar que sea entero
+    hours = total_seconds // 3600
+    minutes_remainder = (total_seconds % 3600) // 60
+    seconds_remainder = total_seconds % 60
+
+    # Formato "HH:MM:SS"
+    # :02d asegura que los valores siempre tengan dos dígitos (ej., 5 se convierte en 05)
+    return f"{hours}:{minutes_remainder:02d}:{seconds_remainder:02d}"
+
+# --- Crear la nueva columna formateada en el DataFrame ---
+df_copia['Delivery_Time_Formatted'] = df_copia['Delivery_Time'].apply(format_minutes_to_hh_mm_ss)
+
+# Impacto del clima y trafico en el tiempo de entregas (tabla dinamica)
+clima_trafico_tiempo_entrega = pd.pivot_table(df_amazon_delivery,
+                                              values='Delivery_Time',
+                                              index=['Weather', 'Traffic'],
+                                              aggfunc='mean')
+
+# Aplicar el formateo a la columna de resultados de la tabla dinámica
+clima_trafico_tiempo_entrega['Delivery_Time_Formatted'] = \
+    clima_trafico_tiempo_entrega['Delivery_Time'].apply(format_minutes_to_hh_mm_ss)
+
+print("Tabla Dinámica Impacto del Clima y Tráfico en el Tiempo de Entregas")
+clima_trafico_tiempo_entrega`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -591,6 +624,34 @@ Número total de entregas: 43644
 Porcentaje de Entregas a Tiempo (con umbral basado en datos): 95.22%`;
 
   const salida7 = `Distancia promedio de entregas: 10.37 km`;
+
+  const salida8 = `Tabla Dinámica Impacto del Clima y Tráfico en el Tiempo de Entregas
+                     Delivery_Time Delivery_Time_Formatted
+Weather    Traffic
+Cloudy     High         138.900838              2:18:54
+           Jam          174.652232              2:54:39
+           Low          106.688986              1:46:41
+           Medium       136.680720              2:16:40
+Fog        High         134.856390              2:14:51
+           Jam          174.054054              2:54:03
+           Low          104.950475              1:44:57
+           Medium       132.230812              2:12:13
+Sandstorms High         131.856932              2:11:51
+           Jam          142.185776              2:22:11
+           Low           96.780159              1:36:46
+           Medium       132.783237              2:12:46
+Stormy     High         131.886555              2:11:53
+           Jam          142.232743              2:22:13
+           Low           98.627676              1:38:37
+           Medium       131.786435              2:11:47
+Sunny      High         110.011158              1:50:00
+           Jam          108.650986              1:48:39
+           Low          102.600917              1:42:36
+           Medium        96.076389              1:36:04
+Windy      High         128.680168              2:08:40
+           Jam          142.869584              2:22:52
+           Low           98.702198              1:38:42
+           Medium       130.675721              2:10:40`;
 
   return (
     <div className="pagina-proyecto">
@@ -1357,6 +1418,26 @@ Porcentaje de Entregas a Tiempo (con umbral basado en datos): 95.22%`;
         </SyntaxHighlighter>
         <ul>
           <li>Análisis: La distancia promedio de las entregas es de 10.37 kilómetros.</li>
+        </ul>
+        <h5>Impacto del Clima y Tráfico en el Tiempo de Entregas</h5>
+        <p>
+          Se analiza cómo las condiciones climáticas (Weather) y el estado del tráfico (Traffic) afectan el tiempo promedio de entrega. 
+          Se crea una tabla dinámica para visualizar el tiempo promedio de entrega para cada combinación de clima y tráfico. 
+          Se incluye una función para formatear los minutos a un formato de horas y minutos más legible.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code62}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida8}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Análisis: La tabla dinámica muestra los diferentes tiempos de entrega (tanto en minutos como en formato de hora para facilitar la lectura). 
+            Se observa claramente que las condiciones de tráfico "Jam" (atasco) y "High" (alto) resultan en tiempos de entrega significativamente mayores, 
+            independientemente del clima. Las entregas en condiciones de tráfico "Low" (bajo) y clima "Sunny" (soleado) son las más rápidas.
+          </li>
         </ul>
       </div>
     </div>
