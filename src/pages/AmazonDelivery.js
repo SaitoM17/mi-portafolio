@@ -682,6 +682,29 @@ df_amazon_delivery[['Order_ID',
 print('Is_Challenging_Delivery nos muestra la cantidad de pedidos que son o no son desafiantes')
 entregas_desafiantes`;
 
+  const code71 = `challenges_by_area_timeslot = df_amazon_delivery.groupby(['Area', 'Delivery_Time_Slot']).agg(
+    Avg_Delivery_Time=('Delivery_Time', 'mean'),
+    Num_Challenging_Deliveries=('Is_Challenging_Delivery', lambda x: x.sum()),
+    Total_Deliveries=('Order_ID', 'count')).reset_index()
+
+challenges_by_area_timeslot['Percentage_Challenging'] = (
+    challenges_by_area_timeslot['Num_Challenging_Deliveries'] / challenges_by_area_timeslot['Total_Deliveries']) * 100
+
+# También podemos ver el tiempo promedio por zona y franja horaria directamente
+avg_time_by_area_timeslot = df_amazon_delivery.groupby(['Area', 'Delivery_Time_Slot']).agg(
+    Avg_Delivery_Time_Minutes=('Delivery_Time', 'mean')).reset_index()`;
+
+  const code72 = `df_amazon_delivery['Lat_Bin'] = df_amazon_delivery['Drop_Latitude'].round(2)
+df_amazon_delivery['Lon_Bin'] = df_amazon_delivery['Drop_Longitude'].round(2)
+
+challenges_by_geo_bin = df_amazon_delivery.groupby(['Lat_Bin', 'Lon_Bin']).agg(
+    Avg_Delivery_Time=('Delivery_Time', 'mean'),
+    Num_Challenging_Deliveries=('Is_Challenging_Delivery', lambda x: x.sum()),
+    Total_Deliveries=('Order_ID', 'count')).reset_index()
+
+challenges_by_geo_bin['Percentage_Challenging'] = (
+    challenges_by_geo_bin['Num_Challenging_Deliveries'] / challenges_by_geo_bin['Total_Deliveries']) * 100`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -1948,6 +1971,33 @@ Name: Order_ID, dtype: int64`;
             Análisis: Se identifica que 41559 órdenes no fueron desafiantes, lo que significa que se entregaron en 215 minutos (3 horas y 35 minutos) o menos (se entregaron a tiempo). 
             Solo 2085 pedidos fueron desafiantes, ya que se entregaron después de este umbral. Esto cuantifica el volumen de entregas que requieren una atención especial.
           </li>
+        </ul>
+        <h5>Agregación para Identificar Zonas y Franjas Horarias con Desafíos</h5>
+        <p>
+          Se realizan agregaciones para identificar patrones de entregas desafiantes por área y franja horaria, así como por bins geográficos (latitud/longitud redondeada).
+        </p>
+        <ul>
+          <li>Desafíos por Área y Franja Horaria:</li>
+          <p>
+            Se agrupa el DataFrame por Area y Delivery_Time_Slot para calcular el tiempo promedio de entrega, 
+            el número de entregas desafiantes y el total de entregas, además del porcentaje de entregas desafiantes.
+          </p>
+          <SyntaxHighlighter language="python" style={dracula} className="code-block">
+            {code71}
+          </SyntaxHighlighter>
+          <li>Desafíos por Bins Geográficos:</li>
+          <p>
+            Se crean bins geográficos redondeando la latitud y longitud de entrega para identificar zonas geográficas más pequeñas con desafíos.
+          </p>
+          <SyntaxHighlighter language="python" style={dracula} className="code-block">
+            {code72}
+          </SyntaxHighlighter>
+          <dd>
+            <li>
+              Propósito: Estas agregaciones son fundamentales para identificar los puntos críticos en la operación de entrega, permitiendo a la empresa enfocar 
+              recursos en áreas y momentos específicos para mejorar la eficiencia.
+            </li>
+          </dd>
         </ul>
       </div>
     </div>
