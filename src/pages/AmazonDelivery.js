@@ -483,6 +483,25 @@ minutos_restantes = promedio_delivery_time % 60 # Obtiene el resto de minutos
 print(f'Promedio del tiempo de entrega (Delivery_Time): {promedio_delivery_time:.2f} minutos')
 print(f'Que equivale a: {horas} horas y {minutos_restantes:.0f} minutos') # Redondea los minutos a un entero`;
 
+  const code59 = `# Calcular el tiempo promedio de procesamiento del pedido (Pickup_Time - Order_Time)
+df_amazon_delivery['Order_Processing_Time'] = df_amazon_delivery['Pickup_Time_TD'] - df_amazon_delivery['Order_Time_TD']
+
+# Si el resultado es negativo, significa que la recogida es "al día siguiente"
+# Por lo tanto, le sumamos un día (24 horas)
+one_day = pd.Timedelta(days=1)
+df_amazon_delivery.loc[df_amazon_delivery['Order_Processing_Time'] < pd.Timedelta(0), 'Order_Processing_Time'] += one_day
+
+promedio_order_processing_time = np.mean(df_amazon_delivery['Order_Processing_Time'])
+promedio_en_segundos = promedio_order_processing_time.total_seconds()
+
+# 2. Calcular los minutos enteros
+minutos = int(promedio_en_segundos // 60)
+# 3. Calcular los segundos restantes y redondearlos al entero más cercano
+segundos = round(promedio_en_segundos % 60)
+
+print(f'Promedio de Procesamiento de la orden del pedido (Order_Processing_Time): {promedio_order_processing_time}')
+print(f'Promedio de Procesamiento de la orden del pedido: {minutos}:{segundos} minutos')`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -521,6 +540,9 @@ Name: Order_Date, dtype: datetime64[ns]`;
 
   const salida4 = `Promedio del tiempo de entrega (Delivery_Time): 124.91 minutos
 Que equivale a: 2 horas y 5 minutos`;
+
+  const salida5 = `Promedio de Procesamiento de la orden del pedido (Order_Processing_Time): 0 days 00:09:59.446728072
+Promedio de Procesamiento de la orden del pedido: 9:59 minutos`;
 
   return (
     <div className="pagina-proyecto">
@@ -1099,6 +1121,22 @@ Que equivale a: 2 horas y 5 minutos`;
         </SyntaxHighlighter>
         <ul>
           <li><p>Análisis: El tiempo promedio de entrega es de 2 horas y 5 minutos (2:05).</p></li>
+        </ul>
+        <h5>Tiempo Promedio de Procesamiento del Pedido</h5>
+        <p>
+          Se calcula el tiempo que tarda la tienda o el centro de distribución en preparar el pedido para su recolección por parte del 
+          agente de entrega, es decir, la diferencia entre Pickup_Time y Order_Time. Se manejan los casos donde Pickup_Time es anterior 
+          a Order_Time (indicando una recogida al día siguiente) sumando un día.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code59}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida5}
+        </SyntaxHighlighter>
+        <ul>
+          <li>Análisis: El tiempo que tarda la tienda o el centro de distribución en preparar el pedido para su recolección es de aproximadamente 9 minutos y 59 segundos.</li>
         </ul>
       </div>
     </div>
