@@ -623,6 +623,42 @@ df_amazon_delivery['Delivery_Day_of_Week'] = df_amazon_delivery['Delivery_Comple
 
 df_amazon_delivery[['Order_ID', 'Order_Date', 'Order_Time', 'Pickup_Time', 'Pickup_Timestamp','Delivery_Duration' ,'Delivery_Completion_Timestamp', 'Delivery_Hour', 'Delivery_Day_of_Week']].head(5)`;
 
+  const code67 = `def get_time_slot(hour):
+    if 6 <= hour < 9:
+        return '06:00 - 08:59 (Mañana Pico)'
+    elif 9 <= hour < 12:
+        return '09:00 - 11:59 (Mañana Tardia)'
+    elif 12 <= hour < 14:
+        return '12:00 - 13:59 (Mediodia)'
+    elif 14 <= hour < 17:
+        return '14:00 - 16:59 (Tarde Pico)'
+    elif 17 <= hour < 20:
+        return '17:00 - 19:59 (Noche Temprana)'
+    elif 20 <= hour < 23:
+        return '20:00 - 22:59 (Noche Tardia)'
+    else:
+        return '23:00 - 05:59 (Madrugada)'
+
+df_amazon_delivery['Delivery_Time_Slot'] = df_amazon_delivery['Delivery_Hour'].apply(get_time_slot)
+
+df_amazon_delivery[['Order_ID',
+                    'Order_Date',
+                    'Order_Time',
+                    'Pickup_Time',
+                    'Pickup_Timestamp',
+                    'Delivery_Duration',
+                    'Delivery_Completion_Timestamp',
+                    'Delivery_Hour',
+                    'Delivery_Day_of_Week',
+                    'Delivery_Time_Slot']].head(5)`;
+
+  const code68 = `franjas_horaria = pd.pivot_table(df_amazon_delivery,
+                                values='Order_ID',
+                                index=['Delivery_Time_Slot'],
+                                aggfunc='count')
+print('La Tabla Dinámica Muestra la Cantidad de Pedidos Entregados en las Diferentes Franjas Horarias')
+franjas_horaria.sort_values(by='Order_ID', ascending=False)`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -750,6 +786,17 @@ Agent_Rating
 2.6        172.772727              2:52:46
 2.5        180.300000              3:00:18
 1.0        132.045455              2:12:02`;
+
+  const salida12 = `La Tabla Dinámica Muestra la Cantidad de Pedidos Entregados en las Diferentes Franjas Horarias
+                                Order_ID
+Delivery_Time_Slot
+23:00 - 05:59 (Madrugada)          16962
+20:00 - 22:59 (Noche Tardia)       11929
+17:00 - 19:59 (Noche Temprana)      4847
+09:00 - 11:59 (Mañana Tardia)       4198
+14:00 - 16:59 (Tarde Pico)          2900
+12:00 - 13:59 (Mediodia)            2764
+06:00 - 08:59 (Mañana Pico)           44`;
 
   return (
     <div className="pagina-proyecto">
@@ -1673,6 +1720,113 @@ Agent_Rating
           <li>
             Análisis: La columna Delivery_Completion_Timestamp muestra la fecha y hora exactas en que se completó cada entrega, incluyendo el día de la semana. 
             Esto es crucial para analizar patrones temporales de entrega.
+          </li>
+        </ul>
+        <h5>Identificar Franjas Horarias</h5>
+        <p>
+          Se define una función get_time_slot para categorizar la hora de entrega en franjas horarias predefinidas 
+          (Mañana Pico, Mañana Tardía, Mediodía, Tarde Pico, Noche Temprana, Noche Tardía, Madrugada). 
+          Esta categorización facilita el análisis de los patrones de entrega a lo largo del día.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code67}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <div className="contenedor-tabla">
+          <table>
+            <thead>
+              <tr>
+                <th>Order_ID</th>
+                <th>Order_Date</th>
+                <th>Order_Time</th>
+                <th>Pickup_Time</th>
+                <th>Pickup_Timestamp</th>
+                <th>Delivery_Duration</th>
+                <th>Delivery_Completion_Timestamp</th>
+                <th>Delivery_Hour</th>
+                <th>Delivery_Day_of_Week</th>
+                <th>Delivery_Time_Slot</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ialx566343618</td>
+                <td>2022-03-19</td>
+                <td>11:30:00</td>
+                <td>11:45:00</td>
+                <td>2022-03-19 11:45:00</td>
+                <td>0 days 02:00:00</td>
+                <td>2022-03-19 13:45:00</td>
+                <td>13</td>
+                <td>Saturday</td>
+                <td>12:00 - 13:59 (Mediodia)</td>
+              </tr>
+              <tr>
+                <td>akqg208421122</td>
+                <td>2022-03-25</td>
+                <td>19:45:00</td>
+                <td>19:50:00</td>
+                <td>2022-03-25 19:50:00</td>
+                <td>0 days 02:45:00</td>
+                <td>2022-03-25 22:35:00</td>
+                <td>22</td>
+                <td>Friday</td>
+                <td>20:00 - 22:59 (Noche Tardia)</td>
+              </tr>
+              <tr>
+                <td>njpu434582536</td>
+                <td>2022-03-19</td>
+                <td>08:30:00</td>
+                <td>08:45:00</td>
+                <td>2022-03-19 08:45:00</td>
+                <td>0 days 02:10:00</td>
+                <td>2022-03-19 10:55:00</td>
+                <td>10</td>
+                <td>Saturday</td>
+                <td>09:00 - 11:59 (Mañana Tardia)</td>
+              </tr>
+              <tr>
+                <td>rjto796129700</td>
+                <td>2022-04-05</td>
+                <td>18:00:00</td>
+                <td>18:10:00</td>
+                <td>2022-04-05 18:10:00</td>
+                <td>0 days 01:45:00</td>
+                <td>2022-04-05 19:55:00</td>
+                <td>19</td>
+                <td>Tuesday</td>
+                <td>17:00 - 19:59 (Noche Temprana)</td>
+              </tr>
+              <tr>
+                <td>zguw716275638</td>
+                <td>2022-03-26</td>
+                <td>13:30:00</td>
+                <td>13:45:00</td>
+                <td>2022-03-26 13:45:00</td>
+                <td>0 days 02:30:00</td>
+                <td>2022-03-26 16:15:00</td>
+                <td>16</td>
+                <td>Saturday</td>
+                <td>14:00 - 16:59 (Tarde Pico)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Se agrupan los pedidos por Delivery_Time_Slot para contar la cantidad de entregas en cada franja horaria.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code68}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida12}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Análisis: Las franjas horarias nos ayudan a identificar cuál es el horario en que se entregan más los pedidos. 
+            Se muestra que la Madrugada (23:00 - 05:59) es el horario con la mayor cantidad de pedidos entregados (16962), 
+            seguido de Noche Tardía (20:00 - 22:59) con 11929 pedidos entregados. Esto puede indicar patrones de demanda o disponibilidad de agentes durante estas horas.
           </li>
         </ul>
       </div>
