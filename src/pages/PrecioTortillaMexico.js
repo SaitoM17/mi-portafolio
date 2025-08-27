@@ -17,6 +17,8 @@ function PrecioTortilla() {
           Analizar la evolución del precio de las tortillas en México desde 2007 hasta 2024, identificando patrones temporales, diferencias regionales 
           y factores que podrían haber influido en su comportamiento.
         </p>
+
+        <h2>🧪 Desarrollo del Proyecto</h2>
       </div>
     </div>
   );
