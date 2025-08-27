@@ -777,6 +777,37 @@ for p in ax.patches:
 plt.tight_layout()
 plt.show()`;
 
+  const code76 = `agente_tiempo_entrega_promedio_volumen_pedidos = pd.pivot_table(
+    df_amazon_delivery,
+    values=['Delivery_Time', 'Order_ID'],
+    index='Agent_Rating',
+    aggfunc={'Delivery_Time': 'mean', 'Order_ID': 'count'})
+
+agente_tiempo_entrega_promedio_volumen_pedidos = agente_tiempo_entrega_promedio_volumen_pedidos.rename(
+    columns={'Order_ID': 'Order_Volume'})
+
+agente_tiempo_entrega_promedio_volumen_pedidos = agente_tiempo_entrega_promedio_volumen_pedidos.reset_index()
+
+plt.figure(figsize=(14, 6))
+sns.scatterplot(
+    x='Agent_Rating',
+    y='Delivery_Time',
+    data=agente_tiempo_entrega_promedio_volumen_pedidos,
+    hue='Agent_Rating',
+    size='Order_Volume',
+    sizes=(50, 1000),
+    palette='viridis',
+    legend='brief'
+)
+plt.title('Calificación del Agente vs. Promedio de Tiempo de Entrega y Volumen de Pedidos')
+plt.xlabel('Calificación del Agente')
+plt.ylabel('Promedio de Tiempo de Entrega')
+plt.xticks(rotation=45, ha='right')
+plt.ylim(100, 200)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -2139,6 +2170,41 @@ Name: Order_ID, dtype: int64`;
             (por ejemplo, 4.0, 4.5, 5.0) debería indicar un mejor rendimiento general, este gráfico sugiere que para el aspecto del 
             "tiempo de entrega desafiante", la relación es inversa o, al menos, no lineal. Los agentes con calificaciones promedio-altas (4.0-4.4) son los que 
             consistentemente tienen un porcentaje de entregas desafiantes por encima del 10%.
+          </li>
+        </ul>
+        <h5>Calificación vs. Promedio de Tiempo y Volumen de Pedidos</h5>
+        <p>
+          Este gráfico de dispersión (scatterplot) visualiza la relación entre la calificación del agente, el tiempo promedio de entrega y el volumen de 
+          pedidos manejado por cada calificación. El tamaño de los puntos representa el volumen de pedidos.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code76}
+        </SyntaxHighlighter>
+        <img src="/AmazonDelivery/calificacion_agente_vs_promedio_tiempo_volumen_pedidos.png" alt="Calificación de agentes vs tiempo volumne pedidos" 
+        className="imagen-proyecto"/>
+        <ul>
+          <li>
+            <p>
+              Análisis: Los agentes con baja calificación y alto tiempo de entrega promedio no son los principales responsables del volumen total de desafíos. 
+              Representan un "problema de eficiencia" individual, pero no un "problema de volumen" a gran escala. Por ejemplo, la calificación 1.0 tiene un 
+              tiempo de entrega alto (aproximadamente 132 minutos) pero es una burbuja muy pequeña, lo que indica un bajo volumen de pedidos.
+            </p>
+            <p>
+              Las calificaciones de agente más altas (color verde/amarillo, por ejemplo, 4.0, 5.0) se agrupan en la parte inferior del gráfico 
+              (menor Promedio de Tiempo de Entrega). Esto sugiere que, en general, son más eficientes en términos de tiempo promedio. A pesar de tener un 
+              promedio de tiempo de entrega más bajo, debido a su alto volumen de pedidos, incluso un pequeño porcentaje de entregas desafiantes 
+              (como se vio en el gráfico anterior) de estos agentes podría traducirse en un número absoluto muy alto de entregas desafiantes.
+            </p>
+            <p>
+              Los agentes con baja calificación (por ejemplo, 1.0, 2.0, 3.0) no manejan un alto volumen de pedidos. Aunque su tiempo promedio de entrega es 
+              alto, su bajo volumen significa que su contribución al número total de entregas desafiantes probablemente es menor. 
+              Son problemas de eficiencia a nivel individual.
+            </p>
+            <p>
+              Los agentes con calificaciones más altas (por ejemplo, 4.0, 5.0), aunque tienen un tiempo de entrega promedio más bajo, sí manejan un volumen 
+              masivo de pedidos. Si, como se vio en el gráfico anterior, un porcentaje significativo de sus entregas son desafiantes, entonces son 
+              ellos los que, por el puro volumen, contribuyen en mayor medida al número absoluto de entregas desafiantes generales.
+            </p>
           </li>
         </ul>
       </div>
