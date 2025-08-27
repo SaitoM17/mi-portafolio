@@ -2459,6 +2459,13 @@ Name: Order_ID, dtype: int64`;
             </p>
           </li>
         </ul>
+
+        <h2>📌 Vista previa del Dashboard</h2>
+        <img src="/AmazonDelivery/Dashboard_Amazon_Delivery.png" alt="Calificación de agentes vs tiempo volumne pedidos" 
+        className="imagen-proyecto"/>
+        <a href="https://public.tableau.com/app/profile/said.mariano/viz/Dashboard_Amazon_Delivery/Dashboard_Amazon_Delivery" target="_black" rel="noopener noreferrer">
+          Link: Dashboard Amazon Delivery
+        </a>
       </div>
     </div>
   );
