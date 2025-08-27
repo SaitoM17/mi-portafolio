@@ -11,6 +11,12 @@ function PrecioTortilla() {
           detallada sobre el precio por kilogramo de la tortilla en diversas ubicaciones (estados y ciudades) y tipos de tiendas a lo largo 
           del tiempo, abarcando el periodo 2007-2024.
         </p>
+
+        <h2>🎯 Propósito</h2>
+        <p>
+          Analizar la evolución del precio de las tortillas en México desde 2007 hasta 2024, identificando patrones temporales, diferencias regionales 
+          y factores que podrían haber influido en su comportamiento.
+        </p>
       </div>
     </div>
   );
