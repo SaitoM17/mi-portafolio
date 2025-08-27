@@ -808,6 +808,23 @@ plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()`;
 
+  const code77 = `resumen_calificacion_agente = pd.pivot_table(df_amazon_delivery,
+                                             values=['Order_ID', 'Delivery_Time', 'Is_Challenging_Delivery'],
+                                             index=['Agent_Rating'],
+                                             aggfunc={'Order_ID': 'count',
+                                                      'Delivery_Time':'mean',
+                                                      'Is_Challenging_Delivery':'sum'})
+
+resumen_calificacion_agente['Porcentaje_Desafiante'] = \
+    resumen_calificacion_agente['Is_Challenging_Delivery'] / resumen_calificacion_agente['Order_ID']
+
+resumen_calificacion_agente = resumen_calificacion_agente.rename(
+    columns={'Order_ID': 'Número_Total_Pedidos'
+             ,'Delivery_Time':'Promedio_Tiempo',
+             'Is_Challenging_Delivery':'Número_Desafios'})
+
+resumen_calificacion_agente`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -2204,6 +2221,241 @@ Name: Order_ID, dtype: int64`;
               Los agentes con calificaciones más altas (por ejemplo, 4.0, 5.0), aunque tienen un tiempo de entrega promedio más bajo, sí manejan un volumen 
               masivo de pedidos. Si, como se vio en el gráfico anterior, un porcentaje significativo de sus entregas son desafiantes, entonces son 
               ellos los que, por el puro volumen, contribuyen en mayor medida al número absoluto de entregas desafiantes generales.
+            </p>
+          </li>
+        </ul>
+        <h5>Resumen por Calificación de Agente</h5>
+        <p>
+          Esta tabla dinámica resume las métricas clave por calificación de agente: número total de pedidos, tiempo promedio de entrega, 
+          número de entregas desafiantes y el porcentaje de entregas desafiantes.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code77}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Agent_Rating</th>
+              <th>Promedio_Tiempo</th>
+              <th>Número_Desafios</th>
+              <th>Número_Total_Pedidos</th>
+              <th>Porcentaje_Desafiante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.0</td>
+              <td>132.045455</td>
+              <td>1</td>
+              <td>22</td>
+              <td>0.045455</td>
+            </tr>
+            <tr>
+              <td>2.5</td>
+              <td>180.300000</td>
+              <td>2</td>
+              <td>20</td>
+              <td>0.100000</td>
+            </tr>
+            <tr>
+              <td>2.6</td>
+              <td>172.772727</td>
+              <td>2</td>
+              <td>22</td>
+              <td>0.090909</td>
+            </tr>
+            <tr>
+              <td>2.7</td>
+              <td>179.318182</td>
+              <td>0</td>
+              <td>22</td>
+              <td>0.000000</td>
+            </tr>
+            <tr>
+              <td>2.8</td>
+              <td>168.842105</td>
+              <td>0</td>
+              <td>19</td>
+              <td>0.000000</td>
+            </tr>
+            <tr>
+              <td>2.9</td>
+              <td>175.578947</td>
+              <td>1</td>
+              <td>19</td>
+              <td>0.052632</td>
+            </tr>
+            <tr>
+              <td>3.0</td>
+              <td>163.333333</td>
+              <td>0</td>
+              <td>6</td>
+              <td>0.000000</td>
+            </tr>
+            <tr>
+              <td>3.1</td>
+              <td>182.758621</td>
+              <td>3</td>
+              <td>29</td>
+              <td>0.103448</td>
+            </tr>
+            <tr>
+              <td>3.2</td>
+              <td>177.172414</td>
+              <td>2</td>
+              <td>29</td>
+              <td>0.068966</td>
+            </tr>
+            <tr>
+              <td>3.3</td>
+              <td>180.200000</td>
+              <td>1</td>
+              <td>25</td>
+              <td>0.040000</td>
+            </tr>
+            <tr>
+              <td>3.4</td>
+              <td>173.468750</td>
+              <td>1</td>
+              <td>32</td>
+              <td>0.031250</td>
+            </tr>
+            <tr>
+              <td>3.5</td>
+              <td>173.040161</td>
+              <td>182</td>
+              <td>49</td>
+              <td>0.072289</td>
+            </tr>
+            <tr>
+              <td>3.6</td>
+              <td>171.357488</td>
+              <td>162</td>
+              <td>207</td>
+              <td>0.077295</td>
+            </tr>
+            <tr>
+              <td>3.7</td>
+              <td>172.773333</td>
+              <td>25</td>
+              <td>225</td>
+              <td>0.111111</td>
+            </tr>
+            <tr>
+              <td>3.8</td>
+              <td>175.328947</td>
+              <td>142</td>
+              <td>228</td>
+              <td>0.061404</td>
+            </tr>
+            <tr>
+              <td>3.9</td>
+              <td>178.284264</td>
+              <td>20</td>
+              <td>197</td>
+              <td>0.101523</td>
+            </tr>
+            <tr>
+              <td>4.0</td>
+              <td>163.881151</td>
+              <td>112</td>
+              <td>1077</td>
+              <td>0.103993</td>
+            </tr>
+            <tr>
+              <td>4.1</td>
+              <td>165.173427</td>
+              <td>159</td>
+              <td>1430</td>
+              <td>0.111189</td>
+            </tr>
+            <tr>
+              <td>4.2</td>
+              <td>165.612835</td>
+              <td>155</td>
+              <td>1418</td>
+              <td>0.109309</td>
+            </tr>
+            <tr>
+              <td>4.3</td>
+              <td>165.139106</td>
+              <td>139</td>
+              <td>1409</td>
+              <td>0.098652</td>
+            </tr>
+            <tr>
+              <td>4.4</td>
+              <td>165.235856</td>
+              <td>145</td>
+              <td>1361</td>
+              <td>0.106539</td>
+            </tr>
+            <tr>
+              <td>4.5</td>
+              <td>112.076294</td>
+              <td>10</td>
+              <td>233</td>
+              <td>0.030881</td>
+            </tr>
+            <tr>
+              <td>4.6</td>
+              <td>116.644524</td>
+              <td>264</td>
+              <td>694</td>
+              <td>0.038040</td>
+            </tr>
+            <tr>
+              <td>4.7</td>
+              <td>115.208905</td>
+              <td>233</td>
+              <td>714</td>
+              <td>0.032624</td>
+            </tr>
+            <tr>
+              <td>4.8</td>
+              <td>113.962927</td>
+              <td>248</td>
+              <td>714</td>
+              <td>0.034695</td>
+            </tr>
+            <tr>
+              <td>4.9</td>
+              <td>114.763670</td>
+              <td>243</td>
+              <td>704</td>
+              <td>0.034512</td>
+            </tr>
+            <tr>
+              <td>5.0</td>
+              <td>120.976727</td>
+              <td>178</td>
+              <td>399</td>
+              <td>0.044545</td>
+            </tr>
+            <tr>
+              <td>6.0</td>
+              <td>111.642857</td>
+              <td>1</td>
+              <td>28</td>
+              <td>0.035714</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>
+            <p>Análisis: Esta tabla proporciona una vista consolidada que confirma los hallazgos de los gráficos anteriores. Se puede observar:</p>
+            <p>
+              Agentes con alto volumen y buen tiempo promedio: Las calificaciones más altas (4.5 a 5.0) y 6.0 manejan un volumen significativamente 
+              mayor de pedidos (Número_Total_Pedidos) y tienen un Promedio_Tiempo de entrega más bajo.
+            </p>
+            <p>
+              Porcentaje de Desafíos: A pesar de su eficiencia general, algunas de las calificaciones más altas (ej. 4.0 a 4.4) muestran un 
+              Porcentaje_Desafiante superior al 10%, lo que, dado su gran volumen de pedidos, se traduce en un alto Número_Desafios absoluto.
+            </p>
+            <p>
+              Agentes con bajo volumen: Las calificaciones más bajas tienen un Promedio_Tiempo de entrega más alto, pero su Número_Total_Pedidos es muy bajo, 
+              lo que significa que su impacto en el total de entregas desafiantes es menor.
             </p>
           </li>
         </ul>
