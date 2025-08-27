@@ -2466,6 +2466,124 @@ Name: Order_ID, dtype: int64`;
         <a href="https://public.tableau.com/app/profile/said.mariano/viz/Dashboard_Amazon_Delivery/Dashboard_Amazon_Delivery" target="_black" rel="noopener noreferrer">
           Link: Dashboard Amazon Delivery
         </a>
+        
+        <h2>💡 Insight clave</h2>
+        <h4>Evaluar la eficiencia general de las entregas</h4>
+        <ul>
+          <li>
+            Eficiencia en el Procesamiento de Pedidos: Se ha identificado una notable eficiencia en la fase inicial del ciclo de entrega, 
+            con un tiempo promedio de procesamiento y recolección de pedidos de tan solo 9 minutos y 59 segundos. Esto indica una operación ágil desde 
+            la confirmación del pedido hasta su preparación para el despacho.
+          </li>
+          <li>
+            Tiempo Promedio de Entrega General: El tiempo promedio general para completar una entrega es de 2 horas y 5 minutos. 
+            Esta métrica establece la expectativa actual para la totalidad del proceso logístico.
+          </li>
+          <li>
+            Umbral de Entrega "A Tiempo": El 95.22% de las entregas históricas se completan en 215 minutos (3 horas y 35 minutos) o menos. 
+            Este umbral se establece como la base para el monitoreo de la puntualidad y la satisfacción del cliente, reflejando 
+            el rendimiento consistente en la gran mayoría de los casos.
+          </li>
+          <li>
+            Distancia Promedio de Entrega: La distancia promedio recorrida por pedido es de 10.37 kilómetros. Este dato contextualiza los 
+            tiempos de entrega y es crucial para futuras optimizaciones de ruta.
+          </li>
+          <li>
+            Impacto de Factores Externos: Las condiciones ambientales y de tráfico tienen un impacto significativo. Por ejemplo, en condiciones óptimas 
+            (día soleado y tráfico bajo), el tiempo promedio de entrega se reduce a 1 hora y 48 minutos, demostrando 
+            la influencia de estos factores en la variabilidad del servicio.
+          </li>
+          <li>
+            Eficiencia por Tipo de Vehículo: Se observa que la elección del vehículo tiene una influencia menor en el tiempo de entrega, con una variación 
+            de solo 15 segundos entre el tipo de vehículo más rápido y el más lento (1 hora y 56 minutos frente a 2 horas y 11 minutos).
+          </li>
+          <li>
+            Disparidad Geográfica en Tiempos de Entrega: Existe una diferencia sustancial en los tiempos de entrega según el área geográfica. 
+            Las áreas urbanas muestran una eficiencia superior con un promedio de 1 hora y 49 minutos, mientras que las áreas semi-urbanas presentan 
+            tiempos significativamente más largos, alcanzando 3 horas y 58 minutos. Esta divergencia subraya la necesidad de estrategias de optimización localizadas.
+          </li>
+          <li>
+            Correlación entre Calificación del Agente y Eficiencia: Los datos sugieren una clara relación entre la calificación del agente y el rendimiento. 
+            Los agentes con una calificación de 4.5 o superior tienden a completar sus entregas en 2 horas o menos, destacando la importancia de la calidad y 
+            experiencia del personal de reparto en la eficiencia operativa.
+          </li>
+        </ul>
+        <h4>Identificar zonas geográficas y franjas horarias con mayores desafíos operativos.</h4>
+        <ul>
+          <li>
+            Desafíos Concentrados en Franjas Horarias de Alto Volumen: La Madrugada (23:00 - 05:59) se posiciona como la franja horaria más crítica. 
+            A pesar de manejar el mayor volumen de pedidos (16,962), registra un promedio de tiempo de entrega elevado de 139.8 minutos. 
+            Además, el 9.59% de estas entregas son desafiantes, siendo el porcentaje más alto entre todas las franjas horarias.
+          </li>
+          <li>Otras franjas con porcentajes notables de entregas desafiantes incluyen:</li>
+            <dd><li>Tarde Pico (14:00 - 16:59): 3.55% de entregas desafiantes.</li></dd>
+            <dd><li>Noche Tardia (20:00 - 22:59): 2.31% de entregas desafiantes, afectando a un volumen considerable de 11,929 pedidos.</li></dd>
+          <li>El Rendimiento Varía Drásticamente por Tipo de Área Geográfica:</li>
+            <dd>
+              <li>
+                Las Áreas Semi-Urbanas presentan el desafío geográfico más significativo, con un tiempo promedio de entrega de 238.6 minutos. 
+                Este promedio supera consistentemente el umbral de 215 minutos, indicando desafíos estructurales o logísticos en estas zonas.
+              </li>
+            </dd>
+            <dd>
+              <li>
+                En contraste, las Áreas Urbanas (109.4 minutos) y Metropolitanas (129.7 minutos) demuestran una eficiencia considerablemente mayor, 
+                con tiempos de entrega promedio que se mantienen bien por debajo del umbral establecido.
+              </li>
+            </dd>
+          <li>
+            Eficiencia Excepcional en Horas de Bajo Volumen: La franja horaria de Mañana Pico (06:00 - 08:59) destaca por su excepcional eficiencia, 
+            con un promedio de solo 19.4 minutos por entrega. No obstante, este periodo maneja el menor volumen de pedidos (44), lo que sugiere que 
+            esta eficiencia podría estar ligada directamente a la baja demanda.
+          </li>
+        </ul>
+        <h4>Reconocer el desempeño individual de los repartidores, destacando a los más eficientes y detectando áreas de mejora.</h4>
+        <ul>
+          <li>
+            Promedio de Tiempo de Entrega por Calificación de Agente: Existe una clara tendencia general donde los agentes con calificaciones 
+            más altas (ej. 4.0 a 5.0) demuestran un promedio de tiempo de entrega significativamente menor. Esto valida la intuición de que 
+            agentes mejor calificados son, en promedio, más eficientes en completar sus entregas rápidamente.
+          </li>
+          <dd>
+            <li>
+              Excepción Notoria: Se observa un caso atípico en agentes con calificación de 1.0, quienes, a pesar de su baja calificación, presentan un 
+              tiempo promedio de entrega de aproximadamente 132 minutos, un valor que no se alinea con la tendencia general de las calificaciones más bajas.
+            </li>
+          </dd>
+          <li>Porcentaje de Entregas Desafiantes por Calificación de Agente:</li>
+          <dd>
+            <li>
+              Contrario a la expectativa inicial, los agentes con calificaciones consistentemente altas (ej. 4.0 - 4.4) exhiben un mayor porcentaje de 
+              entregas desafiantes (superando el umbral de 215 minutos). Específicamente, este grupo presenta porcentajes de entregas desafiantes 
+              por encima del 10%.
+            </li>
+            <li>
+              En contraste, agentes con calificaciones muy bajas o muy altas (ej. 2.7, 2.8, 3.0, así como 4.5 a 5.0) muestran un porcentaje de entregas 
+              desafiantes mucho menor, incluso llegando al 0% en algunos casos.
+            </li>
+          </dd>
+          <p>
+            Este hallazgo sugiere que la relación entre la calificación del agente y la fiabilidad en cumplir los tiempos límite no es lineal y 
+            podría indicar sesgos en el sistema de calificación o factores externos que impactan a agentes de alto rendimiento.
+          </p>
+        </ul>
+        <h4>Calificación vs. Promedio de Tiempo y Volumen de Pedidos:</h4>
+        <ul>
+          <li>
+            Aunque los agentes con calificaciones bajas (ej. 1.0 - 3.0) pueden tener un tiempo promedio de entrega alto, su bajo volumen de pedidos 
+            significa que su contribución al número absoluto de entregas desafiantes es limitada. Constituyen un problema de eficiencia a nivel 
+            individual, pero no una fuente principal de desafíos a escala operativa.
+          </li>
+          <li>
+            Los agentes con calificaciones altas (ej. 4.0 - 5.0), a pesar de su eficiencia en tiempo promedio, manejan un volumen masivo de pedidos. 
+            La paradoja mencionada en el punto 2 (su mayor porcentaje de entregas desafiantes) se magnifica exponencialmente por este volumen.
+          </li>
+          <p>
+            Los agentes con calificaciones más altas son, de hecho, los que contribuyen en mayor medida al número total de entregas desafiantes en el sistema, 
+            no por ser los menos eficientes en promedio, sino porque cualquier porcentaje de fallo en su vasto volumen de trabajo se 
+            traduce en un impacto absoluto significativo.
+          </p>
+        </ul>
       </div>
     </div>
   );
