@@ -714,6 +714,31 @@ challenges_by_area_timeslot.to_csv('../data/processed/desafios_por_area_y_hora.c
 # Exportar datos agregados por bins geográficos para mapas de calor
 challenges_by_geo_bin.to_csv('../data/processed/desafios_por_zona_geografica.csv', index=False)`;
 
+  const code74 = `agente_tiempo_entrega_promedio_ordenado = agente_tiempo_entrega_promedio.sort_values(by='Delivery_Time', ascending=False)
+
+plt.figure(figsize=(19,8))
+order_of_bars = agente_tiempo_entrega_promedio_ordenado.index
+ax = sns.barplot(x='Agent_Rating',
+                 y='Delivery_Time',
+                 data=agente_tiempo_entrega_promedio_ordenado.reset_index(),
+                 order=order_of_bars,
+                 hue='Agent_Rating',
+                 palette='viridis')
+
+plt.title('Promedio de Tiempo de Entrega por Calificación de Agente')
+plt.xlabel('Puntaje del Agente')
+plt.ylabel('Promedio de Tiempo (Minutos)')
+plt.xticks(rotation=45, ha='right')
+
+# Agregar valors encima de las barras
+for p in ax.patches:
+    ax.annotate(f'{p.get_height():.00f}', (p.get_x() + p.get_width() / 2., p.get_height()),
+                ha='center', va='center', xytext=(0, 10), textcoords='offset points')
+
+plt.legend().remove()
+plt.tight_layout()
+plt.show()`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -2038,6 +2063,23 @@ Name: Order_ID, dtype: int64`;
           </li>
         </lu>
         <h4>3. Reconocer el desempeño individual de los repartidores, destacando los más eficientes y detectando áreas de mejora</h4>
+        <h5>Promedio de Tiempo de Entrega por Calificación de Agente</h5>
+        <p>
+          Se visualiza el tiempo promedio de entrega en relación con la calificación de cada agente. Este gráfico de barras ayuda a identificar rápidamente 
+          si existe una correlación entre una mejor calificación y tiempos de entrega más cortos.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code74}
+        </SyntaxHighlighter>
+        <img src="/AmazonDelivery/Promedio_Tiempo_Calificacion_Agente.png" alt="Evolución de las Ventas" className="imagen-proyecto"/>
+        <ul>
+          <li>
+            Análisis: Como se había observado anteriormente en la 'Tabla Dinámica por Agent_Rating en el Tiempo de Entregas', los datos sugieren una clara relación 
+            inversa entre la calificación del agente y el tiempo de entrega. Generalmente, los agentes con calificaciones más altas tienden a tener tiempos de 
+            entrega promedio más bajos, con la notable excepción de un agente con una calificación de 1.0 que, a pesar de su baja calificación, muestra un 
+            tiempo promedio de entrega relativamente bajo (132 minutos). Esto podría indicar un caso atípico o una baja cantidad de pedidos para ese agente específico.
+          </li>
+        </ul>
       </div>
     </div>
   );
