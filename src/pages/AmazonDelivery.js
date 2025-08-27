@@ -586,6 +586,18 @@ tipo_vehiculo_promedio['Delivery_Time_Formatted'] = \
 print("Tabla Dinámica del Tipo de Vehiculo en el Tiempo de Entregas")
 tipo_vehiculo_promedio`;
 
+  const code64 = `# Agrupar pro tipo de área para eficiencia
+tipo_area_promedio = pd.pivot_table(df_amazon_delivery,
+                                    values='Delivery_Time',
+                                    index=['Area'],
+                                    aggfunc='mean')
+
+tipo_area_promedio['Delivery_Time_Formatted'] = \
+    tipo_area_promedio['Delivery_Time'].apply(format_minutes_to_hh_mm_ss)
+
+print('Tabla Dinámica por Tipo de Área en el Tiempo de Entregas')
+tipo_area_promedio`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -673,6 +685,14 @@ bicycle        122.857143              2:02:51
 motorcycle     131.030324              2:11:01
 scooter        116.375385              1:56:22
 van            116.074640              1:56:04`;
+
+  const salida10 = `Tabla Dinámica por Tipo de Área en el Tiempo de Entregas
+               Delivery_Time Delivery_Time_Formatted
+Area
+Metropolitian     129.707626              2:09:42
+Other             104.525110              1:44:31
+Semi-Urban        238.552632              3:58:33
+Urban             109.433871              1:49:26`;
 
   return (
     <div className="pagina-proyecto">
@@ -1474,6 +1494,22 @@ van            116.074640              1:56:04`;
             Análisis: La tabla dinámica muestra el tiempo promedio que se tarda en entregar el paquete por tipo de vehículo. 
             Se observa que el scooter y la van son los tipos de vehículos que tienen un mejor tiempo promedio de entrega, 
             siendo ligeramente más rápidos que las motorcycle y bicycle.
+          </li>
+        </ul>
+        <h5>Eficiencia por Área de Entrega</h5>
+        <p>Se analiza el tiempo promedio de entrega según el tipo de área de entrega (Area).</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code64}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida10}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Análisis: El tipo de área con el mejor tiempo de entrega es 'Other' (área no registrada u omitida) con 1 hora y 44 minutos (1:44), 
+            seguida de 'Urban' con 1 hora y 49 minutos (1:49). Las áreas 'Semi-Urban' muestran un tiempo de entrega significativamente más alto, 
+            lo que podría indicar desafíos logísticos en estas zonas.
           </li>
         </ul>
       </div>
