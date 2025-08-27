@@ -520,6 +520,26 @@ print(f'Número de entregas a tiempo: {numero_entregas_a_tiempo}')
 print(f'Número total de entregas: {numero_total_entregas}')
 print(f'Porcentaje de Entregas a Tiempo (con umbral basado en datos): {porcentaje_entregas_a_tiempo:.2f}%')`;
 
+  const code61 = `def haversine_vector(lat1, lon1, lat2, lon2):
+    R = 6371.0  # Radio de la Tierra en kilómetros
+    lat1 = np.radians(lat1)
+    lat2 = np.radians(lat2)
+    delta_lat = np.radians(lat2 - lat1)
+    delta_lon = np.radians(lon2 - lon1)
+
+    a = np.sin(delta_lat / 2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(delta_lon / 2)**2
+    c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
+    return R * c
+
+# Calcular en lote
+df_amazon_delivery["Distance_km"] = haversine_vector(
+    df_amazon_delivery["Store_Latitude"],
+    df_amazon_delivery["Store_Longitude"],
+    df_amazon_delivery["Drop_Latitude"],
+    df_amazon_delivery["Drop_Longitude"])
+
+df_amazon_delivery.head(5)`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -569,6 +589,8 @@ Usando 215.00 minutos como umbral de "a tiempo":
 Número de entregas a tiempo: 41559
 Número total de entregas: 43644
 Porcentaje de Entregas a Tiempo (con umbral basado en datos): 95.22%`;
+
+  const salida7 = `Distancia promedio de entregas: 10.37 km`;
 
   return (
     <div className="pagina-proyecto">
@@ -1179,6 +1201,162 @@ Porcentaje de Entregas a Tiempo (con umbral basado en datos): 95.22%`;
         <ul>
           <li>Análisis: El 95.22% de los clientes esperan (y reciben) su pedido en 215 minutos (3 horas y 35 minutos). 
           "Se utiliza esta medida ya que no existe una parametros (tiempo estimado de "Entregas a tiempo")</li>
+        </ul>
+        <h5>Distancia Promedio de Entregas</h5>
+        <p>
+          Se calcula la distancia en kilómetros entre la ubicación de la tienda (Store_Latitude, Store_Longitude) y el punto de entrega (Drop_Latitude, Drop_Longitude) 
+          utilizando la fórmula de Haversine. Esta distancia es un factor clave que influye en el tiempo de entrega.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code61}
+        </SyntaxHighlighter>
+        <p>Salida (ejemplo de df_amazon_delivery.head(5) con la nueva columna):</p>
+        <div className="contenedor-tabla">
+          <table>
+            <thead>
+              <tr>
+                <th>Order_ID</th>
+                <th>Agent_Age</th>
+                <th>Agent_Rating</th>
+                <th>Store_Latitude</th>
+                <th>Store_Longitude</th>
+                <th>Drop_Latitude</th>
+                <th>Drop_Longitude</th>
+                <th>Weather</th>
+                <th>Traffic</th>
+                <th>Vehicle</th>
+                <th>Area</th>
+                <th>Delivery_Time</th>
+                <th>Category</th>
+                <th>Order_Time</th>
+                <th>Pickup_Time</th>
+                <th>Order_Date</th>
+                <th>Order_Time_TD</th>
+                <th>Pickup_Time_TD</th>
+                <th>Order_Processing_Time</th>
+                <th>Distance_km</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ialx56634361837</td>
+                <td>4.9</td>
+                <td>22</td>
+                <td>74.504975</td>
+                <td>89.2471</td>
+                <td>22.765049</td>
+                <td>75.912471</td>
+                <td>Sunny</td>
+                <td>High</td>
+                <td>motorcycle</td>
+                <td>Urban</td>
+                <td>120</td>
+                <td>Clothing</td>
+                <td>11:30:00</td>
+                <td>11:45:00</td>
+                <td>2022-03-19</td>
+                <td>0 days 11:30:00</td>
+                <td>0 days 11:45:00</td>
+                <td>0 days 00:15:00</td>
+                <td>2.051173</td>
+              </tr>
+              <tr>
+                <td>akqg20842112234</td>
+                <td>4.5</td>
+                <td>12</td>
+                <td>9130417</td>
+                <td>77.683237</td>
+                <td>13.043041</td>
+                <td>77.813237</td>
+                <td>Stormy</td>
+                <td>Jams</td>
+                <td>scooter</td>
+                <td>Metropolitian</td>
+                <td>165</td>
+                <td>Electronics</td>
+                <td>19:45:00</td>
+                <td>19:50:00</td>
+                <td>2022-03-25</td>
+                <td>0 days 19:45:00</td>
+                <td>0 days 19:50:00</td>
+                <td>0 days 00:05:00</td>
+                <td>14.088346</td>
+              </tr>
+              <tr>
+                <td>njpu43458253623</td>
+                <td>4.4</td>
+                <td>12</td>
+                <td>9142647</td>
+                <td>77.678400</td>
+                <td>12.924264</td>
+                <td>77.688400</td>
+                <td>Sandstorms</td>
+                <td>Low</td>
+                <td>motorcycle</td>
+                <td>Urban</td>
+                <td>130</td>
+                <td>Sports</td>
+                <td>08:30:00</td>
+                <td>08:45:00</td>
+                <td>2022-03-19</td>
+                <td>0 days 08:30:00</td>
+                <td>0 days 08:45:00</td>
+                <td>0 days 00:15:00</td>
+                <td>1.083975</td>
+              </tr>
+              <tr>
+                <td>rjto79612970038</td>
+                <td>4.7</td>
+                <td>11</td>
+                <td>0036697</td>
+                <td>76.976494</td>
+                <td>11.053669</td>
+                <td>77.026494</td>
+                <td>Sunny</td>
+                <td>Medium</td>
+                <td>motorcycle</td>
+                <td>Metropolitian</td>
+                <td>105</td>
+                <td>Cosmetics</td>
+                <td>18:00:00</td>
+                <td>18:10:00</td>
+                <td>2022-04-05</td>
+                <td>0 days 18:00:00</td>
+                <td>0 days 18:10:00</td>
+                <td>0 days 00:10:00</td>
+                <td>5.457929</td>
+              </tr>
+              <tr>
+                <td>zguw71627563832</td>
+                <td>4.6</td>
+                <td>12</td>
+                <td>9727938</td>
+                <td>80.249982</td>
+                <td>13.012793</td>
+                <td>80.289982</td>
+                <td>Cloudy</td>
+                <td>High</td>
+                <td>scooter</td>
+                <td>Metropolitian</td>
+                <td>150</td>
+                <td>Toys</td>
+                <td>13:30:00</td>
+                <td>13:45:00</td>
+                <td>2022-03-26</td>
+                <td>0 days 13:30:00</td>
+                <td>0 days 13:45:00</td>
+                <td>0 days 00:15:00</td>
+                <td>4.334621</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida7}
+        </SyntaxHighlighter>
+        <ul>
+          <li>Análisis: La distancia promedio de las entregas es de 10.37 kilómetros.</li>
         </ul>
       </div>
     </div>
