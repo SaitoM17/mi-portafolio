@@ -659,6 +659,29 @@ df_amazon_delivery[['Order_ID',
 print('La Tabla Dinámica Muestra la Cantidad de Pedidos Entregados en las Diferentes Franjas Horarias')
 franjas_horaria.sort_values(by='Order_ID', ascending=False)`;
 
+  const code69 = `umbral_entrega_desafiante_minutos = 215
+print(f"Umbral de 'Entrega Desafiante' definido: {umbral_entrega_desafiante_minutos} minutos (basado en el 95.22% de entregas históricas).")
+
+# Crea la columna booleana 'Is_Challenging_Delivery'
+# Será True si el Delivery_Time es MAYOR que el umbral, indicando que es un desafío.
+df_amazon_delivery['Is_Challenging_Delivery'] = df_amazon_delivery['Delivery_Time'] > umbral_entrega_desafiante_minutos
+
+df_amazon_delivery[['Order_ID',
+                    'Order_Date',
+                    'Order_Time',
+                    'Pickup_Time',
+                    'Pickup_Timestamp',
+                    'Delivery_Time',
+                    'Delivery_Duration',
+                    'Delivery_Completion_Timestamp',
+                    'Delivery_Day_of_Week',
+                    'Delivery_Time_Slot',
+                    'Is_Challenging_Delivery']].head(3)`;
+
+  const code70 = `entregas_desafiantes = df_amazon_delivery.groupby(['Is_Challenging_Delivery'])['Order_ID'].count()
+print('Is_Challenging_Delivery nos muestra la cantidad de pedidos que son o no son desafiantes')
+entregas_desafiantes`;
+
   const salida1 = `El conjunto de datos amazon_delivery_limpio.csv contiene:
 filas:     43644
 columnas:     16`;
@@ -797,6 +820,14 @@ Delivery_Time_Slot
 14:00 - 16:59 (Tarde Pico)          2900
 12:00 - 13:59 (Mediodia)            2764
 06:00 - 08:59 (Mañana Pico)           44`;
+
+  const salida13 = `Umbral de 'Entrega Desafiante' definido: 215 minutos (basado en el 95.22% de entregas históricas).`;
+
+  const salida14 = `Is_Challenging_Delivery nos muestra la cantidad de pedidos que son o no son desafiantes
+Is_Challenging_Delivery
+False    41559
+True      2085
+Name: Order_ID, dtype: int64`;
 
   return (
     <div className="pagina-proyecto">
@@ -1827,6 +1858,95 @@ Delivery_Time_Slot
             Análisis: Las franjas horarias nos ayudan a identificar cuál es el horario en que se entregan más los pedidos. 
             Se muestra que la Madrugada (23:00 - 05:59) es el horario con la mayor cantidad de pedidos entregados (16962), 
             seguido de Noche Tardía (20:00 - 22:59) con 11929 pedidos entregados. Esto puede indicar patrones de demanda o disponibilidad de agentes durante estas horas.
+          </li>
+        </ul>
+        <h5>Identificar Entregas Desafiantes</h5>
+        <p>
+          Se define una "entrega desafiante" como aquella cuyo Delivery_Time es superior a 215 minutos (3 horas y 35 minutos), 
+          basándose en el percentil 95 de los tiempos de entrega históricos (como se calculó en la Parte 2 del EDA). 
+          Se crea una nueva columna booleana Is_Challenging_Delivery para marcar estos pedidos.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code69}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida13}
+        </SyntaxHighlighter>
+        <div className="contenedor-tabla">
+          <table>
+            <thead>
+              <tr>
+                <th>Order_ID</th>
+                <th>Order_Date</th>
+                <th>Order_Time</th>
+                <th>Pickup_Time</th>
+                <th>Pickup_Timestamp</th>
+                <th>Delivery_Time</th>
+                <th>Delivery_Duration</th>
+                <th>Delivery_Completion_Timestamp</th>
+                <th>Delivery_Day_of_Week</th>
+                <th>Delivery_Time_Slot</th>
+                <th>Is_Challenging_Delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ialx566343618</td>
+                <td>2022-03-19</td>
+                <td>11:30:00</td>
+                <td>11:45:00</td>
+                <td>2022-03-19 11:45:00</td>
+                <td>120</td>
+                <td>0 days 02:00:00</td>
+                <td>2022-03-19 13:45:00</td>
+                <td>Saturday</td>
+                <td>12:00 - 13:59 (Mediodia)</td>
+                <td>False</td>
+              </tr>
+              <tr>
+                <td>akqg208421122</td>
+                <td>2022-03-25</td>
+                <td>19:45:00</td>
+                <td>19:50:00</td>
+                <td>2022-03-25 19:50:00</td>
+                <td>165</td>
+                <td>0 days 02:45:00</td>
+                <td>2022-03-25 22:35:00</td>
+                <td>Friday</td>
+                <td>20:00 - 22:59 (Noche Tardia)</td>
+                <td>False</td>
+              </tr>
+              <tr>
+                <td>njpu434582536</td>
+                <td>2022-03-19</td>
+                <td>08:30:00</td>
+                <td>08:45:00</td>
+                <td>2022-03-19 08:45:00</td>
+                <td>130</td>
+                <td>0 days 02:10:00</td>
+                <td>2022-03-19 10:55:00</td>
+                <td>Saturday</td>
+                <td>09:00 - 11:59 (Mañana Tardia)</td>
+                <td>False</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Se cuenta la cantidad de pedidos que son o no son desafiantes.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code70}
+        </SyntaxHighlighter>
+        <p>Salida:</p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida14}
+        </SyntaxHighlighter>
+        <ul>
+          <li>
+            Análisis: Se identifica que 41559 órdenes no fueron desafiantes, lo que significa que se entregaron en 215 minutos (3 horas y 35 minutos) o menos (se entregaron a tiempo). 
+            Solo 2085 pedidos fueron desafiantes, ya que se entregaron después de este umbral. Esto cuantifica el volumen de entregas que requieren una atención especial.
           </li>
         </ul>
       </div>
