@@ -12,6 +12,8 @@ function MexicoTradeStatis() {
           socios comerciales, productos clave, tendencias de exportación e importación, y patrones económicos 
           relevantes mediante técnicas de análisis de datos.
         </p>
+
+        <h2>🧪 Desarrollo del Proyecto</h2>
       </div>
     </div>
   );
