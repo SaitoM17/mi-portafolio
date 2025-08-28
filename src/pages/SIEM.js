@@ -273,6 +273,25 @@ Total                                       147026         100.00%`;
 51 a 250                            3592
 más de 250                           792`;
 
+  const salida11 = `Promedio de empresas en estados del Norte: 5429.50
+Promedio de empresas en estados del Sur: 2315.78
+Estadístico t: 1.61
+Valor p: 0.130
+
+El valor p es mayor que el nivel de significancia (0.05).
+No rechazamos la hipótesis nula (H0).
+No hay evidencia suficiente para afirmar una diferencia significativa en el promedio de empresas por estado entre el Norte y el Sur.`;
+
+  const salida12 = `--- Intervalo de Confianza del 95% para el Promedio de Empresas por Estado (Norte) ---
+Promedio observado (Norte): 5429.50
+Número de estados (Norte): 10
+Intervalo de Confianza: (1558.14, 9300.86)
+
+--- Intervalo de Confianza del 95% para el Promedio de Empresas por Estado (Sur) ---
+Promedio observado (Sur): 2315.78
+Número de estados (Sur): 9
+Intervalo de Confianza: (263.30, 4368.26)`;
+
 
   return (
     <div className="pagina-proyecto">
@@ -409,6 +428,48 @@ más de 250                           792`;
           {salida10}
         </SyntaxHighlighter>
         <img src="\SIEM\Distribución de Empresas por Rango de Empleados.png" alt="Distribución" className="imagen-proyecto"/>
+
+        <h3>Formulación y prueba de hipótesis:</h3>
+
+        <h4>Hipótesis 1:</h4>
+        <ul>
+          <li>
+            H0: No hay diferencia significativa entre el promedio de empresas por estado en el norte vs sur.
+          </li>
+          <li>
+            H1: Hay diferencia significativa.
+          </li>
+        </ul>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida11}
+        </SyntaxHighlighter>
+        <p>
+          Aunque observas que el promedio de empresas en el Norte (aproximadamente 5,430) es más del doble que en el Sur 
+          (aproximadamente 2,316), esta diferencia no es estadísticamente significativa a un nivel de confianza del 95% 
+          (alpha = 0.05). Esto quiere decir que, con los datos que tienes, la diferencia que ves podría ser simplemente 
+          producto del azar.
+        </p>
+        <p>
+          En términos prácticos, no podemos concluir que las regiones Norte y Sur de México tengan inherentemente un 
+          número promedio diferente de empresas por estado basándonos en esta muestra. Es posible que necesites más datos, 
+          un enfoque diferente, o que la variabilidad dentro de cada grupo de estados sea demasiado alta como para detectar 
+          una diferencia con esta cantidad de información.
+        </p>
+        <h5>Intervalos de confianza</h5>
+        <p>
+          Con el fin de realizar inferencias más robustas sobre el promedio de empresas por región o sector, se procederá a 
+          calcular un intervalo de confianza del 95%. Este intervalo nos ofrecerá un rango de valores dentro del cual podemos 
+          estar 95% seguros de que se encuentra la media real.
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida12}
+        </SyntaxHighlighter>
+        <p>
+          Los dos intervalos de confianza muestran una superposición considerable, especialmente en el rango de 1558 a 4368. 
+          Esta coincidencia visual refuerza la conclusión de nuestra prueba t: al 95% de confianza, no podemos afirmar que el 
+          promedio de empresas por estado sea realmente diferente entre las regiones Norte y Sur. Cualquier distinción aparente 
+          podría atribuirse a la variabilidad aleatoria de los datos.
+        </p>
       </div>
     </div>
   );
