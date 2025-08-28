@@ -15,6 +15,8 @@ function SIEM() {
           Empresarial Mexicano (SIEM) para obtener insights sobre su localización, tamaño, sector económico predominante y 
           diferencias regionales, usando técnicas estadísticas y visualización de datos.
         </p>
+
+        <h2>🧪 Desarrollo del Proyecto</h2>
       </div>
     </div>
   );
