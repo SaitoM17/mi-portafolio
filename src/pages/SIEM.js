@@ -195,6 +195,83 @@ Filas: 147026
 
 Filas duplicadas: 0`;
 
+  const salida8 = `Esatdo                                     Cantidad
+Aguascalientes                                  158
+Baja California                                3344
+Baja California Sur                            1833
+Campeche                                        368
+Chiapas                                        1473
+Chihuahua                                      7611
+Ciudad de México                              28245
+Coahuila de Zaragoza                           4335
+Colima                                          526
+Durango                                        1980
+Guanajuato                                     4812
+Guerrero                                       1009
+Hidalgo                                         997
+Jalisco                                       11786
+Michoacán de Ocampo                            3068
+Morelos                                        1250
+México                                        11072
+Nayarit                                        1711
+Nuevo León                                    18416
+Oaxaca                                          266
+Puebla                                         5038
+Querétaro                                      1042
+Quintana Roo                                   3153
+San Luis Potosí                                1754
+Sinaloa                                        4044
+Sonora                                          688
+Tabasco                                         604
+Tamaulipas                                    10187
+Tlaxcala                                        956
+Veracruz de Ignacio de la Llave                7418
+Yucatán                                        6025
+Zacatecas                                      1857`;
+
+  const salida9 = `--- Proporciones Relativas por Estado ---
+Estado                          Número de Empresas    Porcentaje (%)
+--------------------------------------------------------------------
+Ciudad de México                             28245          19.21%
+Nuevo León                                   18416          12.53%
+Jalisco                                      11786           8.02%
+México                                       11072           7.53%
+Tamaulipas                                   10187           6.93%
+Chihuahua                                     7611           5.18%
+Veracruz de Ignacio de la Llave                7418           5.05%
+Yucatán                                       6025           4.10%
+Puebla                                        5038           3.43%
+Guanajuato                                    4812           3.27%
+Coahuila de Zaragoza                          4335           2.95%
+Sinaloa                                       4044           2.75%
+Baja California                               3344           2.27%
+Quintana Roo                                  3153           2.14%
+Michoacán de Ocampo                           3068           2.09%
+Durango                                       1980           1.35%
+Zacatecas                                     1857           1.26%
+Baja California Sur                           1833           1.25%
+San Luis Potosí                               1754           1.19%
+Nayarit                                       1711           1.16%
+Chiapas                                       1473           1.00%
+Morelos                                       1250           0.85%
+Querétaro                                     1042           0.71%
+Guerrero                                      1009           0.69%
+Hidalgo                                        997           0.68%
+Tlaxcala                                       956           0.65%
+Sonora                                         688           0.47%
+Tabasco                                        604           0.41%
+Colima                                         526           0.36%
+Campeche                                       368           0.25%
+Oaxaca                                         266           0.18%
+Aguascalientes                                 158           0.11%
+--------------------------------------------------------------------
+Total                                       147026         100.00%`;
+
+  const salida10 = `Rango de Empleados              Cantidad
+0 a 10                            125256
+11 a 50                            17386
+51 a 250                            3592
+más de 250                           792`;
 
 
   return (
@@ -303,6 +380,35 @@ Filas duplicadas: 0`;
         <SyntaxHighlighter language="python" style={dracula} className="code-block">
           {code10}
         </SyntaxHighlighter>
+
+        <h3>Análisis exploratorio de datos (EDA)</h3>
+        <p>
+          La siguiente tabla muestra el recuento de empresas por entidad federativa, proporcionando una visión detallada 
+          de la concentración empresarial en el país:
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida8}
+        </SyntaxHighlighter>
+        <img src="\SIEM\Número de empresas pro estado.png" alt="Número de empresas" className="imagen-proyecto"/>
+        <p>
+          La siguiente tabla muestra la proporción de empresas por cada estado, permitiendo identificar las principales 
+          concentraciones y las regiones con menor densidad empresarial. La Ciudad de México es, por mucho, la entidad con 
+          el mayor número de empresas, albergando el 19.21% del total. Nuevo León (12.53%) y Jalisco (8.02%) ocupan el 
+          segundo y tercer lugar, respectivamente. En el otro extremo, estados como Aguascalientes (0.11%), Oaxaca (0.18%) 
+          y Campeche (0.25%) presentan las proporciones más bajas, indicando una menor actividad empresarial en comparación 
+          con el resto del país
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida9}
+        </SyntaxHighlighter>
+        <p>
+          El análisis del tamaño de las empresas, categorizado por el número de empleados, revela que la mayoría opera a 
+          pequeña escala, como se detalla a continuación:
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida10}
+        </SyntaxHighlighter>
+        <img src="\SIEM\Distribución de Empresas por Rango de Empleados.png" alt="Distribución" className="imagen-proyecto"/>
       </div>
     </div>
   );
