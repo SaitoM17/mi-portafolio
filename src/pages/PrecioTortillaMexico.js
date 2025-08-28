@@ -339,6 +339,13 @@ Series([], Name: Price per kilogram, dtype: float64)`;
           Un análisis exhaustivo requerirá la exploración de datos sobre estos diversos factores a lo largo del periodo estudiado para identificar 
           correlaciones y posibles relaciones causales.
         </p>
+
+        <h3>💡 Insight clave</h3>
+        <p>
+          El análisis confirma que el precio de la tortilla en México ha aumentado consistentemente desde 2007, con una mayor aceleración en la última década. 
+          Existen diferencias regionales claras, con precios más elevados en el norte del país. Además, la variabilidad entre estados se ha incrementado, 
+          lo que puede reflejar desigualdades económicas, logísticas o políticas en las cadenas de distribución.
+        </p>
       </div>
     </div>
   );
