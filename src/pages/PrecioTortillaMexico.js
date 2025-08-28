@@ -290,6 +290,55 @@ Series([], Name: Price per kilogram, dtype: float64)`;
           como el primer argumento en ttest_ind) sugiere que, en promedio, los precios de la tortilla son significativamente más altos en la región norte en 
           comparación con la región sur, lo que respalda nuestra hipótesis inicial.
         </p>
+
+        <h3>Factores que podrían influir en el aumento del precio de las tortillas</h3>
+        <p>
+          El precio de la tortilla en México no es un valor aislado, sino el resultado de una compleja interacción de diversas fuerzas económicas, 
+          sociales y políticas. A continuación, exploramos algunos de los factores clave que podrían influir en las diferencias regionales y la 
+          tendencia general observada entre 2007 y 2024:
+        </p>
+
+        <h4>Factores Macroeconómicos:</h4>
+        <ul>
+          <li>Inflación: La tendencia inflacionaria general del país es un impulsor fundamental del aumento de precios en bienes básicos.</li>
+        </ul>
+
+        <h4>Factores de la Cadena de Suministro:</h4>
+        <ul>
+          <li>
+            Precio del Maíz: Las fluctuaciones en los mercados nacionales e internacionales del maíz son un determinante directo del costo de producción.
+          </li>
+          <li>Costos de Producción y Operación: Incluyen energía (gas, electricidad), mano de obra, transporte y alquiler de locales.</li>
+        </ul>
+
+        <h4>Factores Socioeconómicos y de Seguridad:</h4>
+        <ul>
+          <li>Crimen Organizado: La extorsión y la inseguridad pueden añadir costos significativos en ciertas regiones.</li>
+          <li>
+            Poder Adquisitivo del Consumidor: Aunque no causa directamente el aumento de precios, influye en la demanda y la 
+            capacidad de los consumidores para absorberlos.
+          </li>
+        </ul>
+
+        <h4>Factores Políticos y Regulatorios:</h4>
+        <ul>
+          <li>
+            Políticas Agrícolas y Subsidios: Las decisiones gubernamentales en este ámbito pueden afectar la oferta y el precio del maíz.
+          </li>
+          <li>Regulaciones de Precios: Aunque limitadas, cualquier intervención gubernamental podría influir.</li>
+        </ul>
+
+        <h4>Factores de Mercado:</h4>
+        <ul>
+          <li>
+            Tipo de Tienda y Márgenes: Las diferencias en las estructuras de costos y las estrategias de precios entre los diferentes tipos de establecimientos.
+          </li>
+          <li>Oferta y Demanda Regional: Las condiciones locales pueden generar variaciones de precios entre estados.</li>
+        </ul>
+        <p>
+          Un análisis exhaustivo requerirá la exploración de datos sobre estos diversos factores a lo largo del periodo estudiado para identificar 
+          correlaciones y posibles relaciones causales.
+        </p>
       </div>
     </div>
   );
