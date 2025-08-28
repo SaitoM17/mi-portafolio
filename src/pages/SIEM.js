@@ -292,6 +292,15 @@ Promedio observado (Sur): 2315.78
 Número de estados (Sur): 9
 Intervalo de Confianza: (263.30, 4368.26)`;
 
+  const salida13 = `El valor p es menor que el nivel de significancia (0.05).
+Rechazamos la hipótesis nula (H0).
+Existe una relación significativa entre el tamaño de las empresas y el sector económico.`;
+
+  const salida14 = `--- Intervalo de Confianza del 95% para la Proporción de Empresas '0 a 10' en el sector 'restaurante' ---
+Proporción observada: 0.9676
+Número total de empresas en el sector 'restaurante': 2901
+Intervalo de Confianza: (0.9612, 0.9740)`;
+
 
   return (
     <div className="pagina-proyecto">
@@ -469,6 +478,33 @@ Intervalo de Confianza: (263.30, 4368.26)`;
           Esta coincidencia visual refuerza la conclusión de nuestra prueba t: al 95% de confianza, no podemos afirmar que el 
           promedio de empresas por estado sea realmente diferente entre las regiones Norte y Sur. Cualquier distinción aparente 
           podría atribuirse a la variabilidad aleatoria de los datos.
+        </p>
+        <h4>Hipótesis 2:</h4>
+        <ul>
+          <li>H0: El tamaño de las empresas es independiente del sector económico.</li>
+        </ul>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida13}
+        </SyntaxHighlighter>
+        <p>
+          ¡Este es un resultado significativo! Al rechazar la hipótesis nula, estás afirmando que el tamaño de las empresas 
+          (según tu rango_de_empleados) NO es independiente del sector económico (giro o scian).
+        </p>
+        <p>
+          En otras palabras, existe una asociación estadísticamente significativa entre el tamaño de una empresa y el sector 
+          económico al que pertenece. Esto sugiere que ciertos sectores económicos tienden a tener empresas de tamaños específicos 
+          (por ejemplo, quizás el sector de servicios tiende a tener más empresas pequeñas, mientras que la manufactura podría 
+          tener más empresas grandes, o viceversa).
+        </p>
+        <h5>Intervalos de confianza</h5>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida14}
+        </SyntaxHighlighter>
+        <p>
+          El intervalo de confianza del 95% para la proporción de empresas pequeñas (0 a 10 empleados) en el sector de la restauración 
+          es notablemente estrecho: (0.9612, 0.9740). Al ser cercano a 1 (o 100%), este resultado confirma contundentemente lo que ya 
+          indicaba la prueba de chi-cuadrado: la gran mayoría de las empresas en el sector de la restauración son pequeñas, demostrando 
+          una fuerte relación entre el tamaño de la empresa y este sector económico
         </p>
       </div>
     </div>
