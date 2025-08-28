@@ -3,6 +3,41 @@ import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function MexicoTradeStatis() {
 
+  const code1 = `df_2012_2023 = pd.concat([df_2012_2020, df_2021, df_2022, df_2023])
+filas, columnas = df_2012_2023.shape
+
+print('Filas y columnas del DataFrame 2012 - 2023 (unión de los 4 conjuntos de datos)')
+print(f'Filas: {filas}\\nColumnas: {columnas}')`;
+
+  const code2 = `# Verificar valores nulos
+valores_nulos = df_2012_2023.isnull().sum()
+print(f'Nulos\\n{valores_nulos}')
+
+# Verificar duplicados
+duplicados = df_2012_2023.duplicated().sum()
+print(f'\\nDuplicados: {duplicados}')`;
+
+  const code3 = `valores_negativos = df_2012_2023[df_2012_2023['value_usd'] < 0]
+print(f'Cantidad de valores negativos: {len(valores_negativos)}')
+valores_negativos.head(10)`;
+
+  const code4 = `concept = valores_negativos['concept']
+concept.value_counts()`;
+
+  const code5 = `# Ver si hay otros conceptos con valores negativos distintos a la balanza comercial
+otros_negativos = valores_negativos[~valores_negativos['concept'].str.contains('Trade Balance', case=False)]
+print(f'Otros valores negativos fuera del concepto de balanza: {len(otros_negativos)}')
+otros_negativos.head()`;
+
+  const code6 = `Q1 = df_2012_2023['value_usd'].quantile(0.25)
+Q3 = df_2012_2023['value_usd'].quantile(0.75)
+IQR = Q3 - Q1
+outliers = df_2012_2023[(df_2012_2023['value_usd'] < Q1 - 1.5 * IQR) | (df_2012_2023['value_usd'] > Q3 + 1.5 * IQR)]
+print(f"Outliers detectados por IQR: {len(outliers)}")`;
+
+  const code7 = `df_2012_2023.to_csv('../data/processed/mex_trade_2012_2023_clean.csv', index=False)
+print('CSV guardado')`;
+
   const salida1 = `Filas y columnas de DatFrame df_2012_2020
 Filas: 1944
 Columnas: 8
@@ -75,6 +110,34 @@ Cantidad de duplicados en conjunto de datos 2022
 Cantidad de duplicados en conjunto de datos 2023
 0
 `;
+  
+  const salida3 = `Filas y columnas del DataFrame 2012 - 2023 (unión de los 4 conjuntos de datos)
+Filas: 2556
+Columnas: 8`;
+
+  const salida4 = `Nulos
+prod_est     0
+coverage     0
+type         0
+year         0
+month        0
+concept      0
+value_usd    0
+status       0
+dtype: int64
+
+Duplicados: 0`;
+
+  const salida5 = `Cantidad de valores negativos: 199`;
+
+  const salida6 = `concept
+Total Trade Balance Exports Total - Imports Total CIF    115
+Total Trade Balance Exports Total - Imports Total         84
+Name: count, dtype: int64`;
+
+  const salida7 = `Otros valores negativos fuera del concepto de balanza: 0`;
+
+  const salida8 = `Outliers detectados por IQR: 0`;
 
   return (
     <div className="pagina-proyecto">
@@ -128,6 +191,219 @@ Cantidad de duplicados en conjunto de datos 2023
           En conclusión, este análisis exploratorio preliminar no identificó problemas de calidad significativos en los conjuntos de datos, 
           asegurando una base robusta y fiable para fases de análisis más avanzadas.
         </p>
+
+        <h3>Limpieza y preprocesamiento</h3>
+        <p>
+          Durante esta fase, se llevó a cabo un proceso de limpieza y preparación de los conjuntos de datos de comercio exterior. 
+          El objetivo principal fue consolidar la información y asegurar su calidad para análisis posteriores.
+        </p>
+        <p>
+          Como primera acción, se procedió a unir los cuatro conjuntos de datos individuales (df_2012_2020, df_2021, df_2022, df_2023) 
+          en un único DataFrame consolidado, denominado df_2012_2023, para facilitar la gestión y el análisis de todos los registros del período.
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code1}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida3}
+        </SyntaxHighlighter>
+        <p>
+          El DataFrame resultante df_2012_2023 ahora contiene 2556 filas y 8 columnas. Se verificaron los tipos de datos de cada columna y 
+          se confirmó que eran correctos, lo que eliminó la necesidad de realizar conversiones de tipo.
+        </p>
+        <p>
+          Tras la consolidación de los datos, se realizó una nueva verificación exhaustiva de valores nulos y duplicados en el DataFrame 
+          unificado para garantizar la integridad del conjunto de datos final. Los resultados confirmaron la ausencia total de ambos:
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code2}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida4}
+        </SyntaxHighlighter>
+        <p>
+          Las columnas prod_est, coverage, type, concept, y status ya habían sido revisadas durante el EDA inicial y no se detectaron 
+          errores ni la necesidad de limpieza adicional en sus entradas.
+        </p>
+        <p>
+          Un punto crucial abordado en esta fase fue el análisis de los valores negativos identificados en la columna value_usd durante 
+          el análisis preliminar:
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code3}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida5}
+        </SyntaxHighlighter>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>prod_est</th>
+              <th>coveragetype</th>
+              <th>year</th>
+              <th>month</th>
+              <th>concept</th>
+              <th>value_usd</th>
+              <th>status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>16</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>1</td>
+              <td>Total Trade Balance Exports Total - Imports Total</td>
+              <td>-267.418000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>1</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-1013.224000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>35</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>2</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-267.776000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>71</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>4</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-366.619000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>89</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>5</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-532.382000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>107</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>6</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-166.668000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>124</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>7</td>
+              <td>Total Trade Balance Exports Total - Imports Total</td>
+              <td>-409.644000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>125</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>7</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-1224.047000</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>142</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>8</td>
+              <td>Total Trade Balance Exports Total - Imports Total</td>
+              <td>-981.812999</td>
+              <td>Final Figures</td>
+            </tr>
+            <tr>
+              <td>143</td>
+              <td>Trade Balance of Goods of Mexico</td>
+              <td>National</td>
+              <td>Not applicable</td>
+              <td>2012</td>
+              <td>8</td>
+              <td>Total Trade Balance Exports Total - Imports To...</td>
+              <td>-1844.143000</td>
+              <td>Final Figures</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Se investigó el tipo de conceptos asociados a estos valores negativos:</p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code4}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida6}
+        </SyntaxHighlighter>
+        <p>
+          Adicionalmente, se verificó si existían valores negativos bajo cualquier otro concepto diferente a la balanza comercial:
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code5}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida7}
+        </SyntaxHighlighter>
+        <p>
+          Los resultados confirman que los valores negativos en value_usd corresponden exclusivamente a los conceptos de balanza comercial 
+          (Total Trade Balance Exports Total - Imports Total y Total Trade Balance Exports Total - Imports Total CIF). Esto reitera la 
+          conclusión del análisis preliminar: estos valores no son errores de origen, sino una representación válida de periodos con 
+          déficit comercial (cuando las importaciones superan a las exportaciones), y por lo tanto, se retienen en el conjunto de datos 
+          por su relevancia para el análisis económico del país.
+        </p>
+        <p>
+          Como parte final de la limpieza y el procesamiento, se realizó una búsqueda de valores atípicos (outliers) en la columna 
+          value_usd utilizando el método del rango intercuartílico (IQR):
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code6}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida8}
+        </SyntaxHighlighter>
+        <img src="\MexicoTrade\deteccion_outliers_valores_comerciales.png" alt="Detección de outliers valores" className="imagen-proyecto"/>
+        <p>
+          No se identificaron valores atípicos que se consideren relevantes o que pudieran afectar negativamente los objetivos del proyecto.
+        </p>
+        <p>
+          Finalmente, el conjunto de datos consolidado y validado fue guardado en formato CSV para su uso en análisis posteriores:
+        </p>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code7}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
