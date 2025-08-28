@@ -518,7 +518,7 @@ Intervalo de Confianza: (0.9612, 0.9740)`;
             la necesidad de políticas que las apoyen.
           </li>
           <li>
-            Insigt 3: Existen diferencias notables en la distribución y características de las empresas entre las regiones norte y sur 
+            Insight 3: Existen diferencias notables en la distribución y características de las empresas entre las regiones norte y sur 
             del país, lo que podría reflejar desigualdades en el desarrollo económico.
           </li>
         </ul>
