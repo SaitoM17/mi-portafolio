@@ -506,6 +506,22 @@ Intervalo de Confianza: (0.9612, 0.9740)`;
           indicaba la prueba de chi-cuadrado: la gran mayoría de las empresas en el sector de la restauración son pequeñas, demostrando 
           una fuerte relación entre el tamaño de la empresa y este sector económico
         </p>
+
+        <h2>💡 Insights claves</h2>
+        <ul>
+          <li>
+            Insight 1: El análisis reveló una alta concentración de empresas en ciertas regiones, destacando la importancia de estos 
+            núcleos económicos en el país.
+          </li>
+          <li>
+            Insight 2: La mayoría de las empresas registradas son microempresas, lo que subraya su papel crucial en la economía nacional y 
+            la necesidad de políticas que las apoyen.
+          </li>
+          <li>
+            Insigt 3: Existen diferencias notables en la distribución y características de las empresas entre las regiones norte y sur 
+            del país, lo que podría reflejar desigualdades en el desarrollo económico.
+          </li>
+        </ul>
       </div>
     </div>
   );
