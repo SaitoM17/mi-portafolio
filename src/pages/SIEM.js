@@ -522,6 +522,18 @@ Intervalo de Confianza: (0.9612, 0.9740)`;
             del país, lo que podría reflejar desigualdades en el desarrollo económico.
           </li>
         </ul>
+
+        <h2>📈 Recomendaciones</h2>
+        <ul>
+          <li>
+            Recomendación: Implementar programas específicos que fortalezcan a las microempresas, facilitando su acceso a financiamiento, 
+            capacitación y mercados.
+          </li>
+          <li>
+            Recomendación: Diseñar estrategias que promuevan el desarrollo empresarial en regiones menos favorecidas, 
+            equilibrando la distribución de oportunidades económicas.
+          </li>
+        </ul>
       </div>
     </div>
   );
