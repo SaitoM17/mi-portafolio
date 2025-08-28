@@ -69,6 +69,14 @@ ultimos_5 = df_tortilla_prices[df_tortilla_prices['Year'].between(2020, 2024)]['
 t_stat, p_value = ttest_ind(primeros_5, ultimos_5, equal_var=False)
 print(f'Estadístico t: {t_stat:.4f}, Valor p: {p_value}')`;
 
+  const code9 = `# Filtra los datos para los primeros y últimos 5 años
+primeros_5 = df_tortilla_prices[df_tortilla_prices['Year'].between(2007, 2011)]['Price per kilogram']
+ultimos_5 = df_tortilla_prices[df_tortilla_prices['Year'].between(2020, 2024)]['Price per kilogram']
+
+# Realiza la prueba t
+t_stat, p_value = ttest_ind(primeros_5, ultimos_5, equal_var=False)
+print(f'Estadístico t: {t_stat:.4f}, Valor p: {p_value}')`;
+
   const salida1 = `Identificar Valores Nulos por Columnas
 State                    0
 City                     0
@@ -110,6 +118,8 @@ Años con precios promedio que se desvían más de 2 desviaciones estándar:
 Series([], Name: Price per kilogram, dtype: float64)`;
 
   const salida7 = `Estadístico t: -429.1513, Valor p: 0.0`;
+
+  const salida8 = `Estadístico t: -429.1513, Valor p: 0.0`;
 
   return (
     <div className="pagina-proyecto">
@@ -259,6 +269,26 @@ Series([], Name: Price per kilogram, dtype: float64)`;
           promedio de la tortilla entre los primeros cinco años (2007-2011) y los últimos cinco años (2020-2024) del periodo analizado. El signo negativo 
           del estadístico t indica que la media del segundo grupo (los últimos cinco años) es significativamente mayor que la media del primer grupo 
           (los primeros cinco años), lo que respalda la hipótesis de que el precio promedio de la tortilla ha aumentado significativamente en los últimos 10 años.
+        </p>
+        <h4>
+          Hipótesis 2: "En el norte del país los precios son más altos que en el sur (Definir las regiones norte y sur según los estados correspondientes)."
+        </h4>
+        <ul>
+          <li>
+            Se realio una prueba t para comparar los precios promedio entre estas dos regiones.
+          </li>
+        </ul>
+        <SyntaxHighlighter language="python" style={dracula} className="code-block">
+          {code9}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida8}
+        </SyntaxHighlighter>
+        <p>
+          El valor p de 0.0005 proporciona evidencia estadística significativa para concluir que existe una diferencia en el precio promedio de la 
+          tortilla entre las regiones norte y sur de México. El signo positivo del estadístico t (asumiendo que la media de los precios del norte se colocó 
+          como el primer argumento en ttest_ind) sugiere que, en promedio, los precios de la tortilla son significativamente más altos en la región norte en 
+          comparación con la región sur, lo que respalda nuestra hipótesis inicial.
         </p>
       </div>
     </div>
