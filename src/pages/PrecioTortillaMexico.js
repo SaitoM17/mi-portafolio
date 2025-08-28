@@ -346,6 +346,12 @@ Series([], Name: Price per kilogram, dtype: float64)`;
           Existen diferencias regionales claras, con precios más elevados en el norte del país. Además, la variabilidad entre estados se ha incrementado, 
           lo que puede reflejar desigualdades económicas, logísticas o políticas en las cadenas de distribución.
         </p>
+        
+        <br/>
+        <a href="https://github.com/SaitoM17/analisis_del_precio_tortillas_mexico_2007_a_2024.git" target="_blank" rel="noopener noreferrer">
+          Ver en GitHub
+        </a>
+
       </div>
     </div>
   );
