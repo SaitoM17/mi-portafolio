@@ -1065,6 +1065,12 @@ Medias de Value_USD (Post-T-MEC):
             Realizar estudios de causalidad avanzados para diferenciar el impacto directo del T-MEC de otros factores económicos externos, como la pandemia.
           </li>
         </ul>
+
+        <br/>
+        <a href="https://github.com/SaitoM17/analisis_mexico_trade_statistics_2012_2023.git" target="_blank" rel="noopener noreferrer">
+          Ver en GitHub
+        </a>
+
       </div>
     </div>
   );
