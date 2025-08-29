@@ -700,6 +700,52 @@ Name: count, dtype: int64`;
         </p>
         <img src="\MexicoTrade\media_mediana_std_tipos.png" 
         alt="Media, mediana std" className="imagen-proyecto"/>
+
+        <h4>3. Análisis por Concepto: Disparidad y Heterogeneidad a Nivel Granular</h4>
+        <p>
+          El análisis granular de la media, mediana y desviación estándar por cada concepto de comercio (concept) revela la estructura de valor y 
+          la variabilidad inherente en los distintos segmentos del comercio exterior de México.
+        </p>
+        <h5>Los Motores del Comercio: Altos Valores y Extrema Heterogeneidad</h5>
+        <p>
+          Los conceptos que realmente impulsan el valor del comercio exterior de México son claramente identificables: "Manufacturing", "Non Petroleum", 
+          y los agregados de "Total Exports", "Total Imports", y "Total Imports CIF". Estas categorías no solo exhiben las medias más altas, indicando 
+          su preponderancia en el valor promedio de las transacciones, sino que también presentan una brecha considerable entre la media y la mediana. 
+          Este patrón subraya que, dentro de estos segmentos críticos, un número limitado de transacciones de muy alto valor son las que elevan 
+          significativamente el promedio, mientras que la mayoría de las operaciones son de menor magnitud.
+        </p>
+        <p>
+          Aunado a esto, la desviación estándar es notablemente alta para estos conceptos, superando con frecuencia el valor de la mediana. 
+          Esto es un insight fundamental: no solo estamos hablando de grandes volúmenes, sino de una extrema variabilidad en los montos de 
+          las transacciones dentro de estas categorías, reflejando una amplia gama de tamaños de operaciones que van desde pequeñas a gigantescas.
+        </p>
+        <h5>Balanza Comercial: Déficit Promedio con Amplia Oscilación</h5>
+        <p>
+          Los conceptos relacionados con la balanza comercial ("Total Trade Balance Exports Total - Imports Total" y "Total Trade Balance Exports Total 
+          - Imports Total CIF") se distinguen por tener medias y medianas cercanas a cero, o incluso negativas, confirmando la tendencia de un déficit 
+          comercial promedio para México en el periodo.
+        </p>
+        <p>
+          Sin embargo, el insight más relevante aquí es la notable desviación estándar para estas categorías. A pesar de los promedios bajos, 
+          la dispersión es significativamente mayor que la media o mediana en valor absoluto. Esto implica que, aunque el balance general se 
+          incline hacia el déficit, existe una gran volatilidad en la balanza comercial mensual, con oscilaciones considerables entre períodos 
+          de déficit y, ocasionalmente, superávit. Esta variabilidad subraya la inestabilidad inherente de este indicador económico.
+        </p>
+        <p>
+          Segmentos Intermedios y de Menor Impacto Los conceptos de volumen intermedio, como "Intermediate Goods", "Capital Goods", "Petroleum" 
+          y "Consumer Goods", también muestran asimetría y variabilidad, pero en una escala reducida en comparación con los motores principales. 
+          Por otro lado, las categorías de bajo volumen como "Agrarian", "Crude Oil", "Extractive", "Freight and insurance of imports", y "Other Oil" 
+          exhiben medias, medianas y desviaciones estándar notablemente menores, indicando operaciones de menor magnitud y con menos variabilidad.
+        </p>
+        <h5>Conclusión General por Concepto</h5>
+        <p>
+          Este análisis granular confirma que el comercio exterior de México está dominado en valor por un puñado de categorías agregadas y 
+          la manufactura, las cuales no solo son las más significativas en volumen, sino que también son altamente heterogéneas, impulsadas por 
+          transacciones excepcionales. Paralelamente, la balanza comercial, si bien promedia un déficit, se caracteriza por una amplia variabilidad 
+          que refleja su constante oscilación. Comprender estas disparidades es crucial para estrategias comerciales más focalizadas.
+        </p>
+        <img src="\MexicoTrade\media_mediana_std_conceptos.png" 
+        alt="Media, mediana std conceptos" className="imagen-proyecto"/>
       </div>
     </div>
   );
