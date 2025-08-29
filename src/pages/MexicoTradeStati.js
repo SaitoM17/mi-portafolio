@@ -574,6 +574,8 @@ Name: count, dtype: int64`;
         </ul>
         <img src="\MexicoTrade\mapa_calor.png" 
         alt="Participacion porcentaje" className="imagen-proyecto"/>
+
+        <h3>Balanza Comercial y Tendencia</h3>
       </div>
     </div>
   );
