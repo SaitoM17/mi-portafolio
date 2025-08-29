@@ -1006,6 +1006,35 @@ Medias de Value_USD (Post-T-MEC):
           implementación del T-MEC. La mayor amplitud de las cajas también sugiere un aumento en la variabilidad, haciendo tangibles los cambios 
           significativos detectados por las pruebas de hipótesis en la distribución de los datos.
         </p>
+
+        <h2>💡 Insights claves</h2>
+        <ul>
+          <li>
+            México presenta un déficit comercial crónico y creciente, ya que las importaciones superan consistentemente a las exportaciones 
+            en valor, alcanzando su punto máximo en 2022.
+          </li>
+          <li>
+            El crecimiento del comercio exterior es robusto, pero impulsado asimétricamente por un pequeño número de transacciones de muy alto valor. 
+            Existe un aumento generalizado en la variabilidad y heterogeneidad de los valores de las transacciones, con la dispersión entre 
+            exportaciones e importaciones uniformándose desde 2014.
+          </li>
+          <li>
+            El T-MEC ha tenido un impacto estadísticamente significativo en el incremento del valor promedio de exportaciones e importaciones, 
+            dinamizando el flujo comercial.
+          </li>
+          <li>
+            Durante la pandemia (2020), las exportaciones mostraron una resiliencia atípica, resultando en el déficit comercial más bajo del periodo, 
+            seguido de una rápida recuperación en 2021 y 2022.
+          </li>
+          <li>
+            Se observan patrones estacionales recurrentes en el comercio, con picos de actividad en marzo, mayo, agosto y octubre, y 2023 destacándose 
+            como el año de mayor actividad mensual promedio.
+          </li>
+          <li>
+            Los conceptos de manufactura, no petroleros y agregados (importaciones/exportaciones totales) son los principales motores del valor del 
+            comercio exterior, mostrando alta heterogeneidad.
+          </li>
+        </ul>
       </div>
     </div>
   );
