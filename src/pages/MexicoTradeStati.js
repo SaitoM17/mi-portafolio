@@ -614,6 +614,52 @@ Name: count, dtype: int64`;
         alt="Tendencia balanza" className="imagen-proyecto"/>
 
         <h3>Análisis Estadístico Detallado</h3>
+        <p>
+          Esta sección profundiza en el comportamiento cuantitativo del comercio exterior de México entre 2012 y 2023, aplicando diversas técnicas 
+          estadísticas descriptivas. El objetivo es desentrañar patrones clave, evaluar la variabilidad y detectar anomalías en el valor de las 
+          transacciones, tanto a nivel anual como por tipo de operación y concepto. Este análisis sienta las bases para comprender la dinámica 
+          comercial antes de la implementación del T-MEC y para la formulación de hipótesis más sólidas.
+        </p>
+        
+        <h4>1. Evolución Anual: Crecimiento Impulsado por Transacciones de Alto Valor y Creciente Dispersión</h4>
+        <p>
+          El análisis de la evolución anual de la media, mediana y desviación estándar del value_usd (valor en USD) desde 2012 a 2023 revela 
+          patrones cruciales sobre la dinámica del comercio exterior.
+        </p>
+        <h5>Crecimiento Impulsado por Transacciones de Alto Valor</h5>
+        <p>
+          Observamos una clara y sostenida tendencia ascendente en el valor promedio (media) de las transacciones comerciales a lo largo del periodo. 
+          Esto indica una expansión constante del volumen económico en el comercio exterior.
+        </p>
+        <p>
+          Sin embargo, el comportamiento de la mediana, que es consistentemente inferior a la media, sugiere un insight fundamental: 
+          la distribución de los valores de las transacciones está sesgada positivamente. Esto significa que el crecimiento del promedio es 
+          significativamente impulsado por un número relativamente pequeño de transacciones de muy alto valor, mientras que la mayoría de las 
+          operaciones se sitúan en rangos de valor inferiores. Es decir, no todas las transacciones crecen de manera uniforme, sino que algunas 
+          operaciones de gran envergadura son las que "tiran" de la media hacia arriba.
+        </p>
+        <h5>Aumento de la Dispersión y la Complejidad del Comercio</h5>
+        <p>
+          Paralelamente al crecimiento en los valores promedio, la desviación estándar también ha mostrado un aumento notable y sostenido a lo 
+          largo de los años. Este incremento en la dispersión nos indica que la variabilidad de los valores de las transacciones ha crecido 
+          significativamente. En términos prácticos, esto significa que la brecha entre las transacciones de menor y mayor valor se ha ampliado, 
+          haciendo que el panorama comercial sea más heterogéneo y, potencialmente, más complejo de analizar en detalle.
+        </p>
+        <p>
+          En los años más recientes, la desviación estándar incluso se acerca o supera el valor de la media, lo cual es una señal potente de 
+          que la dispersión es una característica dominante del comercio actual, y que las transacciones individuales pueden variar enormemente 
+          en su magnitud.
+        </p>
+        <h5>Conclusión de la Evolución Anual</h5>
+        <p>
+          En síntesis, el comercio exterior de México ha experimentado un crecimiento robusto en sus valores promedio. No obstante, este 
+          crecimiento viene acompañado de una creciente asimetría en la distribución de las transacciones y una mayor variabilidad en los 
+          montos operados. Este patrón es coherente con la presencia de "outliers" (valores atípicos) que, aunque no necesariamente errores, 
+          ejercen una influencia significativa en las estadísticas agregadas y reflejan una mayor disparidad en las operaciones comerciales 
+          a lo largo del tiempo.
+        </p>
+        <img src="\MexicoTrade\media_mediana_std_años.png" 
+        alt="Tendencia balanza" className="imagen-proyecto"/>
       </div>
     </div>
   );
