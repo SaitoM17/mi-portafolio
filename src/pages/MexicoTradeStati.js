@@ -824,6 +824,35 @@ Name: count, dtype: int64`;
             involucran valores máximos de transacción más altos.
           </li>
         </ul>
+        <h5>"No Aplicable" (Balanza Comercial): Balance Cercano a Cero con Eventos Extremos</h5>
+        <p>Para la categoría "Not applicable" (verde), que representa la balanza comercial, los boxplots revelan:</p>
+        <ul>
+          <li>
+            Valores Centrales Alrededor de Cero o Negativos: Las cajas y medianas se mantienen consistentemente alrededor de cero o en valores 
+            negativos, lo cual es coherente con su naturaleza de reflejar saldos que pueden ser superávits (positivos) o déficits (negativos) 
+            a lo largo del tiempo.
+          </li>
+          <li>
+            Dispersión Significativa: A pesar de los valores centrales bajos, los bigotes y los outliers muestran una dispersión considerable. 
+            Esto subraya la fluctuación inherente en la balanza comercial, con meses que registran tanto déficits notables (valores negativos) 
+            como, en menor medida, superávits (valores positivos).
+          </li>
+          <li>
+            Outliers Relevantes: La presencia de outliers tanto positivos como negativos en esta categoría es crucial. 
+            Como se confirmó en la preparación de datos, estos no son errores, sino reflejos de meses con superávits o déficits comerciales 
+            de magnitud inusual, aportando información vital para el análisis económico de eventos extremos.
+          </li>
+        </ul>
+        <h5>Conclusión de la Distribución de Valores</h5>
+        <p>
+          Este boxplot proporciona una visión robusta y granular de la evolución del valor del comercio exterior. Confirma la tendencia de 
+          crecimiento en los valores centrales de exportaciones e importaciones, la marcada asimetría positiva en sus distribuciones, y una 
+          variabilidad creciente con el tiempo. Además, subraya la naturaleza oscilatoria de la balanza comercial alrededor de cero o en déficit, 
+          con eventos de grandes déficits o superávits que son válidos y esenciales para el análisis. La decisión de mantener estos "outliers" 
+          valida la representación real de la magnitud y la dinámica del comercio exterior de México.
+        </p>
+        <img src="\MexicoTrade\boxplot_value_usd_anio_tipo_operacion.png" 
+        alt="Boxplot value usd" className="imagen-proyecto"/>
       </div>
     </div>
   );
