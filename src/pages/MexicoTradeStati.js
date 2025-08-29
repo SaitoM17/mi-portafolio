@@ -576,6 +576,42 @@ Name: count, dtype: int64`;
         alt="Participacion porcentaje" className="imagen-proyecto"/>
 
         <h3>Balanza Comercial y Tendencia</h3>
+        <h4>Balance Comercial: Un Déficit Crónico y en Aumento</h4>
+        <p>
+          Nuestro análisis del balance comercial anual entre 2012 y 2023 revela una realidad innegable: la entidad ha mantenido un déficit comercial 
+          persistente en cada uno de estos años. Esto significa que el valor de las importaciones ha superado consistentemente al de las exportaciones.
+        </p>
+        <h4>La Magnitud y Tendencia del Déficit</h4>
+        <p>
+          La magnitud de este déficit es considerable, oscilando entre los -$301,016 y los -$728,671. Alarmantemente, hemos observado una tendencia 
+          general de incremento en el déficit desde 2012, alcanzando su punto más alto en 2022 con -$728,671.
+        </p>
+        <p>
+          Un punto de interés es el año 2020, que rompe esta tendencia con el déficit más bajo del período ( -$301,016). Esto coincide con el 
+          inicio de la pandemia de COVID-19, sugiriendo que las importaciones pudieron haber caído más drásticamente o las exportaciones mostraron 
+          una mayor resiliencia en proporción durante ese año. Sin embargo, en 2023, aunque el déficit se redujo ligeramente respecto a 2022, se 
+          mantiene en un nivel elevado de -$573,622.
+        </p>
+        <h4>Consistencia en los Datos</h4>
+        <p>
+          Estos hallazgos no son aislados; confirman y refuerzan las observaciones de nuestros análisis previos. Tanto los gráficos de volumen 
+          total, que muestran las importaciones consistentemente por encima de las exportaciones, como los de participación porcentual, que 
+          indican una mayor proporción de importaciones, respaldan esta interpretación de un déficit comercial crónico.
+        </p>
+        <p>
+          En síntesis, la entidad enfrenta una dependencia continua y creciente de las importaciones, un factor clave a considerar en su dinámica económica.
+        </p>
+        <img src="\MexicoTrade\balanza_comercial_anual_exportaciones_importaciones_2012_2023.png" 
+        alt="Balanza comercial anual" className="imagen-proyecto"/>
+        <p>
+          La balanza comercial de la entidad ha estado en un déficit crónico a lo largo de todo el período 2012-2023. La tendencia principal ha sido un 
+          aumento constante de este déficit, con una notable interrupción y reducción temporal en 2020 debido a la pandemia, seguida de un rápido y 
+          significativo crecimiento del déficit en 2021 y 2022, alcanzando un máximo histórico en 2022. El año 2023 muestra una ligera moderación, 
+          pero el déficit se mantiene en niveles elevados. Esta tendencia subraya una dependencia estructural de las importaciones y un desafío continuo 
+          para equilibrar el flujo comercial.
+        </p>
+        <img src="\MexicoTrade\tendencia_balanza_como_serie_tiempo.png" 
+        alt="Tendencia balanza" className="imagen-proyecto"/>
       </div>
     </div>
   );
