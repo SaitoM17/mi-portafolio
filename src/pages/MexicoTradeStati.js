@@ -1035,6 +1035,36 @@ Medias de Value_USD (Post-T-MEC):
             comercio exterior, mostrando alta heterogeneidad.
           </li>
         </ul>
+        
+        <h2>📈 Recomendaciones</h2>
+        <ul>
+          <li>
+            Mitigar el déficit comercial mediante el análisis de sectores clave para fomentar la producción nacional y la sustitución de importaciones 
+            estratégicas.
+          </li>
+          <li>
+            Implementar estrategias diferenciadas para transacciones de alto y bajo valor, apoyando a grandes generadores y buscando elevar el valor 
+            promedio de las operaciones de menor cuantía.
+          </li>
+          <li>
+            Desarrollar e implementar herramientas avanzadas de gestión de riesgos para hacer frente a la creciente volatilidad y 
+            heterogeneidad de los montos transaccionales.
+          </li>
+          <li>
+            Optimizar el aprovechamiento del T-MEC a través de un análisis profundo de los sectores beneficiados, guiando políticas de 
+            promoción e integración regional.
+          </li>
+          <li>
+            Fortalecer estratégicamente la capacidad exportadora de México, especialmente en sectores manufactureros y no petroleros, para buscar un 
+            equilibrio más favorable en la balanza comercial.
+          </li>
+          <li>
+            Aprovechar los patrones estacionales identificados para optimizar la logística, producción y estrategias de inventario a lo largo del año.
+          </li>
+          <li>
+            Realizar estudios de causalidad avanzados para diferenciar el impacto directo del T-MEC de otros factores económicos externos, como la pandemia.
+          </li>
+        </ul>
       </div>
     </div>
   );
