@@ -660,6 +660,46 @@ Name: count, dtype: int64`;
         </p>
         <img src="\MexicoTrade\media_mediana_std_años.png" 
         alt="Tendencia balanza" className="imagen-proyecto"/>
+
+        <h4>2. Análisis por Tipo de Operación: Disparidad y Variabilidad en los Flujos Comerciales</h4>
+        <p>
+          El análisis desagregado de las medidas estadísticas (media, mediana y desviación estándar) por tipo de operación 
+          ('Exports', 'Imports' y 'Not applicable') revela características distintivas para cada componente del comercio exterior.
+        </p>
+        <h5>Exportaciones: Impulsadas por Pocas Transacciones de Gran Volumen</h5>
+        <p>
+          Las exportaciones muestran una marcada asimetría positiva. Si bien su media se sitúa en un rango moderado (alrededor de 13,000-14,000 USD), 
+          la mediana es sustancialmente menor (aproximadamente 2,000 USD). Este patrón sugiere que el valor promedio de las exportaciones es fuertemente 
+          influenciado por un número limitado de transacciones de muy alto valor, mientras que la mayoría de las operaciones de exportación son de menor 
+          cuantía. La elevada desviación estándar (más de 16,000 USD) refuerza esta idea, indicando una alta dispersión y heterogeneidad en los montos 
+          de las exportaciones.
+        </p>
+        <h5>Importaciones: Mayor Valor Promedio y Dispersión Similar a Exportaciones</h5>
+        <p>
+          Las importaciones presentan, en promedio, un valor significativamente más alto que las exportaciones, con una media cercana a los 
+          18,000 USD y una mediana también más elevada (alrededor de 12,500 USD). Aunque persiste una asimetría, la brecha entre la media y la 
+          mediana es comparativamente menor, lo que podría indicar una distribución de valores con un "piso" más alto en las importaciones. 
+          Curiosamente, la desviación estándar de las importaciones es muy similar a la de las exportaciones (ligeramente por encima de 16,000 USD), 
+          lo que implica que ambos flujos comerciales exhiben una considerable variabilidad en sus montos.
+        </p>
+        <h5>"No Aplicable" (Balanza Comercial): Fluctuación Alrededor del Equilibrio</h5>
+        <p>
+          La categoría "Not applicable", que representa principalmente la balanza comercial, se caracteriza por tener una media y mediana cercanas a 
+          cero (o incluso ligeramente negativas). Esto es coherente con su naturaleza de reflejar déficits o superávits que promedian alrededor de 
+          un punto de equilibrio. Sin embargo, a pesar de sus valores centrales bajos, la desviación estándar es considerable (alrededor de 2,500 USD). 
+          Este insight es crucial: indica que, aunque el promedio esté cerca de cero, la balanza comercial experimenta fluctuaciones significativas, 
+          oscilando entre periodos de déficit y superávit de magnitudes variadas.
+        </p>
+        <h5>Conclusión por Tipo de Operación</h5>
+        <p>
+          En resumen, este análisis por tipo de operación subraya que, si bien las importaciones manejan en promedio valores más altos que las exportaciones, 
+          ambos flujos presentan una alta variabilidad, impulsados por transacciones de gran magnitud que elevan sus promedios. Por otro lado, la balanza 
+          comercial ("Not applicable") muestra una tendencia a promediar cerca del equilibrio, pero con una dispersión que refleja su constante oscilación 
+          entre periodos de superávit y déficit. Este panorama refuerza la imagen de un comercio exterior dinámico, con componentes de muy distinto tamaño 
+          y una variabilidad inherente en sus operaciones.
+        </p>
+        <img src="\MexicoTrade\media_mediana_std_tipos.png" 
+        alt="Media, mediana std" className="imagen-proyecto"/>
       </div>
     </div>
   );
