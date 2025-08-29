@@ -612,6 +612,8 @@ Name: count, dtype: int64`;
         </p>
         <img src="\MexicoTrade\tendencia_balanza_como_serie_tiempo.png" 
         alt="Tendencia balanza" className="imagen-proyecto"/>
+
+        <h3>Análisis Estadístico Detallado</h3>
       </div>
     </div>
   );
