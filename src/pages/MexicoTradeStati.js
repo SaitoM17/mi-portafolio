@@ -746,6 +746,48 @@ Name: count, dtype: int64`;
         </p>
         <img src="\MexicoTrade\media_mediana_std_conceptos.png" 
         alt="Media, mediana std conceptos" className="imagen-proyecto"/>
+
+        <h4>4. Variabilidad Anual Comparada: Tendencia Creciente en la Volatilidad del Comercio Exterior</h4>
+        <p>
+          El análisis comparativo de las varianzas anuales entre exportaciones e importaciones revela una tendencia clara y significativa: 
+          la dispersión en el valor de las transacciones comerciales ha aumentado considerablemente a lo largo del período 2012-2023.
+        </p>
+        <h5>Incremento Generalizado de la Varianza</h5>
+        <p>
+          Tanto para las exportaciones como para las importaciones, se observa una clara tendencia ascendente en la varianza año tras año. 
+          Esto significa que la volatilidad o la amplitud de los valores de las transacciones se ha incrementado significativamente con el 
+          tiempo. Las varianzas alcanzan sus picos en los años más recientes (2021, 2022 y 2023), superando los 450,000,000 USD$^2$, lo que 
+          indica que el comercio se ha vuelto más impredecible en términos de la magnitud de los montos transaccionados. Este hallazgo es 
+          coherente con las observaciones previas sobre el aumento de la desviación estándar en los análisis anuales.
+        </p>
+        <h5>Convergencia en la Variabilidad entre Exportaciones e Importaciones</h5>
+        <p>
+          Un insight crucial surge al comparar la varianza entre ambos tipos de operaciones. Aunque visualmente las varianzas de exportaciones 
+          e importaciones parecen similares en la mayoría de los años, las pruebas estadísticas de Levene ofrecen una visión más matizada:
+        </p>
+        <ul>
+          <li>
+            Diferencia Inicial (2012-2013): Para 2012 y 2013, las varianzas de exportaciones e importaciones fueron estadísticamente diferentes. 
+            Esto sugiere que, en los primeros años del período, la dispersión de los montos de exportación no se comportaba de la misma manera 
+            que la de importación.
+          </li>
+          <li>
+            Convergencia Posterior (2014-2023): Sin embargo, a partir de 2014 y hasta el final del período analizado, no hay evidencia 
+            estadística para afirmar que las varianzas entre exportaciones e importaciones sean significativamente diferentes. Esto 
+            implica que, a medida que el comercio ha crecido y evolucionado, la dispersión de los montos transaccionados se ha vuelto 
+            similar para ambos tipos de operaciones.
+          </li>
+        </ul>
+        <h5>Conclusión de la Variabilidad Anual</h5>
+        <p>
+          En resumen, el comercio exterior de México se ha caracterizado por una creciente volatilidad en los montos de sus transacciones. 
+          Además, mientras que al inicio del período hubo diferencias en la variabilidad entre exportaciones e importaciones, esta disparidad 
+          se ha disipado, indicando que ambos flujos comerciales ahora exhiben una dispersión similar en sus valores a medida que maduran y se 
+          expanden. Comprender esta creciente y uniformizada volatilidad es clave para la gestión de riesgos y la planificación estratégica en 
+          el sector comercial.
+        </p>
+        <img src="\MexicoTrade\comparacion_anual_varianza_exportaciones_importaciones.png" 
+        alt="Comparación anual varianza" className="imagen-proyecto"/>
       </div>
     </div>
   );
