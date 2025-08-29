@@ -788,6 +788,42 @@ Name: count, dtype: int64`;
         </p>
         <img src="\MexicoTrade\comparacion_anual_varianza_exportaciones_importaciones.png" 
         alt="Comparación anual varianza" className="imagen-proyecto"/>
+
+        <h4>5. Distribución de Valores: Crecimiento Asimétrico y Mayor Amplitud con Outliers Válidos</h4>
+        <p>
+          El gráfico de caja (boxplot) del valor en USD por año y tipo de operación ofrece una visión detallada de la distribución, 
+          la tendencia central y la variabilidad, consolidando las observaciones previas y revelando patrones clave en la dinámica 
+          comercial de México.
+        </p>
+        <h5>
+          Exportaciones e Importaciones: Crecimiento Asimétrico y Mayor Amplitud
+        </h5>
+        <p>
+          Los boxplots de Exportaciones (azul) e Importaciones (naranja) confirman visualmente las tendencias observadas anteriormente:
+        </p>
+        <ul>
+          <li>
+            Crecimiento en los Valores Centrales y Rango: Las cajas y las medianas muestran una clara tendencia ascendente a lo largo de los años. 
+            Esto no solo valida el incremento en los valores promedio, sino que también indica que la mayor concentración de transacciones se ha 
+            movido hacia montos más altos con el tiempo.
+          </li>
+          <li>
+            Asimetría Marcada (Sesgo Positivo): Una característica prominente es la marcada asimetría positiva en la distribución de ambos 
+            tipos de operaciones. La mediana, casi siempre más cercana al cuartil inferior, y los bigotes superiores notablemente más largos, 
+            sugieren que la mayoría de las transacciones son de menor valor, pero un subconjunto de operaciones de muy alto valor son las 
+            que "estiran" la distribución hacia arriba, influyendo fuertemente en la media.
+          </li>
+          <li>
+            Aumento de la Variabilidad: La creciente amplitud de las cajas y la extensión de los bigotes, especialmente en los años más recientes 
+            (2020-2023), junto con la dispersión de los puntos atípicos, refuerzan la conclusión de una variabilidad creciente en los montos 
+            de las transacciones de exportación e importación.
+          </li>
+          <li>
+            Ligeras Diferencias en el Rango Superior: Aunque hay superposición en los rangos, las cajas de importaciones tienden a posicionarse 
+            ligeramente por encima o a tener cuartiles superiores más elevados en muchos años, lo que indica que las importaciones a menudo 
+            involucran valores máximos de transacción más altos.
+          </li>
+        </ul>
       </div>
     </div>
   );
