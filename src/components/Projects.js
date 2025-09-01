@@ -23,7 +23,7 @@ function Projects() {
       nombre: "📊 Amazon Delivery",
       descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Sujal Suthar, con información valiosa para entender y mejorar la eficiencia operativa.",
       imagen: "/img/Amazon_Delivery.jpg",
-      tecnologias: "Python, Pandas, SQL",
+      tecnologias: "SQL, MySQL Workbench, Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, Kaggle, Tableau, Git & GitHub.",
       pagina: "/Amazon-delivery",
       link: "https://github.com/SaitoM17/amazon_delivery.git",
     },
