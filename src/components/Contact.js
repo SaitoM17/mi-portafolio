@@ -1,33 +1,26 @@
-import React from "react";
+import { FaEnvelope, FaLinkedin, FaGithub, FaGlobe } from "react-icons/fa";
+import "./Contact.css";
 
-function Contact() {
+function Contacto() {
   return (
-    <section className="contact">
+    <section className="contacto">
       <h2>Contacto</h2>
-      <p>📧 saito@email.com</p>
-      <p>
-        <a href="https://www.linkedin.com/in/said-mariano/" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>{" "}
-        |{" "}
-        <a href="https://github.com/saitoM17" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>{" "}
-        |{" "}
-        <a href="https://public.tableau.com/app/profile/said.mariano/vizzes" target="_blank" rel="noopener noreferrer">
-          Tableu Public
-        </a>{" "}
-        |{" "}
-        <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
-          Ubicación: México
-        </a>{" "}
-        |{" "}
-        <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
-          Disponibilidad para trabajo remoto
+      <div className="contacto-contenedor">
+        <a href="mailto:saito.datos@gmail.com" target="_blank" rel="noopener noreferrer">
+          <FaEnvelope className="icono" /> saito.datos@gmail.com
         </a>
-      </p>
+        <a href="https://linkedin.com/in/saito-datos" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="icono" /> linkedin.com/in/saito-datos
+        </a>
+        <a href="https://github.com/saito-datos" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="icono" /> github.com/saito-datos
+        </a>
+        <a href="https://public.tableau.com/app/profile/saito" target="_blank" rel="noopener noreferrer">
+          <FaGlobe className="icono" /> Tableau Public
+        </a>
+      </div>
     </section>
   );
 }
 
-export default Contact;
+export default Contacto;
