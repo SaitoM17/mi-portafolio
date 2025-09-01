@@ -12,8 +12,8 @@ function Contacto() {
         <a href="https://www.linkedin.com/in/said-mariano/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="icono" /> linkedin.com/in/said-mariano
         </a>
-        <a href="https://github.com/saito-datos" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="icono" /> github.com/saito-datos
+        <a href="https://github.com/saitoM17" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="icono" /> github.com/saitoM17
         </a>
         <a href="https://public.tableau.com/app/profile/saito" target="_blank" rel="noopener noreferrer">
           <FaGlobe className="icono" /> Tableau Public
