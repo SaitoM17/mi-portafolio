@@ -9,8 +9,8 @@ function Contacto() {
         <a href="mailto:said.mariano.sanchez@gmail.com" target="_blank" rel="noopener noreferrer">
           <FaEnvelope className="icono" /> said.mariano.sanchez@gmail.com
         </a>
-        <a href="https://linkedin.com/in/saito-datos" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="icono" /> linkedin.com/in/saito-datos
+        <a href="https://www.linkedin.com/in/said-mariano/" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="icono" /> linkedin.com/in/said-mariano
         </a>
         <a href="https://github.com/saito-datos" target="_blank" rel="noopener noreferrer">
           <FaGithub className="icono" /> github.com/saito-datos
