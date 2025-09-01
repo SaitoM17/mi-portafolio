@@ -1,0 +1,38 @@
+.contacto-contenedor {
+  text-align: center;
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contacto h2 {
+  color: #002855;
+}
+
+.contacto-contenedor a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #1f2937;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  min-width: 220px;
+  justify-content: center;
+}
+
+.contacto-contenedor a:hover {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+  transform: translateY(-4px) scale(1.02);
+}
+
+.icono {
+  font-size: 1.5rem;
+}
