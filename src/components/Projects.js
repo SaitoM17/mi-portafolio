@@ -39,7 +39,7 @@ function Projects() {
       nombre: "📊 Sistema de Información Empresarial Mexicano (SIEM)",
       descripcion: "Analizar la distribución y características de las empresas registradas en el Sistema de Información Empresarial Mexicano (SIEM) para obtener insights sobre su localización, tamaño, sector económico predominante y diferencias regionales, usando técnicas estadísticas y visualización de datos.",
       imagen: "/img/SIEM.jpg",
-      tecnologias: "Python, Pandas, Matplolib, Seaborn Jupyter Notebook",
+      tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, Kaggle, Git & GitHub.",
       pagina: "/Siem",
       link: "https://github.com/SaitoM17/analisis_empresarial_mexico_siem_2024.git",
     },
