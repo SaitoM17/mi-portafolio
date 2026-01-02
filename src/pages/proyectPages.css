@@ -243,3 +243,23 @@
     color: #002855;
   }
 }
+
+/* Ajuste para tablas HTML dentro del Markdown */
+.contenedor-proyecto table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    display: block; /* Permite scroll horizontal si la tabla es muy grande */
+}
+
+.contenedor-proyecto th, .contenedor-proyecto td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.contenedor-proyecto tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
