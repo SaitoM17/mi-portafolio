@@ -3,10 +3,27 @@ import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function AutoPrice() {
 
-  const code1 = `# Identificar valores nulos
-print('Identificar Valores Nulos por Columnas')
-valores_nulos = df_tortilla_price.isnull().sum()
-print(valores_nulos)`;
+  const code1 = `import pandas as pd
+import kagglehub
+import os
+
+# Configuración ruta dentro del proyecto
+path_personalizada = os.path.join(os.getcwd(), 'data/raw')
+
+# Creación de la carpeta en caso de que no exista
+os.makedirs(path_personalizada, exist_ok=True)
+
+# Inidicar que carpeta usar como cache
+os.environ['KAGGLEHUB_CACHE'] = path_personalizada
+
+# Acceder al conjunto de datos de Kaggle
+path = kagglehub.dataset_download('metawave/vehicle-price-prediction')
+print('Conjunto de datos descargado en:', path)
+
+# Revisar el conjunto de datos descargado
+csv_path = os.path.join(path, 'vehicle_price_prediction.csv')
+df = pd.read_csv(csv_path)
+print(df)`;
 
   const code2 = `# Verificar la cantidad de filas y columnas 
 num_fias, num_columnas = df_tortilla_prices.shape
@@ -77,29 +94,60 @@ ultimos_5 = df_tortilla_prices[df_tortilla_prices['Year'].between(2020, 2024)]['
 t_stat, p_value = ttest_ind(primeros_5, ultimos_5, equal_var=False)
 print(f'Estadístico t: {t_stat:.4f}, Valor p: {p_value}')`;
 
-  const salida1 = `Identificar Valores Nulos por Columnas
-State                    0
-City                     0
-Year                     0
-Month                    0
-Day                      0
-Store type               0
-Price per kilogram    6390
-dtype: int64`;
+  const salida1 = `#   Column            Non-Null Count    Dtype  
+---  ------            --------------    -----  
+ 0   make              1000000 non-null  object 
+ 1   model             1000000 non-null  object 
+ 2   year              1000000 non-null  int64  
+ 3   mileage           1000000 non-null  int64  
+ 4   engine_hp         1000000 non-null  int64  
+ 5   transmission      1000000 non-null  object 
+ 6   fuel_type         1000000 non-null  object 
+ 7   drivetrain        1000000 non-null  object 
+ 8   body_type         1000000 non-null  object 
+ 9   exterior_color    1000000 non-null  object 
+ 10  interior_color    1000000 non-null  object 
+ 11  owner_count       1000000 non-null  int64  
+ 12  accident_history  249867 non-null   object 
+ 13  seller_type       1000000 non-null  object 
+ 14  condition         1000000 non-null  object 
+ 15  trim              1000000 non-null  object 
+ 16  vehicle_age       1000000 non-null  int64  
+ 17  mileage_per_year  1000000 non-null  float64
+ 18  brand_popularity  1000000 non-null  float64
+ 19  price             1000000 non-null  float64`;
 
-  const salida2 = `Número de filas: 289146
-Número de columnas: 7`;
+  const salida2 = `Columnas del conjunto de datos con valores nulos
+Columnas            Cant. Nulos
+make                         0
+model                        0
+year                         0
+mileage                      0
+engine_hp                    0
+transmission                 0
+fuel_type                    0
+drivetrain                   0
+body_type                    0
+exterior_color               0
+interior_color               0
+owner_count                  0
+accident_history        750133
+seller_type                  0
+condition                    0
+trim                         0
+vehicle_age                  0
+mileage_per_year             0
+brand_popularity             0
+price                        0`;
 
-  const salida3 = `Número de filas: 282756
-Número de columnas: 7`;
+  const salida3 = `Tipos de datos y cantidad de accident_history
+Minor    199981
+Major     49886
 
-  const salida4 = `Estados del 2007 con precios Mínimos
-Estado      Precio 
-Oaxaca      $6.81
+Cantidad de valores nulos encontrados
+750133`;
 
-Estados del 2007 con precios Máximos
-Estado      Precio 
-Sonora      $8.56`;
+  const salida4 = `Cantidad de valores nulos después de imputar: 0`;
 
   const salida5 = `Estados del 2024 con precios Mínimos
 Estado      Precio 
@@ -144,19 +192,50 @@ Series([], Name: Price per kilogram, dtype: float64)`;
 
         <h3>Carga y exploración inicial de los datos</h3>
         <p>
-          El proyecto comenzó con la obtención del conjunto de datos sobre los precios de la tortilla de maíz en México desde el año 2007 hasta el 2024, 
-          publicado en kaggle por Rick Chavelas. Se realizó una exploración preliminar para entender la estructura del dataset, la cantidad de registros, 
-          las variables disponibles, y la granularidad temporal y geográfica. Esta fase incluyó el uso de funciones como .head(), .info() y .describe() para 
-          detectar inconsistencias básicas y comprender las dimensiones generales del problema.
+          Como primer paso para el desarrollo del proyecto se realizo la descarga del conjunto de datos por medio del siguiente script:
         </p>
-        <p>El problema identificando fue la falta de datos en la columna Price per kilogram</p>
         <SyntaxHighlighter language="python" style={dracula} className="code-block">
           {code1}
         </SyntaxHighlighter>
+        <p>
+            Esto script nos permitio descargar el conjunto de datos Automotive Price Prediction Dataset desde kaggle.
+        </p>
+        <p>
+            Posteriormente se cargó el conjunto de datos en un Notebook para realizar una exploración y 
+            conocer/familiarizarse más sobre el conjunto de datos y detectar posibles problemas con el conjunto de datos.
+        </p>
+        <p>
+            El conjunto de datos cuenta con 1000000 registro(filas) y 20 columnas de las cuales cuentan con los siguientes tipo de datos:
+        </p>
         <SyntaxHighlighter language="bash" style={dracula} className="code-block">
           {salida1}
         </SyntaxHighlighter>
-
+        <p>
+            Como los tipos de datos de cada columna son correctos y no haya necesidad de realizar alguna transformación de datos 
+            adicional pasamos a explorar cada columna en busca de valores nulos/faltantes.
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida2}
+        </SyntaxHighlighter>
+        <p>
+            Se encontro que la columna accident_history es la unica columna con valores nulos.
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida3}
+        </SyntaxHighlighter>
+        <p>
+            Explorando más a detalle la columna accident_history se encontraron 2 categorias que son Minor con 199981 registros y 
+            Mayor con 49886 registros y 750133 registros con valores nulos, los valores nulos nos puede dar a entener que registros 
+            con dichos valores nulos son vehículos no tubieron accidentes por lo que se imputara los registros con valores nulos y 
+            se colocara No Accident.
+        </p>
+        <SyntaxHighlighter language="bash" style={dracula} className="code-block">
+          {salida4}
+        </SyntaxHighlighter>
+        <p>
+            Una vez que se han corregido los problemas con el conjunto de datos se guarda el conjuntos limpio en 
+            la siguiente dirección ../data/processed/vehicle_price.csv.
+        </p>
         <h3>Limpieza y preprocesamiento</h3>
         <p>
           En la limpieza de los datos el un único problema crítico es: la presencia de valores nulos en la columna Price per kilogram. 
