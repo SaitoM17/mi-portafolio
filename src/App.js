@@ -8,12 +8,14 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
 
+import AnimeAnalisis from "./pages/AnimeAnalisis.js";
 import SuperStoreSales from "./pages/SuperStore_Sales.js";
 import RamenRantings from "./pages/RamenRating.js";
 import AmazonDelivery from "./pages/AmazonDelivery.js";
 import PrecioTortilla from "./pages/PrecioTortillaMexico.js";
 import SIEM from "./pages/SIEM.js";
 import MexicoTradeStatis from "./pages/MexicoTradeStati.js";
+import AutoPrice from "./pages/AutoPrice.js";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               <section id="contact"><Contact /></section>
             </>
           }/>
+          <Route path="/Anime-anlisis" element={<AnimeAnalisis />} />
+          <Route path="/Automotive-price" element={<AutoPrice />} />
           <Route path="/superstore-sales" element={<SuperStoreSales />} />
           <Route path="/Ramen-ratings" element={<RamenRantings />} />
           <Route path="/Amazon-delivery" element={<AmazonDelivery />} />
