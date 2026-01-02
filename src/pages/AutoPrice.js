@@ -129,15 +129,15 @@ Series([], Name: Price per kilogram, dtype: float64)`;
 
         <h2>Análisis del Precio de Autómiviles</h2>
         <p>
-          Este proyecto realiza un análisis exploratorio y descriptivo del precio de la tortilla en México. El conjunto de datos incluye información 
-          detallada sobre el precio por kilogramo de la tortilla en diversas ubicaciones (estados y ciudades) y tipos de tiendas a lo largo 
-          del tiempo, abarcando el periodo 2007-2024.
+          En este proyecto se presetan un análisis exploratorio de datos y la implementación de algoritmos de aprendizaje automático al conjunto de datos 
+          Automotive Price Prediction Dataset de Atul Kumar Choudhary con el fin de poner en practica las habilidades en el aprendizaje automático.
         </p>
 
         <h2>🎯 Propósito</h2>
         <p>
-          Analizar la evolución del precio de las tortillas en México desde 2007 hasta 2024, identificando patrones temporales, diferencias regionales 
-          y factores que podrían haber influido en su comportamiento.
+          El propósito de este proyecto es explorar cómo variables como marca, año, kilometraje y potencia afectan el valor de un vehículo. 
+          Esto como un caso de estudio educativo y profesional, integrando las etapas clave del ciclo de análisi de datos: 
+          recolección, limpieza, análisis, modelado y visualización.
         </p>
 
         <h2>🧪 Desarrollo del Proyecto</h2>
