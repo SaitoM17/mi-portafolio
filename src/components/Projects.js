@@ -4,6 +4,22 @@ import { Link } from "react-router-dom";
 function Projects() {
   const proyectos = [
     {
+      nombre: "📊 Anime Análisis",
+      descripcion: "Este proyecto desarrolla un sistema completo de análisis de datos centrado en la industria del anime, utilizando información pública obtenida a través de Jikan API (wrapper de MyAnimeList). El objetivo es identificar patrones de calidad, popularidad y producción a lo largo del tiempo, evaluar el desempeño de estudios y géneros, y comprender la evolución general del anime en las últimas dos décadas.",
+      imagen: "/img/SuperStore_Sales.jpg",
+      tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, MySQL Workbeach 8.0 CE,Git & GitHub, etc..",
+      pagina: "/Anime-analisis",
+      link: "https://github.com/SaitoM17/anime_analisis.git",
+    },
+    {
+      nombre: "📊 Auto P",
+      descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.",
+      imagen: "/img/SuperStore_Sales.jpg",
+      tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, Power BI,Git & GitHub, etc..",
+      pagina: "/superstore-sales",
+      link: "https://github.com/SaitoM17/superstore_sales.git",
+    },
+    {
       nombre: "📊 SuperStore Sales",
       descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.",
       imagen: "/img/SuperStore_Sales.jpg",
