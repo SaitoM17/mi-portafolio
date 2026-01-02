@@ -31,7 +31,7 @@ function App() {
               <section id="contact"><Contact /></section>
             </>
           }/>
-          <Route path="/Anime-anlisis" element={<AnimeAnalisis />} />
+          <Route path="/Anime-analisis" element={<AnimeAnalisis />} />
           <Route path="/Automotive-price" element={<AutoPrice />} />
           <Route path="/superstore-sales" element={<SuperStoreSales />} />
           <Route path="/Ramen-ratings" element={<RamenRantings />} />
