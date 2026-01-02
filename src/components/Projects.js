@@ -12,12 +12,12 @@ function Projects() {
       link: "https://github.com/SaitoM17/anime_analisis.git",
     },
     {
-      nombre: "📊 Auto P",
-      descripcion: "Este proyecto consiste en un dashboard interactivo y la generación de reportes ejecutivos. Ambas herramientas están diseñadas para analizar el rendimiento de la entrega de pedidos. Los datos utilizados provienen de un conjunto de datos real de entregas recopilado por Rohit Sahoo.",
+      nombre: "📊 Automotive Price",
+      descripcion: "En este proyecto se presetan un análisis exploratorio de datos y la implementación de algoritmos de aprendizaje automático al conjunto de datos Automotive Price Prediction Dataset de Atul Kumar Choudhary con el fin de poner en practica las habilidades en el aprendizaje automático.",
       imagen: "/img/SuperStore_Sales.jpg",
       tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, Power BI,Git & GitHub, etc..",
-      pagina: "/superstore-sales",
-      link: "https://github.com/SaitoM17/superstore_sales.git",
+      pagina: "/Automotive-price",
+      link: "https://github.com/SaitoM17/auto_price.git",
     },
     {
       nombre: "📊 SuperStore Sales",
