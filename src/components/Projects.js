@@ -6,7 +6,7 @@ function Projects() {
     {
       nombre: "📊 Anime Análisis",
       descripcion: "Este proyecto desarrolla un sistema completo de análisis de datos centrado en la industria del anime, utilizando información pública obtenida a través de Jikan API (wrapper de MyAnimeList). El objetivo es identificar patrones de calidad, popularidad y producción a lo largo del tiempo, evaluar el desempeño de estudios y géneros, y comprender la evolución general del anime en las últimas dos décadas.",
-      imagen: "/img/SuperStore_Sales.jpg",
+      imagen: "/img/Animes.jpg",
       tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, MySQL Workbeach 8.0 CE,Git & GitHub, etc..",
       pagina: "/Anime-analisis",
       link: "https://github.com/SaitoM17/anime_analisis.git",
@@ -14,7 +14,7 @@ function Projects() {
     {
       nombre: "📊 Automotive Price",
       descripcion: "En este proyecto se presetan un análisis exploratorio de datos y la implementación de algoritmos de aprendizaje automático al conjunto de datos Automotive Price Prediction Dataset de Atul Kumar Choudhary con el fin de poner en practica las habilidades en el aprendizaje automático.",
-      imagen: "/img/SuperStore_Sales.jpg",
+      imagen: "/img/Auto_Price.jpg",
       tecnologias: "Python, Pandas, Numpy, Matplotlib, Seaborn, Jupyter Notebook, Power BI,Git & GitHub, etc..",
       pagina: "/Automotive-price",
       link: "https://github.com/SaitoM17/auto_price.git",
