@@ -1,265 +1,106 @@
-/* Contenedor raíz */
+/* ==========================================================================
+   CSS Optimizado para Renderizado de Markdown (proyectPages.css)
+   ========================================================================== */
+
 .pagina-proyecto {
-  font-family: Arial, sans-serif;
-  background: #f9fafc;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f7f9;
   color: #333;
   line-height: 1.6;
-  padding: 0;
-  margin: 0;
+  padding: 2rem 1rem;
 }
 
-/* Contenido */
 .pagina-proyecto .contenedor-proyecto {
-  max-width: 1300px;
+  max-width: 1100px; /* Reducido ligeramente para mejor lectura */
   margin: auto;
-  padding: 2rem;
+  padding: 3rem;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Evita que hijos rompan el borde redondeado */
 }
 
-/*Títulos*/
-.pagina-proyecto h1 {
-  font-size: 2.5rem;
-  color: #002855;
-  margin-bottom: 1rem;
-  text-align: center;
-}
+/* --- Títulos (Directos y desde Markdown) --- */
+.pagina-proyecto h1 { font-size: 2.4rem; color: #002855; text-align: center; margin-bottom: 2rem; }
+.pagina-proyecto h2 { font-size: 1.9rem; color: #004080; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-top: 2.5rem; }
+.pagina-proyecto h3 { font-size: 1.5rem; color: #0056b3; margin-top: 1.8rem; }
 
-.pagina-proyecto h2 {
-  font-size: 2rem;
-  color: #004080;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-.pagina-proyecto h3 {
-  font-size: 1.4rem;
-  color: #0056b3;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.pagina-proyecto h4 {
-  font-size: 1.3rem; /* Más pequeño que h3 */
-  font-weight: 600;
-  margin: 1.2rem 0 0.6rem 0;
-  color: #002855; /* Azul corporativo */
-  border-left: 4px solid #00aaff; /* Acento sutil */
-  padding-left: 0.6rem;
-}
-
-.pagina-proyecto h5 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 1rem 0 0.5rem 0;
-  color: #002855;/*color: #444; /* Gris elegante */
-  letter-spacing: 0.3px;
-}
-
-/*Imagen Principal*/
-.pagina-proyecto .imagen-principal {
-  width: 100%;
-  max-width: 1000px;
-  margin: 1.5rem auto;
+/* --- Imágenes (Solución al desborde) --- */
+.pagina-proyecto img {
+  max-width: 100%;
+  height: auto;
   display: block;
+  margin: 2rem auto;
   border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.pagina-proyecto .imagen-ramen {
-  width: 100%;
-  max-width: 800px;
-  margin: 1.5rem auto;
+/* --- Bloques de Código (Solución al desborde de texto) --- */
+.pagina-proyecto pre {
+  background: #1e1e1e; /* Color oscuro estilo VS Code */
+  color: #dcdcdc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto; /* Scroll horizontal si el código es largo */
+  margin: 1.5rem 0;
+  border: 1px solid #333;
+}
+
+.pagina-proyecto code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.95rem;
+}
+
+/* Código en línea (inline code) */
+.pagina-proyecto p > code {
+  background: #f0f0f0;
+  color: #d63384;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* --- Tablas (Solución al amontonamiento de datos) --- */
+.pagina-proyecto table {
   display: block;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);    
-}
-
-/*Imágenes*/
-.pagina-proyecto .imagen-proyecto {
   width: 100%;
-  max-width: 1000px;
-  margin: 1.5rem auto;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Obligatorio para tablas grandes de Pandas */
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
 }
 
-/*Texto y párrafos*/
+.pagina-proyecto th {
+  background: #002855;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  white-space: nowrap; /* Evita que los encabezados se corten */
+}
+
+.pagina-proyecto td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  min-width: 100px; /* Asegura espacio para los datos */
+}
+
+.pagina-proyecto tr:nth-child(even) { background: #f8f9fa; }
+
+/* --- Párrafos y Listas --- */
 .pagina-proyecto p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-align: justify;
 }
 
-/*Code*/
-.pagina-proyecto .code-block {
-  max-width: 900px;
-  width: 90%;
-  margin: 2rem auto;
-  border-radius: 8px;
+.pagina-proyecto ul, .pagina-proyecto ol {
+  margin: 1rem 0 1.5rem 2rem;
 }
 
-/*Listas*/
-.pagina-proyecto ul {
-  margin: 1rem 0 1rem 1.5rem;
-  padding: 0;
-}
-
-.pagina-proyecto li {
-  margin-bottom: 0.5rem;
-}
-
-.pagina-proyecto dd {
-  margin-left: 2rem;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/*Estilos de Tablas*/
-.pagina-proyecto .contenedor-tabla {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.pagina-proyecto table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-  font-size: 1rem;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pagina-proyecto thead {
-  background: #002855;
-  color: white;
-  text-align: left;
-}
-
-.pagina-proyecto thead th {
-  padding: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.pagina-proyecto tbody tr {
-  border-bottom: 1px solid #ddd;
-  transition: background 0.2s ease-in-out;
-}
-
-.pagina-proyecto tbody tr:hover {
-  background: #f4f8fc;
-}
-
-.pagina-proyecto tbody td {
-  padding: 1rem;
-  vertical-align: top;
-}
-
-.pagina-proyecto tfoot {
-  background: #f1f1f1;
-  font-weight: bold;
-}
-
-.pagina-proyecto tfoot td {
-  padding: 1rem;
-}
-
-/*Enlaces*/
-.pagina-proyecto a {
-  color: #0056b3;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.pagina-proyecto a:hover {
-  text-decoration: underline;
-}
-
-/*Responsive*/
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .pagina-proyecto .contenedor-proyecto {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
-
-  .pagina-proyecto h1 {
-    font-size: 2rem;
-  }
-
-  .pagina-proyecto h2 {
-    font-size: 1.6rem;
-  }
-
-  .pagina-proyecto .imagen-proyecto {
-    max-width: 100%;
-  }
-}
-
-/*Responsive para tablas*/
-@media (max-width: 768px) {
-  .pagina-proyecto table,
-  .pagina-proyecto thead,
-  .pagina-proyecto tbody,
-  .pagina-proyecto th,
-  .pagina-proyecto td,
-  .pagina-proyecto tr {
-    display: block;
-    width: 100%;
-  }
-
-  .pagina-proyecto thead {
-    display: none;
-  }
-
-  .pagina-proyecto tbody tr {
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0.5rem;
-  }
-
-  .pagina-proyecto tbody td {
-    padding: 0.75rem;
-    text-align: right;
-    position: relative;
-  }
-
-  .pagina-proyecto tbody td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    font-weight: bold;
-    text-align: left;
-    color: #002855;
-  }
-}
-
-/* Ajuste para tablas HTML dentro del Markdown */
-.contenedor-proyecto table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    display: block; /* Permite scroll horizontal si la tabla es muy grande */
-}
-
-.contenedor-proyecto th, .contenedor-proyecto td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.contenedor-proyecto tr:nth-child(even) {
-    background-color: #f2f2f2;
+  
+  .pagina-proyecto h1 { font-size: 1.8rem; }
+  .pagina-proyecto h2 { font-size: 1.5rem; }
 }
