@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Hola 👋, soy Said Mariano Sánchez
+### Analista de Datos Jr. | Ingeniero en Sistemas | Certificado en Google Advanced Data Analytics & OCI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Me especializo en transformar datos complejos en decisiones estratégicas. Mi enfoque abarca desde la extracción y procesamiento de datos hasta la creación de dashboards que cuentan historias accionables.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Sobre mí
+Soy un apasionado del ciclo de vida de los datos. Con experiencia en entornos **Cloud (OCI)** y herramientas avanzadas de **IA**, desarrollo soluciones que optimizan procesos y generan valor real. Actualmente, me desempeño como Consultor Técnico en Grupo TI México, colaborando en la creación de reportes corporativos y análisis de datos.
 
-### `npm start`
+- 📍 Monterrey, Nuevo León, México
+- 🎓 Ingeniero en Sistemas Computacionales (UVEG)
+- 💡 Intereses: Análisis predictivo, Storytelling con datos y Soluciones de Nube.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Stack Tecnológico
+| Categoría | Herramientas |
+| :--- | :--- |
+| **Lenguajes** | `Python`, `SQL`, `PL/SQL` |
+| **Análisis de Datos** | `Pandas`, `NumPy`, `Estadística`, `Limpieza de datos` |
+| **Visualización** | `Power BI`, `Tableau`, `Matplotlib`, `Seaborn` |
+| **Bases de Datos** | `MySQL`, `Oracle`, `MySQL Workbench` |
+| **Cloud & IA** | `Oracle Cloud (OCI)`, `Azure Space`, `IA Foundations` |
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📊 Mis Proyectos Destacados
 
-### `npm run build`
+### 🔍 Análisis Estratégico & Dashboards
+* **[Anime Análisis](https://github.com/SaitoM17/anime_analisis.git)**: Sistema completo utilizando Jikan API para identificar patrones de calidad y popularidad en las últimas dos décadas. 
+    * *Tech: Python, Pandas, MySQL.*
+* **[SuperStore Sales](https://github.com/SaitoM17/superstore_sales.git)**: Dashboard interactivo y reportes ejecutivos para el análisis de rendimiento de entregas.
+    * *Tech: Power BI, Python.*
+* **[Amazon Delivery](https://github.com/SaitoM17/amazon_delivery.git)**: Análisis de eficiencia operativa basado en datasets reales de logística.
+    * *Tech: SQL, Tableau, Seaborn.*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📈 Economía & Sociedad
+* **[Precio de las tortillas en México (2007-2024)](https://github.com/SaitoM17/analisis_del_precio_tortillas_mexico_2007_a_2024.git)**: Análisis exploratorio del impacto de precios por región y tipo de tienda.
+* **[Análisis SIEM](https://github.com/SaitoM17/analisis_empresarial_mexico_siem_2024.git)**: Insights sobre la distribución y sectores de las empresas mexicanas en 2024.
+* **[Mexico Trade Statistics](https://github.com/SaitoM17/analisis_mexico_trade_statistics_2012_2023.git)**: Evolución del comercio exterior y socios comerciales clave de México.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🤖 Machine Learning & Otros
+* **[Automotive Price Prediction](https://github.com/SaitoM17/auto_price.git)**: Implementación de algoritmos de aprendizaje automático para la predicción de precios vehiculares.
+* **[Ramen Ratings](https://github.com/SaitoM17/ramen_ratings.git)**: Dashboard basado en más de 2,500 reseñas internacionales.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📜 Certificaciones Destacadas
+- 🏆 **OCI Data Science Professional** - Oracle (2025)
+- 🏆 **Google Advanced Data Analytics** - Google/Coursera
+- 🏆 **OCI AI Foundations Associate** - Oracle (2025)
+- 🏆 **Insignia Azure Space** - Diversidad en STEM
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📫 Contacto
+- **LinkedIn:** [linkedin.com/in/said-mariano](https://www.linkedin.com/in/said-mariano)
+- **Email:** said.mariano.sanchez@gmail.com
+- **WhatsApp:** [+52 771 346 6983](https://wa.me/527713466983)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*“Cada conjunto de datos esconde oportunidades que, bien interpretadas, generan impacto.”*
