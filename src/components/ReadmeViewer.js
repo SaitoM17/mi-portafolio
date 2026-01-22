@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw'; // Importante para las tablas HTML
+import rehypeSanitize from 'rehype-sanitize';
 
 const ReadmeViewer = ({ repoName }) => {
   const [markdown, setMarkdown] = useState('Cargando...');
@@ -27,7 +28,7 @@ const ReadmeViewer = ({ repoName }) => {
       <div className="contenedor-proyecto">
         <ReactMarkdown 
           remarkPlugins={[remarkGfm]} 
-          rehypePlugins={[rehypeRaw]}
+          rehypePlugins={[rehypeRaw, rehypeSanitize]}
         >
           {markdown}
         </ReactMarkdown>
